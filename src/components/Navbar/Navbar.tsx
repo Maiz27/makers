@@ -1,5 +1,5 @@
 'use client';
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { FaBars, FaTimes } from 'react-icons/fa';
@@ -31,12 +31,27 @@ const links = [
 const Navbar = () => {
   const [isMenuOpen, setMenuOpen] = useState(false);
 
+  const node = useRef<HTMLElement | null>(null);
+
   const toggleMenu = () => {
     setMenuOpen(!isMenuOpen);
   };
 
+  const handleClickOutside = (event: { target: any }) => {
+    if (node.current && !node.current.contains(event.target)) {
+      setMenuOpen(false);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      window.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
+
   return (
-    <header>
+    <header ref={node}>
       <div className='navbar bg-base-100'>
         <div className='navbar-start'>
           <Link href='/' className='h-full grid place-items-center'>
