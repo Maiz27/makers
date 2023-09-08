@@ -1,7 +1,10 @@
+'use client';
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import React from 'react';
+import { FaBars, FaTimes } from 'react-icons/fa';
 import logo from '/public/imgs/logo/logo-w.png';
+import logo2 from '/public/imgs/logo/logo-b.png';
 
 const links = [
   {
@@ -26,6 +29,12 @@ const links = [
   },
 ];
 const Navbar = () => {
+  const [isMenuOpen, setMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setMenuOpen(!isMenuOpen);
+  };
+
   return (
     <header>
       <div className='navbar bg-base-100'>
@@ -54,36 +63,50 @@ const Navbar = () => {
         </div>
         <div className='navbar-end gap-2'>
           <a className='btn btn-primary normal-case'>Contact</a>
-          <div className='dropdown dropdown-end'>
-            <label tabIndex={0} className='btn btn-ghost lg:hidden'>
-              <svg
-                xmlns='http://www.w3.org/2000/svg'
-                className='h-5 w-5'
-                fill='none'
-                viewBox='0 0 24 24'
-                stroke='currentColor'
-              >
-                <path
-                  strokeLinecap='round'
-                  strokeLinejoin='round'
-                  strokeWidth='2'
-                  d='M4 6h16M4 12h8m-8 6h16'
-                />
-              </svg>
-            </label>
-            <ul
-              tabIndex={0}
-              className='menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52'
-            >
-              {links.map(({ name, path }) => {
-                return (
-                  <Link href={path} key={path}>
-                    {name}
-                  </Link>
-                );
-              })}
-            </ul>
-          </div>
+
+          <button
+            onClick={toggleMenu}
+            className='lg:hidden text-3xl grid place-items-center z-50'
+          >
+            {isMenuOpen ? <FaTimes className='text-base-100' /> : <FaBars />}
+          </button>
+          <aside
+            className={`fixed w-3/4 h-screen top-0 z-20 bg-secondary text-base-100 ${
+              isMenuOpen ? 'left-1/4' : 'left-full'
+            }`}
+          >
+            {isMenuOpen && (
+              <nav className='h-full flex flex-col items-center gap-8 mt-20'>
+                <Link href='/' className='flex aspect-square w-48'>
+                  <Image
+                    src={logo2}
+                    alt='Makers Engineering Logo'
+                    title='Makers Engineering Logo'
+                    className='w-full object-cover'
+                  />
+                </Link>
+
+                <h2 className='font-bold tracking-widest text-center text-2xl'>
+                  Makers Engineering
+                </h2>
+
+                <ul className='flex flex-col'>
+                  {links.map(({ name, path }) => {
+                    return (
+                      <Link
+                        key={path}
+                        href={path}
+                        className='font-semibold  p-2 lg:p-0'
+                        onClick={toggleMenu}
+                      >
+                        {name}
+                      </Link>
+                    );
+                  })}
+                </ul>
+              </nav>
+            )}
+          </aside>
         </div>
       </div>
     </header>
