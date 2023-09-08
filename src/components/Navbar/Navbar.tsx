@@ -2,32 +2,11 @@
 import React, { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { routes } from '@/Constants';
 import { FaBars, FaTimes } from 'react-icons/fa';
 import logo from '/public/imgs/logo/logo-w.png';
 import logo2 from '/public/imgs/logo/logo-b.png';
 
-const links = [
-  {
-    name: 'Home',
-    path: '/',
-  },
-  {
-    name: 'About',
-    path: '/about',
-  },
-  {
-    name: 'Services',
-    path: '/services',
-  },
-  {
-    name: 'Blog',
-    path: '/blog',
-  },
-  {
-    name: 'Projects',
-    path: '/projects',
-  },
-];
 const Navbar = () => {
   const [isMenuOpen, setMenuOpen] = useState(false);
 
@@ -67,7 +46,7 @@ const Navbar = () => {
         </div>
         <div className='navbar-center hidden lg:flex'>
           <ul className='flex justify-around items-center px-1 gap-10'>
-            {links.map(({ name, path }) => {
+            {routes.map(({ name, path }) => {
               return (
                 <Link href={path} key={path}>
                   {name}
@@ -106,7 +85,7 @@ const Navbar = () => {
                 </h2>
 
                 <ul className='flex flex-col'>
-                  {links.map(({ name, path }) => {
+                  {routes.map(({ name, path }) => {
                     return (
                       <Link
                         key={path}
