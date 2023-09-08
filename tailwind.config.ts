@@ -7,7 +7,13 @@ const config: Config = {
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
-    extend: {},
+    extend: {
+      backgroundImage: {
+        hero1: "url('/imgs/hero/1.jpg')",
+        hero2: "url('/imgs/hero/2.jpg')",
+        hero3: "url('/imgs/hero/3.jpg')",
+      },
+    },
   },
   plugins: [require('daisyui')],
   daisyui: {
