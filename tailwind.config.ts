@@ -16,7 +16,7 @@ const config: Config = {
         makers: {
           primary: '#FFDE59',
 
-          secondary: '#87f466',
+          secondary: '#F6F1E9',
 
           accent: '#00AEDF',
 
