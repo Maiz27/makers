@@ -2,6 +2,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import useWindowWidth from '@/hooks/useWindowWidth';
 import { routes } from '@/Constants';
 import { FaBars, FaTimes } from 'react-icons/fa';
 import logo from '/public/imgs/logo/logo-w.png';
@@ -9,8 +10,18 @@ import logo2 from '/public/imgs/logo/logo-b.png';
 
 const Navbar = () => {
   const [isMenuOpen, setMenuOpen] = useState(false);
+  const [isTransparent, setIsTransparent] = useState(true);
 
   const node = useRef<HTMLElement | null>(null);
+
+  const width = useWindowWidth();
+
+  // const paths = heroImages.map(({ src }) => {
+  //   return src.src;
+  // });
+
+  // const [bgColor, textColor] = useDominantColor(paths);
+  // console.log(bgColor, textColor);
 
   const toggleMenu = () => {
     setMenuOpen(!isMenuOpen);
@@ -24,31 +35,56 @@ const Navbar = () => {
 
   useEffect(() => {
     window.addEventListener('mousedown', handleClickOutside);
+    window.addEventListener('scroll', changeBackground);
+
     return () => {
       window.removeEventListener('mousedown', handleClickOutside);
+      window.removeEventListener('scroll', changeBackground);
     };
   }, []);
 
+  const changeBackground = () => {
+    if (window.scrollY >= 100) {
+      setIsTransparent(false);
+    } else {
+      setIsTransparent(true);
+    }
+  };
+
   return (
-    <header ref={node}>
-      <div className='navbar bg-base-100'>
+    <header
+      ref={node}
+      className={`w-full top-0 z-50 ${
+        isTransparent ? 'absolute' : 'sticky shadow'
+      }`}
+    >
+      <nav
+        className={`navbar transition-colors ${
+          isTransparent ? 'bg-transparent' : 'bg-base-100'
+        }`}
+      >
         <div className='navbar-start'>
           <Link href='/' className='h-full grid place-items-center'>
             <Image
-              src={logo}
+              src={width < 1024 ? logo : logo2}
               alt='Makers Engineering Logo'
               title='Makers Engineering Logo'
               width={50}
               height={50}
               priority
+              className='mix-blend-difference lg:mix-blend-normal'
             />
           </Link>
         </div>
         <div className='navbar-center hidden lg:flex'>
-          <ul className='flex justify-around items-center px-1 gap-10'>
+          <ul className='flex justify-around items-center px-1 gap-12 xl:gap-20 font-bold'>
             {routes.map(({ name, path }) => {
               return (
-                <Link href={path} key={path}>
+                <Link
+                  href={path}
+                  key={path}
+                  className='hover:text-yellow-500 hover:scale-110 transition-colors'
+                >
                   {name}
                 </Link>
               );
@@ -60,17 +96,17 @@ const Navbar = () => {
 
           <button
             onClick={toggleMenu}
-            className='lg:hidden text-3xl grid place-items-center z-50'
+            className='lg:hidden text-3xl grid place-items-center z-50 text-base-100 mix-blend-difference'
           >
-            {isMenuOpen ? <FaTimes className='text-base-100' /> : <FaBars />}
+            {isMenuOpen ? <FaTimes /> : <FaBars />}
           </button>
           <aside
-            className={`fixed w-3/4 h-screen top-0 z-20 bg-secondary text-base-100 ${
+            className={`fixed w-3/4 h-screen top-0 z-20 bg-primary shadow-xl ${
               isMenuOpen ? 'left-1/4' : 'left-full'
             }`}
           >
             {isMenuOpen && (
-              <nav className='h-full flex flex-col items-center gap-8 mt-20'>
+              <div className='h-full flex flex-col items-center gap-8 mt-20'>
                 <Link href='/' className='flex aspect-square w-48'>
                   <Image
                     src={logo2}
@@ -98,11 +134,11 @@ const Navbar = () => {
                     );
                   })}
                 </ul>
-              </nav>
+              </div>
             )}
           </aside>
         </div>
-      </div>
+      </nav>
     </header>
   );
 };

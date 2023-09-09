@@ -1,15 +1,11 @@
-import Image from 'next/image';
+import Hero from '@/components/hero/Hero';
 
 export default function Home() {
   return (
     <main className=''>
-      <h1 className='text-4xl'>Home Page</h1>
-      <p>
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Placeat hic
-        deserunt laudantium quidem magnam aliquam eligendi optio fugit nemo
-        incidunt, animi sapiente id eveniet repellat. Quam sequi debitis esse
-        atque.
-      </p>
+      <Hero />
+
+      <div className='h-screen'></div>
     </main>
   );
 }

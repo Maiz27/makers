@@ -7,7 +7,13 @@ const config: Config = {
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
-    extend: {},
+    extend: {
+      backgroundImage: {
+        hero1: "url('/imgs/hero/1.jpg')",
+        hero2: "url('/imgs/hero/2.jpg')",
+        hero3: "url('/imgs/hero/3.jpg')",
+      },
+    },
   },
   plugins: [require('daisyui')],
   daisyui: {
@@ -16,13 +22,13 @@ const config: Config = {
         makers: {
           primary: '#FFDE59',
 
-          secondary: '#F6F1E9',
+          secondary: '#dddce0',
 
-          accent: '#00AEDF',
+          accent: '#C81432',
 
-          neutral: '#E5EBE0',
+          neutral: '#121007',
 
-          'base-100': '#040401',
+          'base-100': '#fefdfb',
 
           info: '#42aad7',
 
