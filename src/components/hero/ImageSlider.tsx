@@ -40,6 +40,7 @@ const ImageSlider = () => {
                 src={src}
                 alt={name}
                 className='h-full object-cover object-center'
+                priority
               />
             </SplideSlide>
           );
@@ -47,7 +48,10 @@ const ImageSlider = () => {
       </SplideTrack>
 
       <div className='splide__arrows hidden' />
-      <ul className='splide__pagination w-1/4' style={{ left: '50%' }}></ul>
+      <ul
+        className='splide__pagination -translate-x-1/2 lg:translate-x-0 lg:w-1/3'
+        style={{ left: '50%' }}
+      ></ul>
     </Splide>
   );
 };

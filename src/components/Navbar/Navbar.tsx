@@ -35,7 +35,7 @@ const Navbar = () => {
         <div className='navbar-start'>
           <Link href='/' className='h-full grid place-items-center'>
             <Image
-              src={logo}
+              src={logo2}
               alt='Makers Engineering Logo'
               title='Makers Engineering Logo'
               width={50}
