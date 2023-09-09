@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { IsClientCtxProvider } from '@/context/IsClientContext';
 import Navbar from '@/components/Navbar/Navbar';
 import './globals.css';
 
@@ -15,8 +16,10 @@ export default function RootLayout({
   return (
     <html lang='en'>
       <body>
-        <Navbar />
-        {children}
+        <IsClientCtxProvider>
+          <Navbar />
+          {children}
+        </IsClientCtxProvider>
       </body>
     </html>
   );

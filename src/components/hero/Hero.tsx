@@ -3,11 +3,11 @@ import ImageSlider from './ImageSlider';
 
 const Hero = () => {
   return (
-    <div className='h-[92vh] relative flex items-center'>
-      <div className='w-11/12 md:w-4/5 lg:w-3/6 z-10 mx-auto'>
+    <div className='h-screen relative flex items-center'>
+      <div className='w-11/12 md:w-4/5 lg:w-3/6 z-10 mx-auto text-base-100 lg:text-neutral'>
         <TextArea />
       </div>
-      <div className='w-full absolute lg:static lg:w-[75%] h-full'>
+      <div className='w-full absolute lg:static lg:w-[75%] h-full after:content-[""] after:absolute after:w-full after:h-full after:inset-0 after:bg-[#0000007a] lg:after:bg-[#0000004a]'>
         <ImageSlider />
       </div>
       <div
@@ -15,11 +15,7 @@ const Hero = () => {
         style={{
           clipPath: 'polygon(0 0, 40% 0, 60% 100%, 0 100%)',
         }}
-      >
-        {/* <div className='ml-12 lg:ml-10 xl:ml-16 h-full w-5/12 flex flex-col justify-center'>
-          <TextArea />
-        </div> */}
-      </div>
+      ></div>
     </div>
   );
 };

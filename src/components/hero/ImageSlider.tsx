@@ -5,24 +5,7 @@ import Image from 'next/image';
 import { Splide, SplideSlide, SplideTrack } from '@splidejs/react-splide';
 import '@splidejs/react-splide/css';
 
-import hero1 from '/public/imgs/hero/1.jpg';
-import hero2 from '/public/imgs/hero/2.jpg';
-import hero3 from '/public/imgs/hero/3.jpg';
-
-const images = [
-  {
-    name: '1',
-    src: hero1,
-  },
-  {
-    name: '2',
-    src: hero2,
-  },
-  {
-    name: '3',
-    src: hero3,
-  },
-];
+import { heroImages } from '@/Constants';
 
 const ImageSlider = () => {
   const options = {
@@ -33,7 +16,7 @@ const ImageSlider = () => {
   return (
     <Splide hasTrack={false} options={options} tag='section' className='h-full'>
       <SplideTrack className='h-full'>
-        {images.map(({ name, src }) => {
+        {heroImages.map(({ name, src }) => {
           return (
             <SplideSlide key={name}>
               <Image

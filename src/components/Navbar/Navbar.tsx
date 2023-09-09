@@ -2,6 +2,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import useWindowWidth from '@/hooks/useWindowWidth';
 import { routes } from '@/Constants';
 import { FaBars, FaTimes } from 'react-icons/fa';
 import logo from '/public/imgs/logo/logo-w.png';
@@ -11,6 +12,15 @@ const Navbar = () => {
   const [isMenuOpen, setMenuOpen] = useState(false);
 
   const node = useRef<HTMLElement | null>(null);
+
+  const width = useWindowWidth();
+
+  // const paths = heroImages.map(({ src }) => {
+  //   return src.src;
+  // });
+
+  // const [bgColor, textColor] = useDominantColor(paths);
+  // console.log(bgColor, textColor);
 
   const toggleMenu = () => {
     setMenuOpen(!isMenuOpen);
@@ -30,12 +40,12 @@ const Navbar = () => {
   }, []);
 
   return (
-    <header ref={node}>
-      <div className='navbar bg-base-100'>
+    <header ref={node} className='absolute top-0 z-50 w-full'>
+      <nav className='navbar bg-transparent'>
         <div className='navbar-start'>
           <Link href='/' className='h-full grid place-items-center'>
             <Image
-              src={logo2}
+              src={width < 1024 ? logo : logo2}
               alt='Makers Engineering Logo'
               title='Makers Engineering Logo'
               width={50}
@@ -45,10 +55,10 @@ const Navbar = () => {
           </Link>
         </div>
         <div className='navbar-center hidden lg:flex'>
-          <ul className='flex justify-around items-center px-1 gap-10'>
+          <ul className='flex justify-around items-center px-1 gap-12 xl:gap-20 font-bold'>
             {routes.map(({ name, path }) => {
               return (
-                <Link href={path} key={path}>
+                <Link href={path} key={path} className='mix-blend-difference'>
                   {name}
                 </Link>
               );
@@ -60,9 +70,9 @@ const Navbar = () => {
 
           <button
             onClick={toggleMenu}
-            className='lg:hidden text-3xl grid place-items-center z-50'
+            className='lg:hidden text-3xl grid place-items-center z-50 text-base-100'
           >
-            {isMenuOpen ? <FaTimes className='text-base-100' /> : <FaBars />}
+            {isMenuOpen ? <FaTimes /> : <FaBars />}
           </button>
           <aside
             className={`fixed w-3/4 h-screen top-0 z-20 bg-secondary text-base-100 ${
@@ -70,7 +80,7 @@ const Navbar = () => {
             }`}
           >
             {isMenuOpen && (
-              <nav className='h-full flex flex-col items-center gap-8 mt-20'>
+              <div className='h-full flex flex-col items-center gap-8 mt-20'>
                 <Link href='/' className='flex aspect-square w-48'>
                   <Image
                     src={logo2}
@@ -98,11 +108,11 @@ const Navbar = () => {
                     );
                   })}
                 </ul>
-              </nav>
+              </div>
             )}
           </aside>
         </div>
-      </div>
+      </nav>
     </header>
   );
 };
