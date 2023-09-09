@@ -1,5 +1,6 @@
 import React from 'react';
 import ImageSlider from './ImageSlider';
+import CTA from '../CTA/CTA';
 
 const Hero = () => {
   return (
@@ -35,12 +36,12 @@ const TextArea = () => {
         ea rerum debitis.
       </p>
       <div className='flex items-center gap-4'>
-        <button className='btn normal-case btn-primary'>
-          Explore Services
-        </button>
-        <button className='btn normal-case btn-secondary'>
-          Previous Projects
-        </button>
+        <CTA
+          text='Explore Services'
+          page='/services'
+          className='hover:shadow-[0_20px_80px_-10px] hover:shadow-primary'
+        />
+        <CTA text='Previous Projects' page='/projects' bg='secondary' />
       </div>
     </div>
   );

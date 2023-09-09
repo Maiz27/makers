@@ -10,6 +10,7 @@ import logo2 from '/public/imgs/logo/logo-b.png';
 
 const Navbar = () => {
   const [isMenuOpen, setMenuOpen] = useState(false);
+  const [isTransparent, setIsTransparent] = useState(true);
 
   const node = useRef<HTMLElement | null>(null);
 
@@ -34,14 +35,34 @@ const Navbar = () => {
 
   useEffect(() => {
     window.addEventListener('mousedown', handleClickOutside);
+    window.addEventListener('scroll', changeBackground);
+
     return () => {
       window.removeEventListener('mousedown', handleClickOutside);
+      window.removeEventListener('scroll', changeBackground);
     };
   }, []);
 
+  const changeBackground = () => {
+    if (window.scrollY >= 100) {
+      setIsTransparent(false);
+    } else {
+      setIsTransparent(true);
+    }
+  };
+
   return (
-    <header ref={node} className='absolute top-0 z-50 w-full'>
-      <nav className='navbar bg-transparent'>
+    <header
+      ref={node}
+      className={`w-full top-0 z-50 ${
+        isTransparent ? 'absolute' : 'sticky shadow'
+      }`}
+    >
+      <nav
+        className={`navbar transition-colors ${
+          isTransparent ? 'bg-transparent' : 'bg-base-100'
+        }`}
+      >
         <div className='navbar-start'>
           <Link href='/' className='h-full grid place-items-center'>
             <Image
@@ -51,6 +72,7 @@ const Navbar = () => {
               width={50}
               height={50}
               priority
+              className='mix-blend-difference lg:mix-blend-normal'
             />
           </Link>
         </div>
@@ -58,7 +80,11 @@ const Navbar = () => {
           <ul className='flex justify-around items-center px-1 gap-12 xl:gap-20 font-bold'>
             {routes.map(({ name, path }) => {
               return (
-                <Link href={path} key={path} className='mix-blend-difference'>
+                <Link
+                  href={path}
+                  key={path}
+                  className='hover:text-yellow-500 hover:scale-110 transition-colors'
+                >
                   {name}
                 </Link>
               );
@@ -70,7 +96,7 @@ const Navbar = () => {
 
           <button
             onClick={toggleMenu}
-            className='lg:hidden text-3xl grid place-items-center z-50 text-base-100'
+            className='lg:hidden text-3xl grid place-items-center z-50 text-base-100 mix-blend-difference'
           >
             {isMenuOpen ? <FaTimes /> : <FaBars />}
           </button>
