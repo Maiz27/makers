@@ -1,5 +1,6 @@
 import React from 'react';
 import ImageSlider from './ImageSlider';
+import Stats from './Stats';
 import CTA from '../CTA/CTA';
 
 const Hero = () => {
@@ -8,8 +9,11 @@ const Hero = () => {
       <div className='w-11/12 md:w-4/5 lg:w-3/6 z-10 mx-auto text-base-100 lg:text-neutral'>
         <TextArea />
       </div>
-      <div className='w-full absolute lg:static lg:w-[75%] h-full after:content-[""] after:absolute after:w-full after:h-full after:inset-0 after:bg-[#0000007a] lg:after:bg-[#0000004a]'>
+      <div className='w-full absolute lg:static lg:w-[75%] h-full'>
         <ImageSlider />
+        <div className='hidden z-10 lg:block lg:absolute bottom-[10%] left-1/2 -translate-x-1/5'>
+          <Stats />
+        </div>
       </div>
       <div
         className='absolute inset-0 bg-base-100 hidden lg:block'
@@ -26,7 +30,7 @@ export default Hero;
 const TextArea = () => {
   return (
     <div className='flex flex-col justify-center items-center lg:items-start z-10 gap-8 lg:ml-10 xl:ml-16'>
-      <h1 className='text-3xl leading-normal'>
+      <h1 className='text-3xl xl:text-4xl leading-normal'>
         Redefining Possibilities in The Civil Engineering Industry
       </h1>
       <p>
@@ -39,7 +43,7 @@ const TextArea = () => {
         <CTA
           text='Explore Services'
           page='/services'
-          className='hover:shadow-[0_20px_80px_-10px] hover:shadow-primary'
+          className='hover:shadow-2xl hover:shadow-primary'
         />
         <CTA text='Previous Projects' page='/projects' bg='secondary' />
       </div>

@@ -11,10 +11,15 @@ const ImageSlider = () => {
   const options = {
     type: 'loop',
     autoplay: true,
-    pauseOnHover: true,
+    // pauseOnHover: true,
   };
   return (
-    <Splide hasTrack={false} options={options} tag='section' className='h-full'>
+    <Splide
+      hasTrack={false}
+      options={options}
+      tag='section'
+      className='h-full after:content-[""] after:absolute after:w-full after:h-full after:inset-0 after:bg-[#0000007a] lg:after:bg-[#0000002a]'
+    >
       <SplideTrack className='h-full'>
         {heroImages.map(({ name, src }) => {
           return (

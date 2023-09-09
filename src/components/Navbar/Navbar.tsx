@@ -101,7 +101,7 @@ const Navbar = () => {
             {isMenuOpen ? <FaTimes /> : <FaBars />}
           </button>
           <aside
-            className={`fixed w-3/4 h-screen top-0 z-20 bg-secondary text-base-100 ${
+            className={`fixed w-3/4 h-screen top-0 z-20 bg-primary shadow-xl ${
               isMenuOpen ? 'left-1/4' : 'left-full'
             }`}
           >
