@@ -11,7 +11,7 @@ const Hero = () => {
       </div>
       <div className='w-full absolute lg:static lg:w-[75%] h-full'>
         <ImageSlider />
-        <div className='hidden z-10 lg:block lg:absolute bottom-[10%] left-1/2 -translate-x-1/5'>
+        <div className='hidden z-10 lg:block lg:absolute bottom-[10%] left-1/2 -translate-x-1/5 xl:-translate-x-1/4'>
           <Stats />
         </div>
       </div>
@@ -29,9 +29,9 @@ export default Hero;
 
 const TextArea = () => {
   return (
-    <div className='flex flex-col justify-center items-center lg:items-start z-10 gap-8 lg:ml-10 xl:ml-16'>
+    <section className='flex flex-col justify-center items-center lg:items-start z-10 gap-8 lg:ml-10 xl:ml-16'>
       <h1 className='text-3xl xl:text-4xl leading-normal'>
-        Redefining Possibilities in The Civil Engineering Industry
+        Pioneering a New Era of Innovation and Excellence in Civil Engineering
       </h1>
       <p>
         Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cupiditate
@@ -45,8 +45,19 @@ const TextArea = () => {
           page='/services'
           className='hover:shadow-2xl hover:shadow-primary'
         />
-        <CTA text='Previous Projects' page='/projects' bg='secondary' />
+        <CTA
+          text='Previous Projects'
+          page='/projects'
+          bg='secondary'
+          isOutline={true}
+          className='hidden lg:flex'
+        />
+        <CTA
+          text='Previous Projects'
+          page='/projects'
+          className='lg:hidden btn-outline btn-secondary'
+        />
       </div>
-    </div>
+    </section>
   );
 };

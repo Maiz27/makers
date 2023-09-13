@@ -7,6 +7,7 @@ import { routes } from '@/Constants';
 import { FaBars, FaTimes } from 'react-icons/fa';
 import logo from '/public/imgs/logo/logo-w.png';
 import logo2 from '/public/imgs/logo/logo-b.png';
+import '../../app/globals.css';
 
 const Navbar = () => {
   const [isMenuOpen, setMenuOpen] = useState(false);
@@ -54,15 +55,11 @@ const Navbar = () => {
   return (
     <header
       ref={node}
-      className={`w-full top-0 z-50 ${
-        isTransparent ? 'absolute' : 'sticky shadow'
+      className={`w-full top-0 z-50 transition-all ${
+        isTransparent ? 'absolute bg-transparent' : 'sticky shadow bg-base-100'
       }`}
     >
-      <nav
-        className={`navbar transition-colors ${
-          isTransparent ? 'bg-transparent' : 'bg-base-100'
-        }`}
-      >
+      <nav className='navbar'>
         <div className='navbar-start'>
           <Link href='/' className='h-full grid place-items-center'>
             <Image
@@ -83,7 +80,11 @@ const Navbar = () => {
                 <Link
                   href={path}
                   key={path}
-                  className='hover:text-yellow-500 hover:scale-110 transition-colors'
+                  className='transition-colors hover:text-yellow-500 hover:scale-110 nav-hover'
+                  style={{
+                    textShadow:
+                      '-1px -1px 0px rgba(255, 255, 255, 0.5),1px -1px 0px rgba(255, 255, 255, 0.5),-1px  1px 0px rgba(255, 255, 255, 0.5),1px  1px 0px rgba(255, 255, 255, 0.5)',
+                  }}
                 >
                   {name}
                 </Link>
