@@ -7,6 +7,7 @@ import { routes } from '@/Constants';
 import { FaBars, FaTimes } from 'react-icons/fa';
 import logo from '/public/imgs/logo/logo-w.png';
 import logo2 from '/public/imgs/logo/logo-b.png';
+import icon from '/public/imgs/logo/icon.png';
 import '../../app/globals.css';
 
 const Navbar = () => {
@@ -63,13 +64,13 @@ const Navbar = () => {
         <div className='navbar-start'>
           <Link href='/' className='h-full grid place-items-center'>
             <Image
-              src={width < 1024 ? logo : logo2}
+              src={icon}
               alt='Makers Engineering Logo'
               title='Makers Engineering Logo'
               width={50}
               height={50}
               priority
-              className='mix-blend-difference lg:mix-blend-normal'
+              className=''
             />
           </Link>
         </div>

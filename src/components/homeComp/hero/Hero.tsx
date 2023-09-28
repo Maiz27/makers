@@ -1,7 +1,7 @@
 import React from 'react';
 import ImageSlider from './ImageSlider';
 import Stats from './Stats';
-import CTA from '../CTA/CTA';
+import CTA from '@/components/CTA/CTA';
 
 const Hero = () => {
   return (
