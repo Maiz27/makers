@@ -39,3 +39,5 @@ export const heroImages = [
     src: hero3,
   },
 ];
+
+export const aboutImages = [hero1, hero2, hero2, hero1];
