@@ -52,7 +52,12 @@ export const heroImages = [
   },
 ];
 
-export const aboutImages = [hero1, hero2, hero2, hero1];
+export const aboutImages = [
+  { img: hero1, size: '0' },
+  { img: hero2, size: '0' },
+  { img: hero2, size: '0' },
+  { img: hero1, size: '0' },
+];
 
 export const servicesList = [
   {

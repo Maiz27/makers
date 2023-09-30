@@ -2,11 +2,9 @@
 import React, { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import useWindowWidth from '@/hooks/useWindowWidth';
+import useLockBodyScroll from '@/context/useLockBodyScroll';
 import { routes } from '@/Constants';
 import { FaBars, FaTimes } from 'react-icons/fa';
-import logo from '/public/imgs/logo/logo-w.png';
-import logo2 from '/public/imgs/logo/logo-b.png';
 import icon from '/public/imgs/logo/icon.png';
 import '../../app/globals.css';
 
@@ -16,14 +14,7 @@ const Navbar = () => {
 
   const node = useRef<HTMLElement | null>(null);
 
-  const width = useWindowWidth();
-
-  // const paths = heroImages.map(({ src }) => {
-  //   return src.src;
-  // });
-
-  // const [bgColor, textColor] = useDominantColor(paths);
-  // console.log(bgColor, textColor);
+  useLockBodyScroll(isMenuOpen);
 
   const toggleMenu = () => {
     setMenuOpen(!isMenuOpen);
@@ -103,7 +94,7 @@ const Navbar = () => {
             {isMenuOpen ? <FaTimes /> : <FaBars />}
           </button>
           <aside
-            className={`fixed w-3/4 h-screen top-0 z-20 bg-primary shadow-xl ${
+            className={`fixed w-3/4 h-screen top-0 z-20 bg-base-100 shadow-2xl ${
               isMenuOpen ? 'left-1/4' : 'left-full'
             }`}
           >
@@ -111,7 +102,7 @@ const Navbar = () => {
               <div className='h-full flex flex-col items-center gap-8 mt-20'>
                 <Link href='/' className='flex aspect-square w-48'>
                   <Image
-                    src={logo2}
+                    src={icon}
                     alt='Makers Engineering Logo'
                     title='Makers Engineering Logo'
                     className='w-full object-cover'

@@ -34,10 +34,10 @@ const TextArea = () => {
         Pioneering a New Era of Innovation and Excellence in Civil Engineering
       </h1>
       <p>
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cupiditate
-        placeat repellat sequi consectetur beatae. Molestiae libero deleniti
-        culpa minus distinctio quaerat quidem nesciunt, nisi non commodi ipsum,
-        ea rerum debitis.
+        Discover a dynamic force in the engineering realm,
+        <span className='font-bold tracking-widest'> MAKERS </span>
+        Engineering Limited. a powerhouse committed to innovation, with a vision
+        for a stronger South Sudan.
       </p>
       <div className='flex items-center gap-4'>
         <CTA
