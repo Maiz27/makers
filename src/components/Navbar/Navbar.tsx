@@ -1,5 +1,6 @@
 'use client';
 import React, { useState, useEffect, useRef } from 'react';
+import { usePathname } from 'next/navigation';
 import Link from 'next/link';
 import Image from 'next/image';
 import useLockBodyScroll from '@/context/useLockBodyScroll';
@@ -11,6 +12,7 @@ import '../../app/globals.css';
 const Navbar = () => {
   const [isMenuOpen, setMenuOpen] = useState(false);
   const [isTransparent, setIsTransparent] = useState(true);
+  const pathname = usePathname();
 
   const node = useRef<HTMLElement | null>(null);
 
@@ -48,7 +50,9 @@ const Navbar = () => {
     <header
       ref={node}
       className={`w-full top-0 z-50 transition-all ${
-        isTransparent ? 'absolute bg-transparent' : 'sticky shadow bg-base-100'
+        isTransparent && pathname === '/'
+          ? 'absolute bg-transparent'
+          : 'sticky shadow bg-base-100'
       }`}
     >
       <nav className='navbar'>

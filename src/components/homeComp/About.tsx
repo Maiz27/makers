@@ -18,12 +18,12 @@ const About = () => {
         <Image
           src={hero1}
           alt='Blueprint'
-          className='absolute -top-10 -right-4 lg:-right-10 2xl:-right-20 z-10 w-28 lg:w-32 xl:w-40 2xl:w-44 aspect-square object-cover rounded-xl'
+          className='absolute -top-10 -right-4 lg:-right-10 2xl:-right-20 z-10 w-28 lg:w-32 xl:w-40 2xl:w-44 aspect-square object-cover rounded-xl shadow-xl'
         />
         <Image
           src={hero2}
           alt='Blueprint'
-          className='absolute -bottom-10 -left-4 lg:-left-10 2xl:-left-20 z-10 w-28 lg:w-32 xl:w-40 2xl:w-44 aspect-square object-cover rounded-xl'
+          className='absolute -bottom-10 -left-4 lg:-left-10 2xl:-left-20 z-10 w-28 lg:w-32 xl:w-40 2xl:w-44 aspect-square object-cover rounded-xl shadow-xl'
         />
       </div>
 

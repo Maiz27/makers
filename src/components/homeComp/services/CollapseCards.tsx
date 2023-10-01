@@ -71,7 +71,7 @@ const Card = ({ position, index, title, desc, Icon }) => {
         duration: 0.35,
       }}
       className={`relative flex min-h-[250px] w-10/12 max-w-lg shrink-0 flex-col justify-between group overflow-hidden p-8 shadow hover:shadow-lg transition-shadow rounded-xl md:w-3/5 ${
-        index % 2 ? 'bg-black text-base-100' : ' bg-base-100'
+        index % 2 ? 'bg-black text-base-100' : 'bg-base-100'
       }`}
     >
       <Link href='/services'>
