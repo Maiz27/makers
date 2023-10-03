@@ -3,8 +3,8 @@ import Image from 'next/image';
 import CTA from '../CTA/CTA';
 import Heading from '../heading/Heading';
 import blueprint from '/public/imgs/blueprint.jpg';
-import hero1 from '/public/imgs/hero/1.jpg';
-import hero2 from '/public/imgs/hero/2.jpg';
+import img from '/public/imgs/site/9.jpg';
+import img2 from '/public/imgs/site/11.jpg';
 
 const About = () => {
   return (
@@ -16,12 +16,12 @@ const About = () => {
           className='w-full object-cover rounded-xl'
         />
         <Image
-          src={hero1}
+          src={img}
           alt='Blueprint'
           className='absolute -top-10 -right-4 lg:-right-10 2xl:-right-20 z-10 w-28 lg:w-32 xl:w-40 2xl:w-44 aspect-square object-cover rounded-xl shadow-xl'
         />
         <Image
-          src={hero2}
+          src={img2}
           alt='Blueprint'
           className='absolute -bottom-10 -left-4 lg:-left-10 2xl:-left-20 z-10 w-28 lg:w-32 xl:w-40 2xl:w-44 aspect-square object-cover rounded-xl shadow-xl'
         />

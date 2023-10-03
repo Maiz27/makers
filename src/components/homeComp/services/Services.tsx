@@ -5,7 +5,7 @@ import { servicesList } from '@/Constants';
 
 const Services = () => {
   return (
-    <section className='mt-10 md:mt-0 min-h-screen flex flex-col justify-center'>
+    <section className='mt-10 md:mt-0 min-h-screen flex flex-col justify-center py-10 xl:py-0'>
       <div className='w-4/5 md:w-11/12 flex flex-col md:flex-row mx-auto justify-center items-center gap-8'>
         <div className='w-full md:w-1/2 max-w-lg'>
           <Heading
