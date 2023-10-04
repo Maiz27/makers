@@ -34,7 +34,7 @@ const list = [
 
 const Projects = () => {
   return (
-    <div className='min-h-screen bg-accent/10 flex flex-col md:flex-row justify-evenly items-center gap-24 md:gap-4 lg:gap-0 py-20 md:py-0'>
+    <section className='min-h-screen bg-accent/10 flex flex-col md:flex-row justify-evenly items-center gap-24 md:gap-4 lg:gap-0 py-20 md:py-0'>
       <div className='w-4/5 md:w-2/5 flex flex-col gap-8 items-start'>
         <Heading
           text='Our Impactful Works: Crafting Landmarks, Creating Legacies'
@@ -64,7 +64,7 @@ const Projects = () => {
           );
         })}
       </div>
-    </div>
+    </section>
   );
 };
 
