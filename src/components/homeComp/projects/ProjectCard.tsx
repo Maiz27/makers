@@ -11,7 +11,7 @@ type props = {
 
 const ProjectCard = ({ title, isComplete, design, img }: props) => {
   return (
-    <div className='w-full aspect-square relative shadow rounded-xl group '>
+    <div className='w-full aspect-square relative shadow rounded-xl group'>
       <div className='h-1/2 p-6 flex flex-col justify-center bg-neutral rounded-t-xl'>
         <h3 className='text-xl mb-2 font-semibold text-base-100'>{title}</h3>
         <p className='text-sm font-light text-slate-300'>
