@@ -34,8 +34,8 @@ const list = [
 
 const Projects = () => {
   return (
-    <section className='min-h-screen bg-accent/10 flex flex-col md:flex-row justify-evenly items-center gap-24 md:gap-4 lg:gap-0 py-20 md:py-0'>
-      <div className='w-4/5 md:w-2/5 flex flex-col gap-8 items-start'>
+    <section className='min-h-screen bg-accent/10 flex flex-col lg:flex-row justify-evenly items-center gap-20 lg:gap-0 py-20 lg:py-0'>
+      <div className='w-4/5 lg:w-2/5 flex flex-col gap-8 items-start'>
         <Heading
           text='Our Impactful Works: Crafting Landmarks, Creating Legacies'
           Tag='h2'
@@ -51,7 +51,7 @@ const Projects = () => {
 
         <CTA text='Explore Projects' page='/projects' />
       </div>
-      <div className='w-4/5 md:w-1/2 grid grid-cols-1 md:grid-cols-2 gap-4 max-w-xl'>
+      <div className='w-4/5 lg:w-1/2 grid grid-cols-1 md:grid-cols-2 gap-4 max-w-xl'>
         {list.map(({ title, isComplete, img, design }, idx) => {
           return (
             <ProjectCard

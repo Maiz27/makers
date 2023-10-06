@@ -3,6 +3,7 @@ import About from '@/components/homeComp/About';
 import Services from '@/components/homeComp/services/Services';
 import Projects from '@/components/homeComp/projects/Projects';
 import Blog from '@/components/homeComp/Blog';
+import FAQ from '@/components/homeComp/FAQ';
 
 export default function Home() {
   return (
@@ -16,6 +17,8 @@ export default function Home() {
       <Projects />
 
       <Blog />
+
+      <FAQ />
       <div className='h-screen'></div>
     </main>
   );

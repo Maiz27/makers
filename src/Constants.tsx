@@ -28,12 +28,12 @@ export const routes = [
     path: '/services',
   },
   {
-    name: 'Blog',
-    path: '/blog',
-  },
-  {
     name: 'Projects',
     path: '/projects',
+  },
+  {
+    name: 'Blog',
+    path: '/blog',
   },
 ];
 
