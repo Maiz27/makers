@@ -33,7 +33,7 @@ const BlogCard = ({ index, slug, date, title, desc, img, readTime }: props) => {
         />
       </div>
       <div className='pt-32 md:pt-40 pb-10 lg:py-16 w-11/12 flex flex-col items-center lg:items-start gap-4'>
-        <div className='w-11/12 flex justify-between items-center text-sm'>
+        <div className='w-11/12 flex justify-between items-center text-xs'>
           <time className='flex items-center gap-2'>
             <MdDateRange /> {date}
           </time>
@@ -42,9 +42,9 @@ const BlogCard = ({ index, slug, date, title, desc, img, readTime }: props) => {
             {readTime} mins read
           </span>
         </div>
-        <h3>{title}</h3>
+        <h3 className='text-lg'>{title}</h3>
 
-        <p className='text-sm w-11/12 text-center lg:text-left'>{desc}</p>
+        <p className='text-xs w-11/12 text-center lg:text-left'>{desc}</p>
 
         <CTA text='Read More' page={`/blog/${slug}`} />
       </div>
