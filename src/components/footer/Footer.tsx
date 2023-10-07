@@ -8,7 +8,7 @@ const Footer = () => {
   return (
     <footer className='w-full min-h-60 md:h-72'>
       <div className='h-28 flex flex-col md:flex-row justify-between items-center md:pr-8 xl:pr-12 border-t-2 border-b-2 border-neutral/30'>
-        <div className='h-2/3 -ml-7'>
+        <div className='h-2/3 -ml-7 xl:-ml-5 2xl:-ml-2'>
           <Image
             src={logo}
             alt='Makers Engineering Logo'
@@ -50,7 +50,7 @@ const Footer = () => {
 
         <div className='flex flex-col justify-center gap-2'>
           <p>
-            <span className='font-bold'>Makers Engineering</span> &copy;{' '}
+            <span className='font-bold'>Makers Engineering</span> &copy;
             {new Date().getFullYear().toString()}, All rights reserved.
           </p>
           <p>
