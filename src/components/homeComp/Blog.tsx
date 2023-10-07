@@ -47,7 +47,7 @@ const Blog = () => {
         </div>
       </div>
 
-      <div className='grid place-items-center mx-auto gap-56 lg:gap-20 grid-cols-1 2xl:grid-cols-2 w-4/5  '>
+      <div className='grid place-items-center mx-auto gap-56 md:gap-8 lg:gap-20 grid-cols-1 md:grid-cols-2 lg:grid-cols-1 2xl:grid-cols-2 w-4/5 md:w-11/12'>
         {list.map(({ slug, title, date, desc, img, readTime }, idx) => {
           return (
             <BlogCard

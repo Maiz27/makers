@@ -8,11 +8,20 @@ import {
   FaTasks,
   FaCity,
 } from 'react-icons/fa';
+import { FaXTwitter, FaLinkedinIn, FaFacebookF } from 'react-icons/fa6';
 import { BiSolidTrafficCone } from 'react-icons/bi';
 
 import hero1 from '/public/imgs/hero/1.jpg';
 import hero2 from '/public/imgs/hero/2.jpg';
 import hero3 from '/public/imgs/hero/3.jpg';
+
+import d1 from '/public/imgs/designs/d1.jpg';
+import d2 from '/public/imgs/designs/d2.jpg';
+import d3 from '/public/imgs/designs/d3.jpg';
+
+import c1 from '/public/imgs/designs/c1.jpg';
+import c2 from '/public/imgs/designs/c2.jpg';
+import c3 from '/public/imgs/designs/c3.jpg';
 
 export const routes = [
   {
@@ -28,12 +37,12 @@ export const routes = [
     path: '/services',
   },
   {
-    name: 'Blog',
-    path: '/blog',
-  },
-  {
     name: 'Projects',
     path: '/projects',
+  },
+  {
+    name: 'Blog',
+    path: '/blog',
   },
 ];
 
@@ -52,57 +61,86 @@ export const heroImages = [
   },
 ];
 
-export const aboutImages = [
-  { img: hero1, size: '0' },
-  { img: hero2, size: '0' },
-  { img: hero2, size: '0' },
-  { img: hero1, size: '0' },
-];
-
 export const servicesList = [
   {
     title: 'Architectural & Interior Design',
-    desc: 'Unlock Enchanting Spaces: Architectural and Interior Design Mastery Embark on a design journey that transcends boundaries with MAKERS Engineering Limited Architectural and Interior Design Services. From awe-inspiring structures to captivating interiors, we breathe life into your spaces, marrying innovation with aesthetics. Join us in crafting environments that tell compelling stories and evoke lasting impressions.',
+    desc: 'Elevate your space with our cutting-edge Architectural & Interior Design services. Our expert team transforms concepts into captivating designs, ensuring a perfect blend of aesthetics and functionality. Experience seamless collaboration, attention to detail, and superior craftsmanship, creating spaces that captivate and convert visions into reality.',
     Icon: <FaDraftingCompass />,
   },
   {
     title: 'Building Construction',
-    desc: 'Building Dreams, Brick by Brick: Unleash Potential with Our Construction Expertise Experience the art of construction redefined at MAKERS Engineering Limited Our mastery extends from foundations to the skyline, as we shape spaces that reflect innovation, durability, and your unique vision. Join hands with us to construct a future that stands strong, inspiring generations to come.',
+    desc: 'Experience top-notch Building Construction services tailored to your needs. Our skilled team delivers superior craftsmanship, quality materials, and efficient project management, ensuring timely completion and unmatched durability. From concept to completion, trust us to turn your dreams into a concrete reality.',
     Icon: <FaHardHat />,
   },
   {
     title: 'Roads Construction',
-    desc: 'Unlock Enchanting Spaces: Architectural and Interior Design Mastery Embark on a design journey that transcends boundaries with MAKERS Engineering Limited Architectural and Interior Design Services. From awe-inspiring structures to captivating interiors, we breathe life into your spaces, marrying innovation with aesthetics. Join us in crafting environments that tell compelling stories and evoke lasting impressions.',
+    desc: 'Drive success with our Roads Construction expertise. Our team delivers high-quality road infrastructure, ensuring durability and safety. From planning to execution, we prioritize efficiency and precision, creating well-constructed roads that connect communities and businesses. Partner with us for reliable, long-lasting road solutions that pave the way for progress.',
     Icon: <BiSolidTrafficCone />,
   },
   {
     title: 'Fit-out Work',
-    desc: "MAKERS Engineering Limited fit-out work is a symphony of precision and aesthetics. With meticulous attention to detail, we curate interiors that embody your brand's essence, ensuring every corner radiates functionality and style. Let's collaborate to transform spaces into captivating environments that resonate with purpose and charm.",
+    desc: 'Transform your space with our exceptional Fit-out Work services. We specialize in meticulous interior installations, optimizing every inch of your area for functionality and style. Providing tailored solutions, that leave a lasting impression and enhance your business environment, delivered on time and within budget.',
     Icon: <FaPaintRoller />,
   },
   {
     title: 'Mechanical & Electrical Engineering',
-    desc: "MAKERS Engineering Limited pioneers' advancements in both mechanical and electrical engineering, seamlessly merging functionality and innovation. From intricate machinery to sustainable power solutions, our expertise fuels progress, delivering solutions that redefine industries and electrify possibilities. Join us in engineering a future where technology meets ingenuity, driving lasting impact and transformative change.",
+    desc: 'Empower your projects with our Mechanical & Electrical Engineering prowess. Our expert team provides cutting-edge solutions for seamless integration of mechanical and electrical systems, ensuring optimal performance and energy efficiency. Partner with us for reliable, innovative engineering services that enhance functionality and sustainability.',
     Icon: <FaCogs />,
   },
   {
     title: 'Maintenance & Repairs',
-    desc: 'Sustaining Excellence: Elevate Buildings with Expert Maintenance and Repair Solutions MAKERS Engineering Limited redefines building maintenance and repair, ensuring structures stand strong and vibrant over time. Our expertise spans from preserving architectural beauty to resolving intricate issues, revitalizing spaces with care and precision. Join us to ensure your buildings age gracefully, preserving their integrity while embracing modernity.',
+    desc: 'Ensure the longevity of your investments with our Maintenance & Repairs services. Our dedicated team provides timely, cost-effective solutions to keep your properties and facilities in pristine condition. From routine maintenance to emergency repairs, we offer peace of mind, minimizing downtime and maximizing the lifespan of your assets.',
     Icon: <FaTools />,
   },
   {
     title: 'Property Management',
-    desc: 'Unlocking Value: Seamlessly Manage Properties with MAKERS Engineering Limited Experience a new dimension of property management with MAKERS Engineering Limited. Our comprehensive approach ensures your assets are optimally maintained, enhancing their value and potential. Entrust us to streamline operations, foster tenant satisfaction, and maximize returns, as we orchestrate excellence in property management, tailored to your unique needs.',
+    desc: 'Maximize the value of your real estate with our comprehensive Property Management services. We handle every aspect of property ownership, from tenant relations to maintenance and financial management. Our experienced team ensures that your properties are well-maintained, occupied, and profitable. Partner with us for hassle-free property ownership.',
     Icon: <FaKey />,
   },
   {
     title: 'Project Management',
-    desc: 'Our project management expertise transforms dreams into reality, orchestrating every facet of execution. At MAKERS Engineering Ltd, we drive efficiency, mitigate risks, and deliver results that surpass expectations. Join hands with us to navigate complex projects, from inception to completion, and experience a journey defined by precision, collaboration, and the art of turning ideas into accomplishments.',
+    desc: 'Achieve project success with our expert Project Management services. Our seasoned team ensures seamless planning, execution, and oversight, keeping your projects on time and on budget. We prioritize communication, risk management, and quality control, ensuring a smooth journey from inception to completion. Collaborate with us for efficient project delivery.',
     Icon: <FaTasks />,
   },
   {
     title: 'Real Estate Development',
-    desc: "Elevate your real estate aspirations with MAKERS Engineering Ltd's development prowess. From conceptualization to realization, we create dynamic spaces that inspire, resonate, and set new standards. Join us to shape communities, redefine urban landscapes, and embrace innovation as we sculpt the future of real estate, one visionary project at a time.",
+    desc: 'Unlock the potential of your real estate investments with our Real Estate Development expertise. Our seasoned professionals specialize in identifying opportunities, navigating regulations, and executing strategic plans to maximize property value. We take your vision and turn it into reality, ensuring a profitable return on investment.',
     Icon: <FaCity />,
+  },
+];
+
+export const projectsList = [
+  {
+    title: 'Project #',
+    isComplete: true,
+    design: d1,
+    img: c1,
+  },
+  {
+    title: 'Project #',
+    isComplete: false,
+    design: d2,
+    img: c2,
+  },
+  {
+    title: 'Project #',
+    isComplete: true,
+    design: d3,
+    img: c3,
+  },
+];
+
+export const socials = [
+  {
+    icon: <FaLinkedinIn />,
+    link: 'https://linkedin.com/',
+  },
+  {
+    icon: <FaXTwitter />,
+    link: 'https://twitter.com/',
+  },
+  {
+    icon: <FaFacebookF />,
+    link: 'https://facebook.com/',
   },
 ];
