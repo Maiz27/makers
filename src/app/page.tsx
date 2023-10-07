@@ -7,7 +7,7 @@ import FAQ from '@/components/homeComp/FAQ';
 
 export default function Home() {
   return (
-    <main className=''>
+    <>
       <Hero />
 
       <About />
@@ -19,7 +19,6 @@ export default function Home() {
       <Blog />
 
       <FAQ />
-      <div className='h-screen'></div>
-    </main>
+    </>
   );
 }

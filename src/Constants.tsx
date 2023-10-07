@@ -8,6 +8,7 @@ import {
   FaTasks,
   FaCity,
 } from 'react-icons/fa';
+import { FaXTwitter, FaLinkedinIn, FaFacebookF } from 'react-icons/fa6';
 import { BiSolidTrafficCone } from 'react-icons/bi';
 
 import hero1 from '/public/imgs/hero/1.jpg';
@@ -50,13 +51,6 @@ export const heroImages = [
     name: '3',
     src: hero3,
   },
-];
-
-export const aboutImages = [
-  { img: hero1, size: '0' },
-  { img: hero2, size: '0' },
-  { img: hero2, size: '0' },
-  { img: hero1, size: '0' },
 ];
 
 export const servicesList = [
@@ -104,5 +98,20 @@ export const servicesList = [
     title: 'Real Estate Development',
     desc: "Elevate your real estate aspirations with MAKERS Engineering Ltd's development prowess. From conceptualization to realization, we create dynamic spaces that inspire, resonate, and set new standards. Join us to shape communities, redefine urban landscapes, and embrace innovation as we sculpt the future of real estate, one visionary project at a time.",
     Icon: <FaCity />,
+  },
+];
+
+export const socials = [
+  {
+    icon: <FaLinkedinIn />,
+    link: 'https://linkedin.com/',
+  },
+  {
+    icon: <FaXTwitter />,
+    link: 'https://twitter.com/',
+  },
+  {
+    icon: <FaFacebookF />,
+    link: 'https://facebook.com/',
   },
 ];

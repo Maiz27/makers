@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { IsClientCtxProvider } from '@/context/IsClientContext';
 import Navbar from '@/components/Navbar/Navbar';
 import './globals.css';
+import Footer from '@/components/footer/Footer';
 
 export const metadata: Metadata = {
   title: 'Makers Engineering',
@@ -27,7 +28,8 @@ export default function RootLayout({
       <body>
         <IsClientCtxProvider>
           <Navbar />
-          {children}
+          <main className='min-h-screen'>{children}</main>
+          <Footer />
         </IsClientCtxProvider>
       </body>
     </html>
