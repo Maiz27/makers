@@ -15,6 +15,14 @@ import hero1 from '/public/imgs/hero/1.jpg';
 import hero2 from '/public/imgs/hero/2.jpg';
 import hero3 from '/public/imgs/hero/3.jpg';
 
+import d1 from '/public/imgs/designs/d1.jpg';
+import d2 from '/public/imgs/designs/d2.jpg';
+import d3 from '/public/imgs/designs/d3.jpg';
+
+import c1 from '/public/imgs/designs/c1.jpg';
+import c2 from '/public/imgs/designs/c2.jpg';
+import c3 from '/public/imgs/designs/c3.jpg';
+
 export const routes = [
   {
     name: 'Home',
@@ -98,6 +106,27 @@ export const servicesList = [
     title: 'Real Estate Development',
     desc: 'Unlock the potential of your real estate investments with our Real Estate Development expertise. Our seasoned professionals specialize in identifying opportunities, navigating regulations, and executing strategic plans to maximize property value. We take your vision and turn it into reality, ensuring a profitable return on investment.',
     Icon: <FaCity />,
+  },
+];
+
+export const projectsList = [
+  {
+    title: 'Project #',
+    isComplete: true,
+    design: d1,
+    img: c1,
+  },
+  {
+    title: 'Project #',
+    isComplete: false,
+    design: d2,
+    img: c2,
+  },
+  {
+    title: 'Project #',
+    isComplete: true,
+    design: d3,
+    img: c3,
   },
 ];
 
