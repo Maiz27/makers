@@ -46,7 +46,7 @@ const BlogCard = ({ index, slug, date, title, desc, img, readTime }: props) => {
 
         <p className='text-xs w-11/12 text-center lg:text-left'>{desc}</p>
 
-        <CTA text='Read More' page={`/blog/${slug}`} />
+        <CTA text='Read More' page={`/blog/${slug}`} size='sm' />
       </div>
     </div>
   );

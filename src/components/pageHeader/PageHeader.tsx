@@ -1,5 +1,6 @@
 import React from 'react';
 import Image, { StaticImageData } from 'next/image';
+import Heading from '../heading/Heading';
 import BreadCrumbs from './BreadCrumbs';
 
 type props = {
@@ -17,7 +18,10 @@ const PageHeader = ({ bg }: props) => {
           className='w-full h-full object-cover '
           priority
         />
-        <div className='content-[""] absolute inset-0 bg-black opacity-40 z-20'></div>
+        <div className='absolute inset-0 bg-black opacity-50'></div>
+      </div>
+      <div className='h-fit w-fit text-white absolute inset-0 z-20 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2'>
+        <Heading text='About Us' Tag='h1' isCentered={true} />
       </div>
       <BreadCrumbs />
     </section>

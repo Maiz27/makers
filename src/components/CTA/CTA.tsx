@@ -7,6 +7,7 @@ type props = {
   onClick?: MouseEventHandler<HTMLButtonElement>;
   page: string;
   type?: 'button' | 'reset' | 'submit';
+  size?: 'xs' | 'sm' | 'md' | 'lg';
   isBtn?: boolean;
   isOutline?: boolean;
   bg?: 'primary' | 'secondary' | 'accent';
@@ -21,7 +22,7 @@ const CTA = ({
   isBtn = false,
   isOutline = false,
   bg = 'primary',
-
+  size = 'md',
   className = '',
 }: props) => {
   if (isBtn) {
@@ -29,8 +30,8 @@ const CTA = ({
       <button
         className={
           isOutline
-            ? `btn btn-outline border border-neutral normal-case hover:-translate-y-1 ${className}`
-            : `btn btn-${bg} normal-case hover:-translate-y-1 ${className}`
+            ? `btn btn-${size} btn-outline border border-neutral normal-case hover:-translate-y-1 ${className}`
+            : `btn btn-${size} btn-${bg} normal-case hover:-translate-y-1 ${className}`
         }
         type={type}
         onClick={onClick}
@@ -43,8 +44,8 @@ const CTA = ({
       <Link
         className={
           isOutline
-            ? `btn btn-outline border border-neutral normal-case hover:-translate-y-1 ${className}`
-            : `btn btn-${bg} normal-case hover:-translate-y-1 ${className}`
+            ? `btn btn-${size} btn-outline border border-neutral normal-case hover:-translate-y-1 ${className}`
+            : `btn btn-${size} btn-${bg} normal-case hover:-translate-y-1 ${className}`
         }
         href={page}
       >

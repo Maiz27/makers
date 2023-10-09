@@ -6,6 +6,8 @@ const page = () => {
   return (
     <>
       <PageHeader bg={bg} />
+
+      <div></div>
     </>
   );
 };
