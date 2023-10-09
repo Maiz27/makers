@@ -79,10 +79,6 @@ const FAQ = () => {
             );
           })}
         </div>
-
-        <div>
-          <CTA text='Learn More' page='/about' />
-        </div>
       </div>
     </section>
   );
