@@ -5,7 +5,7 @@ import bg from '/public/imgs/site/1.jpg';
 const page = () => {
   return (
     <>
-      <PageHeader bg={bg} />
+      <PageHeader bg={bg} heading='About Us' />
 
       <div></div>
     </>

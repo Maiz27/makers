@@ -1,7 +1,13 @@
 import React from 'react';
+import PageHeader from '@/components/pageHeader/PageHeader';
+import bg from '/public/imgs/construction2.jpg';
 
 const page = () => {
-  return <div>Services page</div>;
+  return (
+    <>
+      <PageHeader bg={bg} heading='Our Services' />
+    </>
+  );
 };
 
 export default page;
