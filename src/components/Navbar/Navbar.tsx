@@ -50,9 +50,7 @@ const Navbar = () => {
     <header
       ref={node}
       className={`w-full top-0 z-50 transition-all ${
-        isTransparent && pathname === '/'
-          ? 'absolute bg-transparent'
-          : 'sticky shadow bg-base-100'
+        isTransparent ? 'absolute bg-transparent' : 'sticky shadow bg-base-100'
       }`}
     >
       <nav className='navbar'>

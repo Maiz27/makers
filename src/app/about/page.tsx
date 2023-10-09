@@ -1,7 +1,13 @@
 import React from 'react';
+import PageHeader from '@/components/pageHeader/PageHeader';
+import bg from '/public/imgs/site/1.jpg';
 
 const page = () => {
-  return <div>About page</div>;
+  return (
+    <>
+      <PageHeader bg={bg} />
+    </>
+  );
 };
 
 export default page;
