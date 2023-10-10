@@ -4,11 +4,22 @@ import Services from '@/components/homeComp/services/Services';
 import Projects from '@/components/homeComp/projects/Projects';
 import Blog from '@/components/homeComp/Blog';
 import FAQ from '@/components/homeComp/FAQ';
+import { sanityClient } from '@/services/sanity/sanityClient';
+import { getAllHeroImages } from '@/services/sanity/queries';
 
-export default function Home() {
+export const revalidate = 60; // revalidate every minute
+
+const fetchHeroImages = async () => {
+  const images = await sanityClient.fetch(getAllHeroImages);
+  return images;
+};
+
+export default async function Home() {
+  const heroImages = await fetchHeroImages();
+
   return (
     <>
-      <Hero />
+      <Hero images={heroImages} />
 
       <About />
 

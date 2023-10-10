@@ -46,21 +46,6 @@ export const routes = [
   },
 ];
 
-export const heroImages = [
-  {
-    name: '1',
-    src: hero1,
-  },
-  {
-    name: '2',
-    src: hero2,
-  },
-  {
-    name: '3',
-    src: hero3,
-  },
-];
-
 export const servicesList = [
   {
     title: 'Architectural & Interior Design',
