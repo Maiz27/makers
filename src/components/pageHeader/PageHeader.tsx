@@ -10,7 +10,7 @@ import { calculateReadTime, getStringDate } from '@/Constants';
 type props = {
   bg: string | StaticImageData;
   heading: string;
-  blog: blog;
+  blog?: blog;
 };
 
 const PageHeader = ({ bg, heading, blog }: props) => {
