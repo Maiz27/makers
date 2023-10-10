@@ -13,7 +13,7 @@ const BlogCard = ({
   title,
   desc,
   categories,
-  img,
+  mainImage: img,
   author,
   body,
 }: blog) => {

@@ -51,7 +51,7 @@ const Blog = ({ latestBlogs }) => {
                 categories={categories}
                 publishedAt={getStringDate(publishedAt)}
                 desc={description}
-                img={mainImage}
+                mainImage={mainImage}
                 author={author}
                 body={body}
               />

@@ -11,12 +11,11 @@ const fetchPost = async (slug: string) => {
 
 const page = async ({ params }) => {
   const post = await fetchPost(params.slug);
-  const { title, mainImage, publishedAt, body, categories, author } = post;
+  const { mainImage, body } = post;
 
-  const imgUrl = urlFor(mainImage).url();
   return (
     <article>
-      <PageHeader bg={imgUrl} blog={post} heading='' />
+      <PageHeader blog={post} />
 
       <div className='w-4/5 lg:w-2/3 2xl:w-1/2 mx-auto mt-10 mb-20'>
         <BlogBody body={body} />

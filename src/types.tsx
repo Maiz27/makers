@@ -17,7 +17,7 @@ export type blog = {
   categories: Array<{
     title: string;
   }>;
-  img: string | StaticImageData;
+  mainImage: string | StaticImageData;
   author: {
     name: string;
     title: string;
@@ -33,4 +33,10 @@ export type blogBody = Array<{
     _type: string;
     text: string;
   }>;
+}>;
+
+export type headerList = Array<{
+  heading: string;
+  text: string;
+  bg: string | StaticImageData;
 }>;

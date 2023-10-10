@@ -11,9 +11,10 @@ import {
 import { FaXTwitter, FaLinkedinIn, FaFacebookF } from 'react-icons/fa6';
 import { BiSolidTrafficCone } from 'react-icons/bi';
 
-import hero1 from '/public/imgs/hero/1.jpg';
-import hero2 from '/public/imgs/hero/2.jpg';
-import hero3 from '/public/imgs/hero/3.jpg';
+import aboutBg from '/public/imgs/site/1.jpg';
+import projectBg from '/public/imgs/building.jpg';
+import BlogBg from '/public/imgs/library.jpg';
+import servicesBg from '/public/imgs/construction2.jpg';
 
 import d1 from '/public/imgs/designs/d1.jpg';
 import d2 from '/public/imgs/designs/d2.jpg';
@@ -22,7 +23,7 @@ import d3 from '/public/imgs/designs/d3.jpg';
 import c1 from '/public/imgs/designs/c1.jpg';
 import c2 from '/public/imgs/designs/c2.jpg';
 import c3 from '/public/imgs/designs/c3.jpg';
-import { blogBody } from './types';
+import { blogBody, headerList } from './types';
 
 export const routes = [
   {
@@ -128,6 +129,34 @@ export const socials = [
   {
     icon: <FaFacebookF />,
     link: 'https://facebook.com/',
+  },
+];
+
+export const headingList: headerList = [
+  {
+    heading: 'About Us',
+    text: "Discover a dynamic force in the engineering realm, MAKERS Engineering Limited. With a track record spanning multiple technical domains, we've been redefining possibilities in the Civil Engineering Industry since our inception in 2018.",
+    bg: aboutBg,
+  },
+  {
+    heading: 'Our Services',
+    text: 'Unveil the potential of your projects with MAKERS Engineering Limited, specialized construction, architecture, and interior design services. From visionary architectural concepts to thoughtfully crafted interiors, we transform spaces into living works of art.',
+    bg: servicesBg,
+  },
+  {
+    heading: 'Our Projects',
+    text: 'Our Impactful Works showcase our dedication to excellence. Through innovative design and meticulous execution, we create landmarks that stand as symbols of quality and craftsmanship.',
+    bg: projectBg,
+  },
+  {
+    heading: 'Our Blogs',
+    text: 'Discover the latest engineering trends and innovations through our insights. Short, insightful, and engaging, our articles offer a glimpse into the future of construction. Stay updated, and ahead of the curve with Makers Engineering Limited.',
+    bg: BlogBg,
+  },
+  {
+    heading: 'Contact Us',
+    text: '',
+    bg: '',
   },
 ];
 
