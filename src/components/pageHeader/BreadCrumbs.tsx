@@ -18,7 +18,7 @@ const BreadCrumbs = () => {
   });
 
   return (
-    <div className='text-sm lg:text-base breadcrumbs bg-accent/10 pl-4'>
+    <div className='text-sm lg:text-base breadcrumbs bg-accent/10 pl-4 md:pl-10'>
       <ul>
         <li>
           <Link href='/'>Home</Link>

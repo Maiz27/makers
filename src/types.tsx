@@ -23,11 +23,12 @@ export type blog = {
     title: string;
     image: Object;
   };
-  body: BlogBody;
+  body: blogBody;
 };
 
-export type BlogBody = Array<{
+export type blogBody = Array<{
   _type: string;
+  style: string;
   children: Array<{
     _type: string;
     text: string;

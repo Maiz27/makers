@@ -1,7 +1,7 @@
 import React from 'react';
 import Heading from '@/components/heading/Heading';
 import CTA from '@/components/CTA/CTA';
-import BlogCard from '../blogCard/BlogCard';
+import BlogCard from '../blogComp/BlogCard';
 import { calculateReadTime, getStringDate } from '@/Constants';
 
 const Blog = ({ latestBlogs }) => {

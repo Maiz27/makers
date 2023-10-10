@@ -22,7 +22,7 @@ import d3 from '/public/imgs/designs/d3.jpg';
 import c1 from '/public/imgs/designs/c1.jpg';
 import c2 from '/public/imgs/designs/c2.jpg';
 import c3 from '/public/imgs/designs/c3.jpg';
-import { BlogBody } from './types';
+import { blogBody } from './types';
 
 export const routes = [
   {
@@ -131,7 +131,7 @@ export const socials = [
   },
 ];
 
-const getWordCount = (blocks: BlogBody) => {
+const getWordCount = (blocks: blogBody) => {
   let wordCount = 0;
 
   blocks.forEach((block) => {
@@ -147,7 +147,7 @@ const getWordCount = (blocks: BlogBody) => {
   return wordCount;
 };
 
-export const calculateReadTime = (blocks: BlogBody, speed = 200) => {
+export const calculateReadTime = (blocks: blogBody, speed = 200) => {
   const wordCount = getWordCount(blocks);
   const readTime = Math.ceil(wordCount / speed);
   return readTime;
