@@ -11,7 +11,7 @@ const BlogCard = ({
   slug,
   publishedAt,
   title,
-  desc,
+  description: desc,
   categories,
   mainImage: img,
   author,

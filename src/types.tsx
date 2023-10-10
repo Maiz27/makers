@@ -13,7 +13,7 @@ export type blog = {
   slug: string;
   publishedAt: string;
   title: string;
-  desc: string;
+  description: string;
   categories: Array<{
     title: string;
   }>;

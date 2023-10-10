@@ -50,7 +50,7 @@ const Blog = ({ latestBlogs }) => {
                 title={title}
                 categories={categories}
                 publishedAt={getStringDate(publishedAt)}
-                desc={description}
+                description={description}
                 mainImage={mainImage}
                 author={author}
                 body={body}

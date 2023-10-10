@@ -6,7 +6,7 @@ const page = () => {
     <>
       <PageHeader index={0} />
 
-      <div></div>
+      <section></section>
     </>
   );
 };

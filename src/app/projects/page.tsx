@@ -5,6 +5,8 @@ const page = () => {
   return (
     <>
       <PageHeader index={2} />
+
+      <section></section>
     </>
   );
 };
