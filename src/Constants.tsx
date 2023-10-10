@@ -22,6 +22,7 @@ import d3 from '/public/imgs/designs/d3.jpg';
 import c1 from '/public/imgs/designs/c1.jpg';
 import c2 from '/public/imgs/designs/c2.jpg';
 import c3 from '/public/imgs/designs/c3.jpg';
+import { BlogBody } from './types';
 
 export const routes = [
   {
@@ -129,3 +130,54 @@ export const socials = [
     link: 'https://facebook.com/',
   },
 ];
+
+const getWordCount = (blocks: BlogBody) => {
+  let wordCount = 0;
+
+  blocks.forEach((block) => {
+    if (block._type === 'block' && block.children) {
+      block.children.forEach((child) => {
+        if (child._type === 'span' && child.text) {
+          wordCount += child.text.split(' ').length;
+        }
+      });
+    }
+  });
+
+  return wordCount;
+};
+
+export const calculateReadTime = (blocks: BlogBody, speed = 200) => {
+  const wordCount = getWordCount(blocks);
+  const readTime = Math.ceil(wordCount / speed);
+  return readTime;
+};
+
+export const getStringDate = (StringDate: string, isRelative = false) => {
+  const currentDate = new Date();
+  const inputDate = new Date(StringDate);
+  const timeDifference = Math.abs(currentDate.getTime() - inputDate.getTime());
+  const minutesDifference = Math.floor(timeDifference / (1000 * 60));
+  const hoursDifference = Math.floor(minutesDifference / 60);
+  const daysDifference = Math.floor(hoursDifference / 24);
+
+  if (isRelative) {
+    if (daysDifference >= 1) {
+      return `${daysDifference} day${daysDifference !== 1 ? 's' : ''} ago`;
+    } else if (hoursDifference >= 1) {
+      return `${hoursDifference} hour${hoursDifference !== 1 ? 's' : ''} ago`;
+    } else {
+      return `${minutesDifference} min${
+        minutesDifference !== 1 ? 's' : ''
+      } ago`;
+    }
+  } else {
+    // By default, display the date in the "weekday, month day, year" format
+    return inputDate.toLocaleString(undefined, {
+      weekday: 'long',
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric',
+    });
+  }
+};

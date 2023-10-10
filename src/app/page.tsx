@@ -5,7 +5,7 @@ import Projects from '@/components/homeComp/projects/Projects';
 import Blog from '@/components/homeComp/Blog';
 import FAQ from '@/components/homeComp/FAQ';
 import { sanityClient } from '@/services/sanity/sanityClient';
-import { getAllHeroImages } from '@/services/sanity/queries';
+import { getAllHeroImages, getLatestPosts } from '@/services/sanity/queries';
 
 export const revalidate = 60; // revalidate every minute
 
@@ -14,8 +14,16 @@ const fetchHeroImages = async () => {
   return images;
 };
 
+const fetchLatestBlogs = async () => {
+  const latestBlogs = await sanityClient.fetch(getLatestPosts);
+  return latestBlogs;
+};
+
 export default async function Home() {
-  const heroImages = await fetchHeroImages();
+  const [heroImages, latestBlogs] = await Promise.all([
+    fetchHeroImages(),
+    fetchLatestBlogs(),
+  ]);
 
   return (
     <>
@@ -27,7 +35,7 @@ export default async function Home() {
 
       <Projects />
 
-      <Blog />
+      <Blog latestBlogs={latestBlogs} />
 
       <FAQ />
     </>

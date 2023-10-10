@@ -5,3 +5,11 @@ export type heroImages = {
     image: Object;
   }>;
 };
+
+export type BlogBody = Array<{
+  _type: string;
+  children: Array<{
+    _type: string;
+    text: string;
+  }>;
+}>;
