@@ -2,15 +2,16 @@ import React from 'react';
 import ImageSlider from './ImageSlider';
 import Stats from './Stats';
 import CTA from '@/components/CTA/CTA';
+import { heroImages } from '@/types';
 
-const Hero = () => {
+const Hero = ({ images }: heroImages) => {
   return (
     <div className='h-screen relative flex items-center'>
       <div className='w-11/12 md:w-4/5 lg:w-3/6 z-10 mx-auto text-base-100 lg:text-neutral'>
         <TextArea />
       </div>
       <div className='w-full absolute lg:static lg:w-[75%] h-full'>
-        <ImageSlider />
+        <ImageSlider images={images} />
         <div className='hidden z-10 lg:block lg:absolute bottom-[10%] left-1/2 -translate-x-1/5 xl:-translate-x-1/4'>
           <Stats />
         </div>

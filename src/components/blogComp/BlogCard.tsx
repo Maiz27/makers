@@ -19,7 +19,6 @@ const BlogCard = ({
 }: blog) => {
   const imgUrl = urlFor(img).url();
 
-  console.log(author);
   return (
     <div
       className={`w-full h-full grow bg-accent/10 shadow-md relative flex flex-col lg:flex-row justify-center items-center rounded-3xl max-w-2xl ${

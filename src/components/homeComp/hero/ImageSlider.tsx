@@ -5,9 +5,10 @@ import Image from 'next/image';
 import { Splide, SplideSlide, SplideTrack } from '@splidejs/react-splide';
 import '@splidejs/react-splide/css';
 
-import { heroImages } from '@/Constants';
+import { urlFor } from '@/services/sanity/sanityClient';
+import { heroImages } from '@/types';
 
-const ImageSlider = () => {
+const ImageSlider = ({ images }: heroImages) => {
   const options = {
     type: 'loop',
     autoplay: true,
@@ -21,14 +22,17 @@ const ImageSlider = () => {
       className='h-full after:content-[""] after:absolute after:w-full after:h-full after:inset-0 after:bg-[#0000007a] lg:after:bg-[#0000002a]'
     >
       <SplideTrack className='h-full'>
-        {heroImages.map(({ name, src }) => {
+        {images.map(({ title, image }) => {
+          const imgUrl = urlFor(image).url();
           return (
-            <SplideSlide key={name}>
+            <SplideSlide key={title}>
               <Image
-                src={src}
-                alt={name}
+                src={imgUrl}
+                alt={title}
+                width={2400}
+                height={2400}
                 className='h-full object-cover object-center'
-                priority
+                priority={true}
               />
             </SplideSlide>
           );
