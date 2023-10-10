@@ -2,8 +2,6 @@ import React from 'react';
 import Heading from '@/components/heading/Heading';
 import CTA from '@/components/CTA/CTA';
 import BlogCard from '../blogCard/BlogCard';
-import img from '/public/imgs/site/9.jpg';
-import img2 from '/public/imgs/site/11.jpg';
 import { calculateReadTime, getStringDate } from '@/Constants';
 
 const Blog = ({ latestBlogs }) => {
@@ -35,6 +33,7 @@ const Blog = ({ latestBlogs }) => {
             {
               slug,
               title,
+              author,
               publishedAt,
               description,
               mainImage,
@@ -50,10 +49,11 @@ const Blog = ({ latestBlogs }) => {
                 slug={slug.current}
                 title={title}
                 categories={categories}
-                date={getStringDate(publishedAt)}
-                readTime={calculateReadTime(body)}
+                publishedAt={getStringDate(publishedAt)}
                 desc={description}
                 img={mainImage}
+                author={author}
+                body={body}
               />
             );
           }

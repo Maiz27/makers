@@ -3,33 +3,23 @@ import CTA from '../CTA/CTA';
 import Image, { StaticImageData } from 'next/image';
 import { MdDateRange, MdTimer } from 'react-icons/md';
 import { urlFor } from '@/services/sanity/sanityClient';
-
-type props = {
-  index: number;
-  slug: string;
-  date: string;
-  title: string;
-  desc: string;
-  categories: Array<{
-    title: string;
-  }>;
-  img: string | StaticImageData;
-  readTime: number;
-};
+import { blog } from '@/types';
+import { calculateReadTime } from '@/Constants';
 
 const BlogCard = ({
   index,
   slug,
-  date,
+  publishedAt,
   title,
   desc,
   categories,
   img,
-  readTime,
-}: props) => {
+  author,
+  body,
+}: blog) => {
   const imgUrl = urlFor(img).url();
 
-  console.log(categories);
+  console.log(author);
   return (
     <div
       className={`w-full h-full grow bg-accent/10 shadow-md relative flex flex-col lg:flex-row justify-center items-center rounded-3xl max-w-2xl ${
@@ -53,11 +43,11 @@ const BlogCard = ({
       <div className='-mt-20 md:-mt-28 grow pb-10 lg:pb-0 lg:my-16 w-11/12 flex flex-col justify-evenly items-center lg:items-start gap-4'>
         <div className='w-11/12 flex justify-between items-center text-xs'>
           <time className='flex items-center gap-2'>
-            <MdDateRange /> {date}
+            <MdDateRange /> {publishedAt}
           </time>
           <span className='flex items-center gap-2'>
             <MdTimer />
-            {readTime} mins read
+            {calculateReadTime(body)} mins read
           </span>
         </div>
         <h3 className='font-semibold text-lg text-center'>{title}</h3>

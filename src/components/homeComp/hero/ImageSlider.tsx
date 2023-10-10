@@ -32,7 +32,7 @@ const ImageSlider = ({ images }: heroImages) => {
                 width={2400}
                 height={2400}
                 className='h-full object-cover object-center'
-                priority
+                priority={true}
               />
             </SplideSlide>
           );
