@@ -2,10 +2,19 @@ import React from 'react';
 import Image from 'next/image';
 import { tripleImageProps } from '@/types';
 
-const TripleImage = ({ main, right, left }: tripleImageProps) => {
+const TripleImage = ({
+  main,
+  right,
+  left,
+  mainExpand = false,
+}: tripleImageProps) => {
   const rightPosition = right.position;
   return (
-    <div className='w-4/5 lg:w-1/3 grid place-items-center relative group'>
+    <div
+      className={`w-4/5 ${
+        mainExpand ? 'lg:w-1/2' : 'lg:w-1/3'
+      } grid place-items-center relative group`}
+    >
       <Image
         src={main.img}
         alt={main.alt}

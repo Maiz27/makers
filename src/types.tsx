@@ -16,6 +16,7 @@ export type tripleImageProps = {
   };
   left: leftImage;
   right: rightImage;
+  mainExpand?: boolean;
 };
 
 export type leftImage = {
