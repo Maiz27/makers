@@ -16,6 +16,7 @@ import { FaXTwitter, FaLinkedinIn, FaFacebookF } from 'react-icons/fa6';
 import { BiSolidTrafficCone } from 'react-icons/bi';
 
 import aboutBg from '/public/imgs/site/1.jpg';
+import teamBg from '/public/imgs/site/6.jpg';
 import projectBg from '/public/imgs/wallpapers/construction.jpg';
 import BlogBg from '/public/imgs/wallpapers/library.jpg';
 import servicesBg from '/public/imgs/wallpapers/construction2.jpg';
@@ -191,6 +192,11 @@ export const headingList: headerList = [
     heading: 'Contact Us',
     text: '',
     bg: '',
+  },
+  {
+    heading: 'Our Team',
+    text: 'The Driving Force Behind Makers Engineering. At Makers, we believe in the power of collaboration and the strength of a unified vision. Our team is not just a group of individuals; we are a collective force dedicated to innovation and excellence.',
+    bg: teamBg,
   },
 ];
 

@@ -16,17 +16,6 @@ import img6 from '/public/imgs/office/3.jpg';
 import Image from 'next/image';
 
 const page = () => {
-  const main = { img: img4, alt: 'Makers Engineers', priority: true };
-  const left: leftImage = {
-    img: img5,
-    alt: 'Makers Engineers',
-    position: 'bottom',
-  };
-  const right: rightImage = {
-    img: img6,
-    alt: 'Makers Engineers',
-    position: 'top',
-  };
   return (
     <>
       <PageHeader index={0} />
@@ -50,28 +39,7 @@ const page = () => {
 
       <MissionVision />
 
-      <section className='flex flex-col lg:flex-row justify-evenly items-center bg-accent/10 gap-24 lg:gap-4 py-20 xl:py-32'>
-        <TripleImage main={main} left={left} right={right} />
-        <div className='w-4/5 lg:w-1/2 max-w-2xl flex flex-col gap-8'>
-          <Heading
-            text='Our Team: The Driving Force Behind Makers Engineering'
-            Tag='h2'
-          />
-          <p>
-            The Driving Force Behind Makers Engineering. At Makers, we believe
-            in the power of collaboration and the strength of a unified vision.
-            Our team is not just a group of individuals; we are a collective
-            force dedicated to innovation and excellence. With diverse expertise
-            and a shared passion for engineering, we work together seamlessly to
-            bring visionary projects to life. Meet the brilliant minds shaping
-            our future on the Team page and discover the spirit that fuels
-            Makers Engineering Limited.
-          </p>
-          <div>
-            <CTA text='Meet Our Team' page='/about/team' />
-          </div>
-        </div>
-      </section>
+      <Team />
     </>
   );
 };
@@ -152,6 +120,44 @@ const MissionVision = () => {
             future where our engineering prowess shapes a more sustainable,
             connected, and prosperous world for generations to come.
           </p>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+const Team = () => {
+  const main = { img: img4, alt: 'Makers Engineers', priority: true };
+  const left: leftImage = {
+    img: img5,
+    alt: 'Makers Engineers',
+    position: 'bottom',
+  };
+  const right: rightImage = {
+    img: img6,
+    alt: 'Makers Engineers',
+    position: 'top',
+  };
+  return (
+    <section className='flex flex-col lg:flex-row justify-evenly items-center bg-accent/10 gap-24 lg:gap-4 py-20 xl:py-32'>
+      <TripleImage main={main} left={left} right={right} />
+      <div className='w-4/5 lg:w-1/2 max-w-2xl flex flex-col gap-8'>
+        <Heading
+          text='Our Team: The Driving Force Behind Makers Engineering'
+          Tag='h2'
+        />
+        <p>
+          The Driving Force Behind Makers Engineering. At Makers, we believe in
+          the power of collaboration and the strength of a unified vision. Our
+          team is not just a group of individuals; we are a collective force
+          dedicated to innovation and excellence. With diverse expertise and a
+          shared passion for engineering, we work together seamlessly to bring
+          visionary projects to life. Meet the brilliant minds shaping our
+          future on the Team page and discover the spirit that fuels Makers
+          Engineering Limited.
+        </p>
+        <div>
+          <CTA text='Meet Our Team' page='/about/team' />
         </div>
       </div>
     </section>
