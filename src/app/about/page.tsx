@@ -2,12 +2,12 @@ import React from 'react';
 import PageHeader from '@/components/pageHeader/PageHeader';
 import Heading from '@/components/heading/Heading';
 import CTA from '@/components/CTA/CTA';
+import TripleImage from '@/components/tripleImage/TripleImage';
+import { leftImage, rightImage } from '@/types';
 import { values } from '@/Constants';
 import img from '/public/imgs/site/2.jpg';
 import img2 from '/public/imgs/site/3.jpg';
 import img3 from '/public/imgs/site/4.jpg';
-import TripleImage from '@/components/tripleImage/TripleImage';
-import { leftImage, rightImage } from '@/types';
 
 const page = () => {
   const main = { img: img, alt: 'Makers Engineers', priority: true };
@@ -52,14 +52,16 @@ const page = () => {
         <div className='w-full grid place-items-center grid-cols-2 md:grid-cols-4 gap-10'>
           {values.map(({ title, icon }) => {
             return (
-              <div key={title} className='flex flex-col items-center'>
+              <div key={title} className='flex flex-col items-center gap-2'>
                 <span className='text-xl'>{icon}</span>
-                <span>{title}</span>
+                <h3>{title}</h3>
               </div>
             );
           })}
         </div>
       </section>
+
+      <section></section>
     </>
   );
 };

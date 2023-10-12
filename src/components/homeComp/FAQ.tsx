@@ -3,7 +3,7 @@ import Heading from '../heading/Heading';
 import TripleImage from '../tripleImage/TripleImage';
 import { leftImage, rightImage } from '@/types';
 import { faqList } from '@/Constants';
-import building from '/public/imgs/building.jpg';
+import building from '/public/imgs/wallpapers/construction.jpg';
 import img from '/public/imgs/site/9.jpg';
 import img2 from '/public/imgs/site/11.jpg';
 

@@ -16,9 +16,9 @@ import { FaXTwitter, FaLinkedinIn, FaFacebookF } from 'react-icons/fa6';
 import { BiSolidTrafficCone } from 'react-icons/bi';
 
 import aboutBg from '/public/imgs/site/1.jpg';
-import projectBg from '/public/imgs/building.jpg';
-import BlogBg from '/public/imgs/library.jpg';
-import servicesBg from '/public/imgs/construction2.jpg';
+import projectBg from '/public/imgs/wallpapers/construction.jpg';
+import BlogBg from '/public/imgs/wallpapers/library.jpg';
+import servicesBg from '/public/imgs/wallpapers/construction2.jpg';
 
 import d1 from '/public/imgs/designs/d1.jpg';
 import d2 from '/public/imgs/designs/d2.jpg';
