@@ -8,6 +8,27 @@ export type heroImages = {
   }>;
 };
 
+export type tripleImageProps = {
+  main: {
+    img: string | StaticImageData;
+    alt: string;
+    priority: boolean;
+  };
+  left: leftImage;
+  right: rightImage;
+};
+
+export type leftImage = {
+  img: string | StaticImageData;
+  alt: string;
+  position: 'bottom' | 'top';
+};
+export type rightImage = {
+  img: string | StaticImageData;
+  alt: string;
+  position: 'bottom' | 'top';
+};
+
 export type blog = {
   index: number;
   slug: string;

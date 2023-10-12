@@ -1,19 +1,26 @@
 import React from 'react';
-import Image from 'next/image';
 import PageHeader from '@/components/pageHeader/PageHeader';
 import Heading from '@/components/heading/Heading';
 import CTA from '@/components/CTA/CTA';
+import { values } from '@/Constants';
 import img from '/public/imgs/site/2.jpg';
 import img2 from '/public/imgs/site/3.jpg';
 import img3 from '/public/imgs/site/4.jpg';
-import {
-  FaHandshake,
-  FaLightbulb,
-  FaShieldAlt,
-  FaTrophy,
-} from 'react-icons/fa';
+import TripleImage from '@/components/tripleImage/TripleImage';
+import { leftImage, rightImage } from '@/types';
 
 const page = () => {
+  const main = { img: img, alt: 'Makers Engineers', priority: true };
+  const left: leftImage = {
+    img: img2,
+    alt: 'Makers Engineers',
+    position: 'bottom',
+  };
+  const right: rightImage = {
+    img: img3,
+    alt: 'Makers Engineers',
+    position: 'top',
+  };
   return (
     <>
       <PageHeader index={0} />
@@ -36,46 +43,21 @@ const page = () => {
           </p>
         </div>
 
-        <div className='w-4/5 lg:w-1/3 grid place-items-center relative group'>
-          <Image
-            src={img}
-            alt='Blueprint'
-            className='w-full object-cover rounded-xl'
-            priority={true}
-          />
-          <Image
-            src={img2}
-            alt='Makers Engineers'
-            className='absolute -top-10 -right-4 lg:-right-10 2xl:-right-20 z-10 w-28 md:w-32 lg:w-28 xl:w-32 2xl:w-40 aspect-square object-cover rounded-xl shadow-xl'
-          />
-          <Image
-            src={img3}
-            alt='Makers Engineers'
-            className='absolute -bottom-10 -left-4 lg:-left-10 2xl:-left-20 z-10 w-28 md:w-32 lg:w-28 xl:w-32 2xl:w-40 aspect-square object-cover rounded-xl shadow-xl'
-          />
-        </div>
+        <TripleImage main={main} left={left} right={right} />
       </section>
 
-      <section className='flex flex-col items-center gap-8 md:gap-12 bg-accent/10 py-20'>
-        <Heading Tag='h3' text='Core Values' />
+      <section className='flex flex-col justify-center items-center gap-10 md:gap-12 bg-accent/10 py-20'>
+        <Heading Tag='h3' text='Our Values: Defining Who We Are' />
 
-        <div className='w-full grid place-items-center grid-cols-2 md:grid-cols-4 gap-8'>
-          <div className='flex flex-col items-center'>
-            <FaShieldAlt />
-            <span>Integrity</span>
-          </div>
-          <div className='flex flex-col items-center'>
-            <FaLightbulb />
-            <span>Innovation</span>
-          </div>
-          <div className='flex flex-col items-center'>
-            <FaTrophy />
-            <span>Excellence</span>
-          </div>
-          <div className='flex flex-col items-center'>
-            <FaHandshake />
-            <span>Collaboration</span>
-          </div>
+        <div className='w-full grid place-items-center grid-cols-2 md:grid-cols-4 gap-10'>
+          {values.map(({ title, icon }) => {
+            return (
+              <div key={title} className='flex flex-col items-center'>
+                <span className='text-xl'>{icon}</span>
+                <span>{title}</span>
+              </div>
+            );
+          })}
         </div>
       </section>
     </>

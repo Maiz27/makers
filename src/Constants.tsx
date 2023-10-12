@@ -7,6 +7,10 @@ import {
   FaKey,
   FaTasks,
   FaCity,
+  FaHandshake,
+  FaLightbulb,
+  FaShieldAlt,
+  FaTrophy,
 } from 'react-icons/fa';
 import { FaXTwitter, FaLinkedinIn, FaFacebookF } from 'react-icons/fa6';
 import { BiSolidTrafficCone } from 'react-icons/bi';
@@ -117,6 +121,36 @@ export const projectsList = [
   },
 ];
 
+export const faqList = [
+  {
+    question: 'What services does your construction company provide?',
+    answer:
+      'Our construction company offers a wide range of services, including residential and commercial construction, remodeling, renovations, interior and exterior improvements, landscaping, and architectural design.',
+  },
+  {
+    question: 'How experienced is your construction team?',
+    answer:
+      'Our construction team comprises highly skilled professionals with years of experience in the industry. They are experts in their respective fields and are dedicated to delivering high-quality workmanship on every project.',
+  },
+  {
+    question:
+      'Can you handle both small and large-scale construction projects?',
+    answer:
+      "Absolutely! Whether it's a small home renovation or a large commercial construction project, we have the expertise, resources, and equipment to handle projects of any scale. No project is too big or too small for us.",
+  },
+  {
+    question:
+      'What sets your construction company apart from others in the market?',
+    answer:
+      'We pride ourselves on our commitment to excellence, attention to detail, and exceptional customer service. Our team goes the extra mile to ensure client satisfaction, and we use high-quality materials and the latest construction techniques to deliver outstanding results.',
+  },
+  {
+    question: 'How do you ensure the safety of your construction sites?',
+    answer:
+      'Safety is our top priority. We strictly adhere to all safety regulations and guidelines. Our construction sites are supervised by experienced professionals, and we conduct regular safety inspections to identify and mitigate potential hazards, ensuring a secure working environment for our team and anyone involved in the project.',
+  },
+];
+
 export const socials = [
   {
     icon: <FaLinkedinIn />,
@@ -157,6 +191,25 @@ export const headingList: headerList = [
     heading: 'Contact Us',
     text: '',
     bg: '',
+  },
+];
+
+export const values = [
+  {
+    icon: <FaShieldAlt />,
+    title: 'Integrity',
+  },
+  {
+    icon: <FaLightbulb />,
+    title: 'Innovation',
+  },
+  {
+    icon: <FaTrophy />,
+    title: 'Excellence',
+  },
+  {
+    icon: <FaHandshake />,
+    title: 'Collaboration',
   },
 ];
 

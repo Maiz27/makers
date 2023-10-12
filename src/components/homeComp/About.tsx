@@ -1,31 +1,27 @@
 import React from 'react';
-import Image from 'next/image';
 import CTA from '../CTA/CTA';
 import Heading from '../heading/Heading';
+import TripleImage from '../tripleImage/TripleImage';
+import { leftImage, rightImage } from '@/types';
 import blueprint from '/public/imgs/blueprint.jpg';
 import img from '/public/imgs/site/9.jpg';
 import img2 from '/public/imgs/site/11.jpg';
 
 const About = () => {
+  const main = { img: blueprint, alt: 'Blueprint', priority: false };
+  const left: leftImage = {
+    img: img,
+    alt: 'Makers Engineers',
+    position: 'bottom',
+  };
+  const right: rightImage = {
+    img: img2,
+    alt: 'Makers Engineers',
+    position: 'top',
+  };
   return (
     <section className='min-h-screen bg-accent/10 flex flex-col lg:flex-row justify-evenly items-center gap-24 lg:gap-4 py-20 lg:py-0'>
-      <div className='w-4/5 lg:w-1/3 grid place-items-center relative group'>
-        <Image
-          src={blueprint}
-          alt='Blueprint'
-          className='w-full object-cover rounded-xl'
-        />
-        <Image
-          src={img}
-          alt='Makers Engineers'
-          className='absolute -top-10 -right-4 lg:-right-10 2xl:-right-20 z-10 w-28 md:w-32 lg:w-28 xl:w-32 2xl:w-40 aspect-square object-cover rounded-xl shadow-xl'
-        />
-        <Image
-          src={img2}
-          alt='Makers Engineers'
-          className='absolute -bottom-10 -left-4 lg:-left-10 2xl:-left-20 z-10 w-28 md:w-32 lg:w-28 xl:w-32 2xl:w-40 aspect-square object-cover rounded-xl shadow-xl'
-        />
-      </div>
+      <TripleImage main={main} left={left} right={right} />
 
       <div className='w-4/5 lg:w-1/2 max-w-2xl flex flex-col gap-8'>
         <Heading text='Our Story: Engineering a Brighter Future' Tag='h2' />
