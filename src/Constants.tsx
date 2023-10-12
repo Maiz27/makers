@@ -134,7 +134,7 @@ export const socials = [
 
 export const headingList: headerList = [
   {
-    heading: 'About Us',
+    heading: 'About Makers',
     text: "Discover a dynamic force in the engineering realm, MAKERS Engineering Limited. With a track record spanning multiple technical domains, we've been redefining possibilities in the Civil Engineering Industry since our inception in 2018.",
     bg: aboutBg,
   },
