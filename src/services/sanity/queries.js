@@ -56,3 +56,16 @@ export const getAllHeroImages = `*[_type == 'heroImages']
     index,
     image,
 }`;
+
+export const getAllFounders = `*[_type == 'founder'] {
+  name,
+  title,
+  description,
+  image,
+}`;
+
+export const getAllMembers = `*[_type == 'team'] | order(title asc) {
+  name,
+  title,
+  image,
+}`;

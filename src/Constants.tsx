@@ -14,6 +14,7 @@ import {
 } from 'react-icons/fa';
 import { FaXTwitter, FaLinkedinIn, FaFacebookF } from 'react-icons/fa6';
 import { BiSolidTrafficCone } from 'react-icons/bi';
+import { blogBody, headerList } from './types';
 
 import aboutBg from '/public/imgs/site/1.jpg';
 import teamBg from '/public/imgs/site/6.jpg';
@@ -28,7 +29,9 @@ import d3 from '/public/imgs/designs/d3.jpg';
 import c1 from '/public/imgs/designs/c1.jpg';
 import c2 from '/public/imgs/designs/c2.jpg';
 import c3 from '/public/imgs/designs/c3.jpg';
-import { blogBody, headerList } from './types';
+
+import founder from '/public/imgs/office/4.jpg';
+import founder2 from '/public/imgs/office/5.jpg';
 
 export const routes = [
   {
