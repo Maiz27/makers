@@ -14,6 +14,7 @@ import {
 } from 'react-icons/fa';
 import { FaXTwitter, FaLinkedinIn, FaFacebookF } from 'react-icons/fa6';
 import { BiSolidTrafficCone } from 'react-icons/bi';
+import { blogBody, headerList } from './types';
 
 import aboutBg from '/public/imgs/site/1.jpg';
 import teamBg from '/public/imgs/site/6.jpg';
@@ -28,7 +29,9 @@ import d3 from '/public/imgs/designs/d3.jpg';
 import c1 from '/public/imgs/designs/c1.jpg';
 import c2 from '/public/imgs/designs/c2.jpg';
 import c3 from '/public/imgs/designs/c3.jpg';
-import { blogBody, headerList } from './types';
+
+import founder from '/public/imgs/office/4.jpg';
+import founder2 from '/public/imgs/office/5.jpg';
 
 export const routes = [
   {
@@ -219,6 +222,20 @@ export const values = [
   },
 ];
 
+export const founders = [
+  {
+    img: founder,
+    name: 'Sadji Jibriel Maider',
+    title: 'Founder, Managing Director',
+    desc: 'Sadji Jibriel Maider is a driving force behind our journey of innovation and growth. With an astute business acumen and a passion for strategic leadership, Sadji orchestrates success with precision. His dedication to fostering collaboration and steering projects towards excellence has solidified MAKERS Engineering Ltd as a beacon of innovation. Through his visionary guidance, we transcend challenges, embrace new horizons, and realize our mission to engineer a transformative future.',
+  },
+  {
+    img: founder2,
+    name: 'Ali M. Ali',
+    title: 'Co-Founder, Principal Architect',
+    desc: "Ali M. Ali is a visionary force in the world of architecture. With an innate ability to blend aesthetics and functionality, he crafts spaces that tell stories. His unwavering commitment to innovation, coupled with his profound technical acumen, has been pivotal in shaping the identity of MAKERS Engineering Ltd. His designs not only transcend boundaries but also elevate the standards of architectural brilliance. Drawing inspiration from culture, nature, and cutting-edge technologies, Ali's work stands as a testament to his passion for pushing the boundaries of architectural possibility.",
+  },
+];
 const getWordCount = (blocks: blogBody) => {
   let wordCount = 0;
 
