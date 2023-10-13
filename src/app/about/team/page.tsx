@@ -23,7 +23,7 @@ const page = () => {
 
 export default page;
 
-export const Founders = ({ list }) => {
+const Founders = ({ list }) => {
   return (
     <div className='flex flex-col justify-center items-center gap-20 py-20'>
       {list.map(({ img, name, title, desc }, index: number) => {
