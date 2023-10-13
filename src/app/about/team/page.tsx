@@ -2,7 +2,7 @@ import React from 'react';
 import Image from 'next/image';
 import Heading from '@/components/heading/Heading';
 import PageHeader from '@/components/pageHeader/PageHeader';
-import { founders } from '@/Constants';
+import { foundersList } from '@/Constants';
 
 const page = () => {
   return (
@@ -15,7 +15,7 @@ const page = () => {
           text="Our Founders: Guiding Makers' Path to Success"
         />
 
-        <Founders list={founders} />
+        <Founders list={foundersList} />
       </section>
     </>
   );

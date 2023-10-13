@@ -222,7 +222,7 @@ export const values = [
   },
 ];
 
-export const founders = [
+export const foundersList = [
   {
     img: founder,
     name: 'Sadji Jibriel Maider',
