@@ -222,20 +222,6 @@ export const values = [
   },
 ];
 
-export const foundersList = [
-  {
-    img: founder,
-    name: 'Sadji Jibriel Maider',
-    title: 'Founder, Managing Director',
-    desc: 'Sadji Jibriel Maider is a driving force behind our journey of innovation and growth. With an astute business acumen and a passion for strategic leadership, Sadji orchestrates success with precision. His dedication to fostering collaboration and steering projects towards excellence has solidified MAKERS Engineering Ltd as a beacon of innovation. Through his visionary guidance, we transcend challenges, embrace new horizons, and realize our mission to engineer a transformative future.',
-  },
-  {
-    img: founder2,
-    name: 'Ali M. Ali',
-    title: 'Co-Founder, Principal Architect',
-    desc: "Ali M. Ali is a visionary force in the world of architecture. With an innate ability to blend aesthetics and functionality, he crafts spaces that tell stories. His unwavering commitment to innovation, coupled with his profound technical acumen, has been pivotal in shaping the identity of MAKERS Engineering Ltd. His designs not only transcend boundaries but also elevate the standards of architectural brilliance. Drawing inspiration from culture, nature, and cutting-edge technologies, Ali's work stands as a testament to his passion for pushing the boundaries of architectural possibility.",
-  },
-];
 const getWordCount = (blocks: blogBody) => {
   let wordCount = 0;
 
