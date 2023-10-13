@@ -3,7 +3,7 @@ import Image from 'next/image';
 import Heading from '@/components/heading/Heading';
 import PageHeader from '@/components/pageHeader/PageHeader';
 import { sanityClient, urlFor } from '@/services/sanity/sanityClient';
-import { getAllFounders } from '@/services/sanity/queries';
+import { getAllFounders, getAllMembers } from '@/services/sanity/queries';
 
 export const revalidate = 60; // revalidate every minute
 
@@ -12,8 +12,16 @@ const fetchFounders = async () => {
   return founders;
 };
 
+const fetchTeamMembers = async () => {
+  const team = await sanityClient.fetch(getAllMembers);
+  return team;
+};
+
 const page = async () => {
-  const founders = await fetchFounders();
+  const [founders, team] = await Promise.all([
+    fetchFounders(),
+    fetchTeamMembers(),
+  ]);
 
   return (
     <>
@@ -28,13 +36,7 @@ const page = async () => {
         <Founders list={founders} />
       </section>
 
-      <section className='flex flex-col items-center'>
-        <div className='w-4/5 grid place-items-center'>
-          <Heading Tag='h2' text='Our Dynamic Team: Architects of Innovation' />
-        </div>
-
-        <div className='grid place-items-center gap-8 grid-cols-1 '></div>
-      </section>
+      <Team list={team} />
     </>
   );
 };
@@ -64,7 +66,7 @@ const Founders = ({ list }) => {
             <div className='w-full md:w-4/5 lg:w-2/5 space-y-4 max-w-4xl'>
               <div className='space-y-1'>
                 <h3 className='text-xl tracking-wider font-semibold'>{name}</h3>
-                <h4 className='text-lg font-medium'>{title}</h4>
+                <h4 className='text-lg'>{title}</h4>
               </div>
 
               <p>{description}</p>
@@ -73,5 +75,39 @@ const Founders = ({ list }) => {
         );
       })}
     </div>
+  );
+};
+
+const Team = ({ list }) => {
+  return (
+    <section className='flex flex-col items-center gap-10 pb-20'>
+      <div className='w-4/5 grid place-items-center'>
+        <Heading Tag='h2' text='Our Dynamic Team: Architects of Innovation' />
+      </div>
+
+      <div className='grid place-items-center gap-y-20 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4'>
+        {list.map(({ name, title, image }, index: number) => {
+          const imgUrl = urlFor(image).url();
+          return (
+            <div key={index} className='w-4/5 space-y-4'>
+              <div className='h-96 lg:h-72 2xl:h-96'>
+                <Image
+                  src={imgUrl}
+                  alt={name}
+                  width={500}
+                  height={500}
+                  className='h-full object-cover object-top rounded-xl shadow-lg'
+                />
+              </div>
+
+              <div className='flex flex-col justify-center items-center'>
+                <h3 className='text-lg tracking-wider font-semibold'>{name}</h3>
+                <h4>{title}</h4>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+    </section>
   );
 };

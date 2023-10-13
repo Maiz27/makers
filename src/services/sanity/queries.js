@@ -63,3 +63,9 @@ export const getAllFounders = `*[_type == 'founder'] {
   description,
   image,
 }`;
+
+export const getAllMembers = `*[_type == 'team'] | order(title asc) {
+  name,
+  title,
+  image,
+}`;
