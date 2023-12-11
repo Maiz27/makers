@@ -62,6 +62,7 @@ const Navbar = () => {
               title='Makers Engineering Logo'
               width={30}
               height={20}
+              loading='eager'
               priority
               className='h-full object-scale-down'
             />
@@ -108,6 +109,8 @@ const Navbar = () => {
                     alt='Makers Engineering Logo'
                     title='Makers Engineering Logo'
                     className='w-full object-cover'
+                    width={50}
+                    height={20}
                   />
                 </Link>
 

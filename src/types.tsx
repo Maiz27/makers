@@ -12,7 +12,7 @@ export type tripleImageProps = {
   main: {
     img: string | StaticImageData;
     alt: string;
-    priority: boolean;
+    priority?: boolean;
   };
   left: leftImage;
   right: rightImage;

@@ -1,7 +1,7 @@
 import Hero from '@/components/homeComp/hero/Hero';
 import About from '@/components/homeComp/About';
 import Services from '@/components/homeComp/services/Services';
-import Projects from '@/components/homeComp/projects/Projects';
+import Designs from '@/components/homeComp/designs/Designs';
 import Blog from '@/components/homeComp/Blog';
 import FAQ from '@/components/homeComp/FAQ';
 import { sanityClient } from '@/services/sanity/sanityClient';
@@ -33,7 +33,7 @@ export default async function Home() {
 
       <Services />
 
-      <Projects />
+      <Designs />
 
       <Blog latestBlogs={latestBlogs} />
 

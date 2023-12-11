@@ -30,9 +30,6 @@ import c1 from '/public/imgs/designs/c1.jpg';
 import c2 from '/public/imgs/designs/c2.jpg';
 import c3 from '/public/imgs/designs/c3.jpg';
 
-import founder from '/public/imgs/office/4.jpg';
-import founder2 from '/public/imgs/office/5.jpg';
-
 export const routes = [
   {
     name: 'Home',
@@ -47,8 +44,8 @@ export const routes = [
     path: '/services',
   },
   {
-    name: 'Projects',
-    path: '/projects',
+    name: 'Designs',
+    path: '/designs',
   },
   {
     name: 'Blog',
@@ -104,26 +101,26 @@ export const servicesList = [
   },
 ];
 
-export const projectsList = [
-  {
-    title: 'Project #',
-    isComplete: true,
-    design: d1,
-    img: c1,
-  },
-  {
-    title: 'Project #',
-    isComplete: false,
-    design: d2,
-    img: c2,
-  },
-  {
-    title: 'Project #',
-    isComplete: true,
-    design: d3,
-    img: c3,
-  },
-];
+// export const projectsList = [
+//   {
+//     title: 'Project #',
+//     isComplete: true,
+//     design: d1,
+//     img: c1,
+//   },
+//   {
+//     title: 'Project #',
+//     isComplete: false,
+//     design: d2,
+//     img: c2,
+//   },
+//   {
+//     title: 'Project #',
+//     isComplete: true,
+//     design: d3,
+//     img: c3,
+//   },
+// ];
 
 export const faqList = [
   {
@@ -182,8 +179,8 @@ export const headingList: headerList = [
     bg: servicesBg,
   },
   {
-    heading: 'Our Projects',
-    text: 'Our Impactful Works showcase our dedication to excellence. Through innovative design and meticulous execution, we create landmarks that stand as symbols of quality and craftsmanship.',
+    heading: 'Our Designs',
+    text: 'Immerse yourself in a world where architectural innovation meets artistic expression. Each design crafted by Makers Engineering Limited is a signature statement, meticulously curated to transcend the ordinary and redefine the very essence of aesthetics. Explore our portfolio to witness the seamless fusion of form and function.',
     bg: projectBg,
   },
   {

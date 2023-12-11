@@ -14,6 +14,8 @@ const Footer = () => {
               src={logo}
               alt='Makers Engineering Logo'
               className='h-full object-contain'
+              width={30}
+              height={20}
             />
           </div>
           <div className='flex flex-col text-neutral w-fit max-w-[10rem]'>
