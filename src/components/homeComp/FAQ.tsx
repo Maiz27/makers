@@ -4,19 +4,19 @@ import TripleImage from '../tripleImage/TripleImage';
 import { leftImage, rightImage } from '@/types';
 import { faqList } from '@/Constants';
 import building from '/public/imgs/wallpapers/construction.jpg';
-import img from '/public/imgs/site/9.jpg';
-import img2 from '/public/imgs/site/11.jpg';
+import img from '/public/imgs/crane.jpg';
+import img2 from '/public/imgs/construction.jpg';
 
 const FAQ = () => {
   const main = { img: building, alt: 'Building', priority: false };
   const left: leftImage = {
     img: img,
-    alt: 'Makers Engineers',
+    alt: 'Crane',
     position: 'top',
   };
   const right: rightImage = {
     img: img2,
-    alt: 'Makers Engineers',
+    alt: 'construction',
     position: 'bottom',
   };
 

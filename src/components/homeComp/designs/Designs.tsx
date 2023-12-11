@@ -3,8 +3,8 @@ import Heading from '@/components/heading/Heading';
 import React from 'react';
 import TripleImage from '@/components/tripleImage/TripleImage';
 import AD from 'public/imgs/AD/ad1.jpg';
-import ID1 from 'public/imgs/iD/id1.jpg';
-import ID2 from 'public/imgs/iD/id2.jpg';
+import ID1 from 'public/imgs/ID/id1.jpg';
+import ID2 from 'public/imgs/ID/id2.jpg';
 import { leftImage, rightImage } from '@/types';
 
 const Designs = () => {

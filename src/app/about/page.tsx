@@ -22,21 +22,6 @@ const page = () => {
 
       <AboutUs />
 
-      <section className='flex flex-col justify-center items-center gap-10 md:gap-12 bg-accent/10 py-20'>
-        <Heading Tag='h3' text='Our Values: Defining Who We Are' />
-
-        <div className='w-full grid place-items-center grid-cols-2 md:grid-cols-4 gap-10'>
-          {values.map(({ title, icon }) => {
-            return (
-              <div key={title} className='flex flex-col items-center gap-2'>
-                <span className='text-xl'>{icon}</span>
-                <h3>{title}</h3>
-              </div>
-            );
-          })}
-        </div>
-      </section>
-
       <MissionVision />
 
       <Team />
@@ -84,14 +69,20 @@ const AboutUs = () => {
 
 const MissionVision = () => {
   return (
-    <section className='flex flex-col justify-center items-center gap-10 md:gap-12 py-20'>
-      <div className='w-4/5 lg:w-1/2 grid place-items-center relative group'>
-        <Image
-          src={img4}
-          alt=''
-          loading='lazy'
-          className='w-full object-cover rounded-xl'
-        />
+    <section className='min-h-[60vh] flex flex-col justify-center items-center gap-16 py-20 bg-accent/10'>
+      <div className='w-full flex flex-col justify-center items-center gap-10 md:gap-12'>
+        <Heading Tag='h3' text='Our Values: Defining Who We Are' />
+
+        <div className='w-full grid place-items-center grid-cols-2 md:grid-cols-4 gap-10'>
+          {values.map(({ title, icon }) => {
+            return (
+              <div key={title} className='flex flex-col items-center gap-2'>
+                <span className='text-xl'>{icon}</span>
+                <h3>{title}</h3>
+              </div>
+            );
+          })}
+        </div>
       </div>
 
       <div className='w-10/12 flex flex-col lg:flex-row justify-center items-center gap-16 mt-8 xl:mt-16'>
@@ -139,7 +130,7 @@ const Team = () => {
     position: 'top',
   };
   return (
-    <section className='flex flex-col lg:flex-row justify-evenly items-center bg-accent/10 gap-24 lg:gap-4 py-20 xl:py-32'>
+    <section className='flex flex-col lg:flex-row justify-evenly items-center gap-24 lg:gap-4 py-20 xl:py-32'>
       <TripleImage main={main} left={left} right={right} />
       <div className='w-4/5 lg:w-1/2 max-w-2xl flex flex-col gap-8'>
         <Heading

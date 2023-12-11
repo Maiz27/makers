@@ -10,12 +10,12 @@ import img2 from '/public/imgs/site/11.jpg';
 const About = () => {
   const main = { img: blueprint, alt: 'Blueprint', priority: false };
   const left: leftImage = {
-    img: img,
+    img: img2,
     alt: 'Makers Engineers',
     position: 'bottom',
   };
   const right: rightImage = {
-    img: img2,
+    img: img,
     alt: 'Makers Engineers',
     position: 'top',
   };
