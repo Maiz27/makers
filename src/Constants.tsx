@@ -22,13 +22,14 @@ import projectBg from '/public/imgs/wallpapers/construction.jpg';
 import BlogBg from '/public/imgs/wallpapers/library.jpg';
 import servicesBg from '/public/imgs/wallpapers/construction2.jpg';
 
-import d1 from '/public/imgs/designs/d1.jpg';
-import d2 from '/public/imgs/designs/d2.jpg';
-import d3 from '/public/imgs/designs/d3.jpg';
-
-import c1 from '/public/imgs/designs/c1.jpg';
-import c2 from '/public/imgs/designs/c2.jpg';
-import c3 from '/public/imgs/designs/c3.jpg';
+import ad1 from 'public/imgs/AD/ad1.jpg';
+import ad2 from 'public/imgs/AD/ad2.jpg';
+import ad3 from 'public/imgs/AD/ad3.jpg';
+import ad4 from 'public/imgs/AD/ad4.jpg';
+import ad5 from 'public/imgs/AD/ad5.jpg';
+import ad6 from 'public/imgs/AD/ad6.jpg';
+import ad7 from 'public/imgs/AD/ad7.jpg';
+import ad8 from 'public/imgs/AD/ad8.jpg';
 
 export const routes = [
   {
@@ -101,26 +102,36 @@ export const servicesList = [
   },
 ];
 
-// export const projectsList = [
-//   {
-//     title: 'Project #',
-//     isComplete: true,
-//     design: d1,
-//     img: c1,
-//   },
-//   {
-//     title: 'Project #',
-//     isComplete: false,
-//     design: d2,
-//     img: c2,
-//   },
-//   {
-//     title: 'Project #',
-//     isComplete: true,
-//     design: d3,
-//     img: c3,
-//   },
-// ];
+export const archDesigns = [
+  {
+    name: 'G Apartments',
+    description:
+      'In the realm of real estate, envisioning a paradigm shift involves transcending the mere exchange of properties to sculpting immersive spaces that harmonize with individual aspirations. Redefining real estate means not just selling homes but crafting narratives where each brick resonates with personal stories of belonging and dreams realized',
+    images: [ad3, ad4],
+    contentPosition: 'r',
+  },
+  {
+    name: 'Garthgoth villa',
+    description:
+      "Home is more than a shelter; it's a living canvas where the strokes of memories, laughter, and comfort create a masterpiece of belonging. In the embrace of four walls, the heartbeat of family and the symphony of shared experiences transform a house into a sanctuary, making 'home' the poetry written in the language of love and shared stories",
+    images: [ad1, ad2],
+    contentPosition: 'l',
+  },
+  {
+    name: 'Business Center Concept',
+    description:
+      'Designing a dynamic business center involves a fusion of sophistication and functionality, where contemporary architecture meets state-of-the-art amenities. The blueprint envisions a space that seamlessly accommodates collaborative work environments, advanced technological infrastructure,and aesthetic appeal—cultivating an atmosphere where innovation thrives and professional aspirations find their optimal expression.',
+    images: [ad5, ad6],
+    contentPosition: 'r',
+  },
+  {
+    name: 'Filling Station',
+    description:
+      'Crafting a modern petrol filling station design is an intricate dance between form and function,seamlessly blending sleek architectural aesthetics with cutting-edge technology. From eco-friendly fueling points to inviting convenience spaces, the design envisions a harmonious synergy, not just catering to vehicular needs but embracing sustainability and enhancing the overall customer experience.',
+    images: [ad7, ad8],
+    contentPosition: 'l',
+  },
+];
 
 export const faqList = [
   {
