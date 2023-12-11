@@ -96,6 +96,7 @@ const Team = ({ list }) => {
                   alt={name}
                   width={500}
                   height={500}
+                  loading='lazy'
                   className='h-full object-cover object-top rounded-xl shadow-lg'
                 />
               </div>

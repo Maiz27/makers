@@ -55,15 +55,15 @@ const Navbar = () => {
     >
       <nav className='navbar'>
         <div className='navbar-start'>
-          <Link href='/' className='h-full grid place-items-center'>
+          <Link href='/' className='grid place-items-center'>
             <Image
               src={icon}
               alt='Makers Engineering Logo'
               title='Makers Engineering Logo'
-              width={50}
-              height={50}
+              width={30}
+              height={20}
               priority
-              className=''
+              className='h-full object-scale-down'
             />
           </Link>
         </div>

@@ -2,18 +2,28 @@ import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { routes, socials } from '@/Constants';
-import logo from '/public/imgs/logo/text-logo.png';
+import logo from '/public/imgs/logo/icon.png';
 
 const Footer = () => {
   return (
     <footer className='w-full min-h-60 md:h-72'>
       <div className='h-28 flex flex-col md:flex-row justify-between items-center md:pr-8 xl:pr-12 border-t-2 border-b-2 border-neutral/30'>
-        <div className='h-2/3 -ml-7 xl:-ml-5 2xl:-ml-2'>
-          <Image
-            src={logo}
-            alt='Makers Engineering Logo'
-            className='h-full object-contain'
-          />
+        <div className='h-2/3 w-full md:w-1/3 flex justify-center items-center space-x-2'>
+          <div className='h-full w-12'>
+            <Image
+              src={logo}
+              alt='Makers Engineering Logo'
+              className='h-full object-contain'
+            />
+          </div>
+          <div className='flex flex-col text-neutral w-fit max-w-[10rem]'>
+            <span className='uppercase font-black text-3xl text-center'>
+              Makers
+            </span>
+            <span className='text-xs flex justify-end -mt-1'>
+              Engineering Limited
+            </span>
+          </div>
         </div>
         <ul className='w-4/5 md:w-1/2 max-w-sm flex justify-between items-center'>
           {routes.map(({ path, name }) => {
