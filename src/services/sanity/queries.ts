@@ -50,6 +50,11 @@ export const getLatestPosts = `*[_type == 'post']
       body,
   }`;
 
+export const getPostCategories = `*[_type == 'category'] 
+| order(title asc) {
+    title,
+}`;
+
 export const getAllHeroImages = `*[_type == 'heroImages'] 
 | order(index asc) {
     title,

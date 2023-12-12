@@ -66,7 +66,7 @@ const BlogCard = ({
           })}
         </ul>
 
-        <CTA text='Read More' page={`/blog/${slug}`} size='sm' />
+        <CTA text='Read More' page={`/blog/${slug.current}`} size='sm' />
       </div>
     </div>
   );

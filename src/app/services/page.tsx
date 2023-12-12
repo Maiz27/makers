@@ -1,7 +1,7 @@
 import React from 'react';
 import PageHeader from '@/components/pageHeader/PageHeader';
-import { servicesList } from '@/Constants';
 import { ServiceCardAlt } from '@/components/servicesComp/ServiceCard';
+import { servicesList } from '@/Constants';
 
 const page = () => {
   return (
