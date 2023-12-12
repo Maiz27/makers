@@ -5,13 +5,45 @@ import PageHeader from '@/components/pageHeader/PageHeader';
 import { fetchSanityData, urlFor } from '@/services/sanity/sanityClient';
 import { getAllFounders, getAllMembers } from '@/services/sanity/queries';
 import AnimateInView from '@/components/animateInView/AnimateInView';
+import { pagesMetaData } from '@/Constants';
+import { Metadata } from 'next';
+import { OpenGraph } from 'next/dist/lib/metadata/types/opengraph-types';
 
 export const revalidate = 60; // revalidate every minute
-export const metadata = {
-  title: 'Makers Engineering - Our Team',
-  image: '/imgs/site/1.jpg',
-  description:
-    'The Driving Force Behind Makers Engineering. At Makers, we believe in the power of collaboration and the strength of a unified vision.',
+
+export const metadata: Metadata = {
+  title: pagesMetaData[2].title,
+  description: pagesMetaData[2].description,
+  icons: {
+    icon: pagesMetaData[2].image,
+    shortcut: pagesMetaData[2].image,
+    apple: pagesMetaData[2].image,
+    other: {
+      rel: 'apple-touch-icon-precomposed',
+      url: pagesMetaData[2].image,
+    },
+  },
+  openGraph: {
+    type: pagesMetaData[2].type,
+    url: pagesMetaData[2].url,
+    title: pagesMetaData[2].title,
+    description: pagesMetaData[2].description,
+    siteName: pagesMetaData[2].title,
+    images: [
+      {
+        url: pagesMetaData[2].image,
+      },
+    ],
+  } as OpenGraph,
+  twitter: {
+    card: 'summary_large_image',
+    site: pagesMetaData[2].url,
+    images: [
+      {
+        url: pagesMetaData[2].image,
+      },
+    ],
+  },
 };
 
 const page = async () => {

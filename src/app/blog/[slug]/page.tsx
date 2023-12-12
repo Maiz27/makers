@@ -3,29 +3,51 @@ import { fetchSanityData, urlFor } from '@/services/sanity/sanityClient';
 import { getPostBySlug } from '@/services/sanity/queries';
 import PageHeader from '@/components/pageHeader/PageHeader';
 import BlogBody from '@/components/blogComp/BlogBody';
+import { blog } from '@/types';
 
 export const revalidate = 60; // revalidate every minute
 
-export async function generateMetadata({ params }, parent) {
-  // read route params
+export async function generateMetadata({ params }) {
   const slug = params.slug;
 
-  // fetch data
-  const post = await fetchSanityData(getPostBySlug, { slug });
+  const post: blog = await fetchSanityData(getPostBySlug, { slug });
   const imgUrl = urlFor(post.mainImage).url();
+  const url = `https://www.makersengineeringltd.com/blog/${post.slug.current}`;
 
   return {
     title: post.title,
     description: post.description,
-    type: 'article',
+    image: imgUrl,
+
     icons: {
-      icon: imgUrl,
-      shortcut: imgUrl,
-      apple: imgUrl,
+      icon: '/imgs/logo/icon.png',
+      shortcut: '/imgs/logo/icon.png',
+      apple: '/imgs/logo/icon.png',
       other: {
         rel: 'apple-touch-icon-precomposed',
-        url: imgUrl,
+        url: '/imgs/logo/icon.png',
       },
+    },
+    openGraph: {
+      type: 'article',
+      url: url,
+      title: post.title,
+      description: post.description,
+      siteName: post.title,
+      images: [
+        {
+          url: imgUrl,
+        },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      site: url,
+      images: [
+        {
+          url: imgUrl,
+        },
+      ],
     },
   };
 }

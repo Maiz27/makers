@@ -47,7 +47,6 @@ import id7 from 'public/imgs/ID/id7.jpg';
 import id8 from 'public/imgs/ID/id8.jpg';
 import id9 from 'public/imgs/ID/id9.jpg';
 import id10 from 'public/imgs/ID/id10.jpg';
-import { sanityClient } from './services/sanity/sanityClient';
 
 export const routes = [
   {
@@ -305,6 +304,65 @@ export const contactFormFields = [
     type: 'textarea',
     placeholder: 'Type here',
     required: true,
+  },
+];
+
+export const pagesMetaData = [
+  {
+    title: 'Makers Engineering',
+    description:
+      "Discover a dynamic force in South Sudan's the engineering realm, MAKERS Engineering Limited.",
+    type: 'website',
+    url: 'https://www.makersengineeringltd.com/',
+    image: '/imgs/logo/text-logo.png',
+  },
+  {
+    title: 'Makers Engineering - About Us',
+    description:
+      "With a track record spanning multiple technical domains, we've been redefining possibilities in the Civil Engineering Industry since our inception in 2018.",
+    type: 'website',
+    url: 'https://www.makersengineeringltd.com/about',
+    image: '/imgs/logo/text-logo.png',
+  },
+  {
+    title: 'Makers Engineering - Our Team',
+    description:
+      'The Driving Force Behind Makers Engineering. At Makers, we believe in the power of collaboration and the strength of a unified vision.',
+    type: 'website',
+    url: 'https://www.makersengineeringltd.com/about/team',
+    image: '/imgs/site/1.jpg',
+  },
+  {
+    title: 'Makers Engineering - Our Services',
+    description:
+      "Unveil the potential of your projects with MAKERS Engineering's broad service list that will fulfill all your needs.",
+    type: 'website',
+    url: 'https://www.makersengineeringltd.com/services',
+    image: '/imgs/logo/text-logo.png',
+  },
+  {
+    title: 'Makers Engineering - Our Designs',
+    description:
+      "Unveil the potential of your projects with MAKERS Engineering's broad service list that will fulfill all your needs.",
+    type: 'website',
+    url: 'https://www.makersengineeringltd.com/designs',
+    image: '/imgs/AD/ad1.jpg',
+  },
+  {
+    title: 'Makers Engineering - Our Blogs',
+    description:
+      'Discover the latest engineering trends and innovations through our insights. Short, insightful, and engaging, our articles offer a glimpse into the future of construction.',
+    type: 'website',
+    url: 'https://www.makersengineeringltd.com/blog',
+    image: '/imgs/wallpapers/library.jpg',
+  },
+  {
+    title: 'Makers Engineering - Contact Us',
+    description:
+      'Get in touch with Makers Engineering Limited. Your journey towards innovative solutions and collaborative excellence starts here.',
+    type: 'website',
+    url: 'https://www.makersengineeringltd.com/contact',
+    image: '/imgs/logo/text-logo.png',
   },
 ];
 

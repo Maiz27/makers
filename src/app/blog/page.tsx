@@ -3,15 +3,47 @@ import PageHeader from '@/components/pageHeader/PageHeader';
 import BlogsGrid from '@/components/blogComp/BlogsGrid';
 import { fetchSanityData } from '@/services/sanity/sanityClient';
 import { getAllPosts, getPostCategories } from '@/services/sanity/queries';
+import { pagesMetaData } from '@/Constants';
+import { Metadata } from 'next';
+import { OpenGraph } from 'next/dist/lib/metadata/types/opengraph-types';
 
 export const revalidate = 60; // revalidate every minute
 
-export const metadata = {
-  title: 'Makers Engineering - Our Blogs',
-  image: '/imgs/wallpapers/library.jpg',
-  description:
-    'Discover the latest engineering trends and innovations through our insights. Short, insightful, and engaging, our articles offer a glimpse into the future of construction.',
+export const metadata: Metadata = {
+  title: pagesMetaData[5].title,
+  description: pagesMetaData[5].description,
+  icons: {
+    icon: pagesMetaData[5].image,
+    shortcut: pagesMetaData[5].image,
+    apple: pagesMetaData[5].image,
+    other: {
+      rel: 'apple-touch-icon-precomposed',
+      url: pagesMetaData[5].image,
+    },
+  },
+  openGraph: {
+    type: pagesMetaData[5].type,
+    url: pagesMetaData[5].url,
+    title: pagesMetaData[5].title,
+    description: pagesMetaData[5].description,
+    siteName: pagesMetaData[5].title,
+    images: [
+      {
+        url: pagesMetaData[5].image,
+      },
+    ],
+  } as OpenGraph,
+  twitter: {
+    card: 'summary_large_image',
+    site: pagesMetaData[5].url,
+    images: [
+      {
+        url: pagesMetaData[5].image,
+      },
+    ],
+  },
 };
+
 const page = async () => {
   const [blogs, categories] = await Promise.all([
     fetchSanityData(getAllPosts),

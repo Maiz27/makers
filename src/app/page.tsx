@@ -6,22 +6,44 @@ import Blog from '@/components/homeComp/Blog';
 import FAQ from '@/components/homeComp/FAQ';
 import { getAllHeroImages, getLatestPosts } from '@/services/sanity/queries';
 import { fetchSanityData } from '@/services/sanity/sanityClient';
+import { pagesMetaData } from '@/Constants';
+import { Metadata } from 'next';
+import { OpenGraph } from 'next/dist/lib/metadata/types/opengraph-types';
 
 export const revalidate = 60; // revalidate every minute
 
-export const metadata = {
-  title: 'Makers Engineering',
-  image: '/imgs/logo/text-logo.png',
-  description:
-    "Discover a dynamic force in South Sudan's the engineering realm, MAKERS Engineering Limited.",
+export const metadata: Metadata = {
+  title: pagesMetaData[0].title,
+  description: pagesMetaData[0].description,
   icons: {
-    icon: '/imgs/logo/icon.png',
-    shortcut: '/imgs/logo/text-logo.png',
-    apple: '/imgs/logo/text-logo.png',
+    icon: pagesMetaData[0].image,
+    shortcut: pagesMetaData[0].image,
+    apple: pagesMetaData[0].image,
     other: {
       rel: 'apple-touch-icon-precomposed',
-      url: '/imgs/logo/apple-touch-icon.png',
+      url: pagesMetaData[0].image,
     },
+  },
+  openGraph: {
+    type: pagesMetaData[0].type,
+    url: pagesMetaData[0].url,
+    title: pagesMetaData[0].title,
+    description: pagesMetaData[0].description,
+    siteName: pagesMetaData[0].title,
+    images: [
+      {
+        url: pagesMetaData[0].image,
+      },
+    ],
+  } as OpenGraph,
+  twitter: {
+    card: 'summary_large_image',
+    site: pagesMetaData[0].url,
+    images: [
+      {
+        url: pagesMetaData[0].image,
+      },
+    ],
   },
 };
 

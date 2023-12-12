@@ -1,12 +1,43 @@
 import React from 'react';
 import PageHeader from '@/components/pageHeader/PageHeader';
 import { ServiceCardAlt } from '@/components/servicesComp/ServiceCard';
-import { servicesList } from '@/Constants';
+import { pagesMetaData, servicesList } from '@/Constants';
+import { Metadata } from 'next';
+import { OpenGraph } from 'next/dist/lib/metadata/types/opengraph-types';
 
-export const metadata = {
-  title: 'Makers Engineering - Our Services',
-  description:
-    "Unveil the potential of your projects with MAKERS Engineering's broad service list that will fulfill all your needs.",
+export const metadata: Metadata = {
+  title: pagesMetaData[3].title,
+  description: pagesMetaData[3].description,
+  icons: {
+    icon: pagesMetaData[3].image,
+    shortcut: pagesMetaData[3].image,
+    apple: pagesMetaData[3].image,
+    other: {
+      rel: 'apple-touch-icon-precomposed',
+      url: pagesMetaData[3].image,
+    },
+  },
+  openGraph: {
+    type: pagesMetaData[3].type,
+    url: pagesMetaData[3].url,
+    title: pagesMetaData[3].title,
+    description: pagesMetaData[3].description,
+    siteName: pagesMetaData[3].title,
+    images: [
+      {
+        url: pagesMetaData[3].image,
+      },
+    ],
+  } as OpenGraph,
+  twitter: {
+    card: 'summary_large_image',
+    site: pagesMetaData[3].url,
+    images: [
+      {
+        url: pagesMetaData[3].image,
+      },
+    ],
+  },
 };
 
 const page = () => {

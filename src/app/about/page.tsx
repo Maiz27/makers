@@ -4,7 +4,7 @@ import Heading from '@/components/heading/Heading';
 import CTA from '@/components/CTA/CTA';
 import TripleImage from '@/components/tripleImage/TripleImage';
 import { leftImage, rightImage } from '@/types';
-import { values } from '@/Constants';
+import { pagesMetaData, values } from '@/Constants';
 
 import img from '/public/imgs/office/1.jpg';
 import img2 from '/public/imgs/site/3.jpg';
@@ -14,11 +14,42 @@ import img4 from '/public/imgs/site/2.jpg';
 import img5 from '/public/imgs/office/2.jpg';
 import img6 from '/public/imgs/office/3.jpg';
 import AnimateInView from '@/components/animateInView/AnimateInView';
+import { Metadata } from 'next';
+import { OpenGraph } from 'next/dist/lib/metadata/types/opengraph-types';
 
-export const metadata = {
-  title: 'Makers Engineering - About Us',
-  description:
-    "With a track record spanning multiple technical domains, we've been redefining possibilities in the Civil Engineering Industry since our inception in 2018.",
+export const metadata: Metadata = {
+  title: pagesMetaData[1].title,
+  description: pagesMetaData[1].description,
+  icons: {
+    icon: pagesMetaData[1].image,
+    shortcut: pagesMetaData[1].image,
+    apple: pagesMetaData[1].image,
+    other: {
+      rel: 'apple-touch-icon-precomposed',
+      url: pagesMetaData[1].image,
+    },
+  },
+  openGraph: {
+    type: pagesMetaData[1].type,
+    url: pagesMetaData[1].url,
+    title: pagesMetaData[1].title,
+    description: pagesMetaData[1].description,
+    siteName: pagesMetaData[1].title,
+    images: [
+      {
+        url: pagesMetaData[1].image,
+      },
+    ],
+  } as OpenGraph,
+  twitter: {
+    card: 'summary_large_image',
+    site: pagesMetaData[1].url,
+    images: [
+      {
+        url: pagesMetaData[1].image,
+      },
+    ],
+  },
 };
 
 const page = () => {

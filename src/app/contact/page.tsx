@@ -3,12 +3,43 @@ import Heading from '@/components/heading/Heading';
 import ContactForm from '@/components/forms/ContactForm';
 import { FaPhoneAlt, FaEnvelope, FaMapPin } from 'react-icons/fa';
 import AnimateInView from '@/components/animateInView/AnimateInView';
+import { Metadata } from 'next';
+import { pagesMetaData } from '@/Constants';
+import { OpenGraph } from 'next/dist/lib/metadata/types/opengraph-types';
 
-export const metadata = {
-  title: 'Makers Engineering - Contact Us',
-  image: '/imgs/logo/text-logo.png',
-  description:
-    'Get in touch with Makers Engineering Limited. Your journey towards innovative solutions and collaborative excellence starts here.',
+export const metadata: Metadata = {
+  title: pagesMetaData[6].title,
+  description: pagesMetaData[6].description,
+  icons: {
+    icon: pagesMetaData[6].image,
+    shortcut: pagesMetaData[6].image,
+    apple: pagesMetaData[6].image,
+    other: {
+      rel: 'apple-touch-icon-precomposed',
+      url: pagesMetaData[6].image,
+    },
+  },
+  openGraph: {
+    type: pagesMetaData[6].type,
+    url: pagesMetaData[6].url,
+    title: pagesMetaData[6].title,
+    description: pagesMetaData[6].description,
+    siteName: pagesMetaData[6].title,
+    images: [
+      {
+        url: pagesMetaData[6].image,
+      },
+    ],
+  } as OpenGraph,
+  twitter: {
+    card: 'summary_large_image',
+    site: pagesMetaData[6].url,
+    images: [
+      {
+        url: pagesMetaData[6].image,
+      },
+    ],
+  },
 };
 
 const page = () => {

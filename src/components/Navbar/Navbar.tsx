@@ -22,14 +22,14 @@ const Navbar = () => {
     setIsTransparent(!isMenuOpen ? false : true);
   };
 
-  const handleClickOutside = (event: { target: any }) => {
-    if (node.current && !node.current.contains(event.target)) {
-      setMenuOpen(false);
-      setIsTransparent(true);
-    }
-  };
-
   useEffect(() => {
+    const handleClickOutside = (event: { target: any }) => {
+      if (node.current && !node.current.contains(event.target)) {
+        setMenuOpen(false);
+        changeBackground();
+      }
+    };
+
     window.addEventListener('mousedown', handleClickOutside);
     window.addEventListener('scroll', changeBackground);
 
