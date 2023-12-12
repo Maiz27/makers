@@ -12,11 +12,14 @@ export type tripleImageProps = {
   main: {
     img: string | StaticImageData;
     alt: string;
-    priority: boolean;
+    priority?: boolean;
   };
   left: leftImage;
   right: rightImage;
   mainExpand?: boolean;
+  animateFrom?: 'l' | 'r';
+  animationThreshold?: number;
+  animationDelay?: number;
 };
 
 export type leftImage = {
@@ -32,13 +35,13 @@ export type rightImage = {
 
 export type blog = {
   index: number;
-  slug: string;
+  slug: {
+    current: string;
+  };
   publishedAt: string;
   title: string;
   description: string;
-  categories: Array<{
-    title: string;
-  }>;
+  categories: blogCategory[];
   mainImage: string | StaticImageData;
   author: {
     name: string;
@@ -46,6 +49,10 @@ export type blog = {
     image: Object;
   };
   body: blogBody;
+};
+
+export type blogCategory = {
+  title: string;
 };
 
 export type blogBody = Array<{

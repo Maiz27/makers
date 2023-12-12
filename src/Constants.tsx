@@ -11,9 +11,14 @@ import {
   FaLightbulb,
   FaShieldAlt,
   FaTrophy,
+  FaUser,
+  FaEnvelopeOpenText,
+  FaComment,
 } from 'react-icons/fa';
 import { FaXTwitter, FaLinkedinIn, FaFacebookF } from 'react-icons/fa6';
 import { BiSolidTrafficCone } from 'react-icons/bi';
+import { MdMail, MdPhoneIphone } from 'react-icons/md';
+
 import { blogBody, headerList } from './types';
 
 import aboutBg from '/public/imgs/site/1.jpg';
@@ -21,17 +26,27 @@ import teamBg from '/public/imgs/site/6.jpg';
 import projectBg from '/public/imgs/wallpapers/construction.jpg';
 import BlogBg from '/public/imgs/wallpapers/library.jpg';
 import servicesBg from '/public/imgs/wallpapers/construction2.jpg';
+import contactBg from '/public/imgs/wallpapers/contact.jpg';
 
-import d1 from '/public/imgs/designs/d1.jpg';
-import d2 from '/public/imgs/designs/d2.jpg';
-import d3 from '/public/imgs/designs/d3.jpg';
+import ad1 from 'public/imgs/AD/ad1.jpg';
+import ad2 from 'public/imgs/AD/ad2.jpg';
+import ad3 from 'public/imgs/AD/ad3.jpg';
+import ad4 from 'public/imgs/AD/ad4.jpg';
+import ad5 from 'public/imgs/AD/ad5.jpg';
+import ad6 from 'public/imgs/AD/ad6.jpg';
+import ad7 from 'public/imgs/AD/ad7.jpg';
+import ad8 from 'public/imgs/AD/ad8.jpg';
 
-import c1 from '/public/imgs/designs/c1.jpg';
-import c2 from '/public/imgs/designs/c2.jpg';
-import c3 from '/public/imgs/designs/c3.jpg';
-
-import founder from '/public/imgs/office/4.jpg';
-import founder2 from '/public/imgs/office/5.jpg';
+import id1 from 'public/imgs/ID/id1.jpg';
+import id2 from 'public/imgs/ID/id2.jpg';
+import id3 from 'public/imgs/ID/id3.jpg';
+import id4 from 'public/imgs/ID/id4.jpg';
+import id5 from 'public/imgs/ID/id5.jpg';
+import id6 from 'public/imgs/ID/id6.jpg';
+import id7 from 'public/imgs/ID/id7.jpg';
+import id8 from 'public/imgs/ID/id8.jpg';
+import id9 from 'public/imgs/ID/id9.jpg';
+import id10 from 'public/imgs/ID/id10.jpg';
 
 export const routes = [
   {
@@ -47,12 +62,16 @@ export const routes = [
     path: '/services',
   },
   {
-    name: 'Projects',
-    path: '/projects',
+    name: 'Designs',
+    path: '/designs',
   },
   {
     name: 'Blog',
     path: '/blog',
+  },
+  {
+    name: 'Contact',
+    path: '/contact',
   },
 ];
 
@@ -104,25 +123,48 @@ export const servicesList = [
   },
 ];
 
-export const projectsList = [
+export const archDesigns = [
   {
-    title: 'Project #',
-    isComplete: true,
-    design: d1,
-    img: c1,
+    name: 'G Apartments',
+    description:
+      'In the realm of real estate, envisioning a paradigm shift involves transcending the mere exchange of properties to sculpting immersive spaces that harmonize with individual aspirations. Redefining real estate means not just selling homes but crafting narratives where each brick resonates with personal stories of belonging and dreams realized',
+    images: [ad3, ad4],
+    contentPosition: 'r',
   },
   {
-    title: 'Project #',
-    isComplete: false,
-    design: d2,
-    img: c2,
+    name: 'Garthgoth villa',
+    description:
+      "Home is more than a shelter; it's a living canvas where the strokes of memories, laughter, and comfort create a masterpiece of belonging. In the embrace of four walls, the heartbeat of family and the symphony of shared experiences transform a house into a sanctuary, making 'home' the poetry written in the language of love and shared stories",
+    images: [ad1, ad2],
+    contentPosition: 'l',
   },
   {
-    title: 'Project #',
-    isComplete: true,
-    design: d3,
-    img: c3,
+    name: 'Business Center Concept',
+    description:
+      'Designing a dynamic business center involves a fusion of sophistication and functionality, where contemporary architecture meets state-of-the-art amenities. The blueprint envisions a space that seamlessly accommodates collaborative work environments, advanced technological infrastructure,and aesthetic appeal—cultivating an atmosphere where innovation thrives and professional aspirations find their optimal expression.',
+    images: [ad5, ad6],
+    contentPosition: 'r',
   },
+  {
+    name: 'Filling Station',
+    description:
+      'Crafting a modern petrol filling station design is an intricate dance between form and function,seamlessly blending sleek architectural aesthetics with cutting-edge technology. From eco-friendly fueling points to inviting convenience spaces, the design envisions a harmonious synergy, not just catering to vehicular needs but embracing sustainability and enhancing the overall customer experience.',
+    images: [ad7, ad8],
+    contentPosition: 'l',
+  },
+];
+
+export const interiorDesigns = [
+  id1,
+  id2,
+  id3,
+  id4,
+  id5,
+  id6,
+  id7,
+  id8,
+  id9,
+  id10,
 ];
 
 export const faqList = [
@@ -182,8 +224,8 @@ export const headingList: headerList = [
     bg: servicesBg,
   },
   {
-    heading: 'Our Projects',
-    text: 'Our Impactful Works showcase our dedication to excellence. Through innovative design and meticulous execution, we create landmarks that stand as symbols of quality and craftsmanship.',
+    heading: 'Our Designs',
+    text: 'Immerse yourself in a world where architectural innovation meets artistic expression. Each design crafted by Makers Engineering Limited is a signature statement, meticulously curated to transcend the ordinary and redefine the very essence of aesthetics. Explore our portfolio to witness the seamless fusion of form and function.',
     bg: projectBg,
   },
   {
@@ -193,8 +235,8 @@ export const headingList: headerList = [
   },
   {
     heading: 'Contact Us',
-    text: '',
-    bg: '',
+    text: "Get in touch with Makers Engineering Limited. Your journey towards innovative solutions and collaborative excellence starts here. Whether you have inquiries, partnership proposals, or simply want to connect, we are ready to assist you. Reach out and let's build something extraordinary together.",
+    bg: contactBg,
   },
   {
     heading: 'Our Team',
@@ -222,6 +264,127 @@ export const values = [
   },
 ];
 
+export const contactFormFields = [
+  {
+    name: 'name',
+    label: 'Name',
+    icon: <FaUser />,
+    type: 'text',
+    placeholder: 'John Doe',
+    required: true,
+  },
+  {
+    name: 'email',
+    label: 'Email Address',
+    icon: <MdMail />,
+    type: 'email',
+    placeholder: 'username@site.com',
+    required: true,
+  },
+  {
+    name: 'phone',
+    label: 'Phone Number',
+    icon: <MdPhoneIphone />,
+    type: 'tel',
+    placeholder: '+211 (Optional)',
+    required: false,
+  },
+  {
+    name: 'subject',
+    label: 'Message Subject',
+    icon: <FaEnvelopeOpenText />,
+    type: 'text',
+    placeholder: 'Type here (Optional)',
+    required: false,
+  },
+  {
+    name: 'message',
+    label: 'Message',
+    icon: <FaComment />,
+    type: 'textarea',
+    placeholder: 'Type here',
+    required: true,
+  },
+];
+
+export const pagesMetaData = [
+  {
+    title: 'Makers Engineering',
+    description:
+      "Discover a dynamic force in South Sudan's the engineering realm, MAKERS Engineering Limited.",
+    type: 'website',
+    url: 'https://www.makersengineeringltd.com/',
+    image: '/imgs/logo/text-logo.png',
+    icon: '/imgs/logo/icon.png',
+  },
+  {
+    title: 'Makers Engineering - About Us',
+    description:
+      "With a track record spanning multiple technical domains, we've been redefining possibilities in the Civil Engineering Industry since our inception in 2018.",
+    type: 'website',
+    url: 'https://www.makersengineeringltd.com/about',
+    image: '/imgs/logo/text-logo.png',
+    icon: '/imgs/logo/icon.png',
+  },
+  {
+    title: 'Makers Engineering - Our Team',
+    description:
+      'The Driving Force Behind Makers Engineering. At Makers, we believe in the power of collaboration and the strength of a unified vision.',
+    type: 'website',
+    url: 'https://www.makersengineeringltd.com/about/team',
+    image: '/imgs/site/1.jpg',
+    icon: '/imgs/logo/icon.png',
+  },
+  {
+    title: 'Makers Engineering - Our Services',
+    description:
+      "Unveil the potential of your projects with MAKERS Engineering's broad service list that will fulfill all your needs.",
+    type: 'website',
+    url: 'https://www.makersengineeringltd.com/services',
+    image: '/imgs/logo/text-logo.png',
+    icon: '/imgs/logo/icon.png',
+  },
+  {
+    title: 'Makers Engineering - Our Designs',
+    description:
+      "Unveil the potential of your projects with MAKERS Engineering's broad service list that will fulfill all your needs.",
+    type: 'website',
+    url: 'https://www.makersengineeringltd.com/designs',
+    image: '/imgs/AD/ad1.jpg',
+    icon: '/imgs/logo/icon.png',
+  },
+  {
+    title: 'Makers Engineering - Our Blogs',
+    description:
+      'Discover the latest engineering trends and innovations through our insights. Short, insightful, and engaging, our articles offer a glimpse into the future of construction.',
+    type: 'website',
+    url: 'https://www.makersengineeringltd.com/blog',
+    image: '/imgs/wallpapers/library.jpg',
+    icon: '/imgs/logo/icon.png',
+  },
+  {
+    title: 'Makers Engineering - Contact Us',
+    description:
+      'Get in touch with Makers Engineering Limited. Your journey towards innovative solutions and collaborative excellence starts here.',
+    type: 'website',
+    url: 'https://www.makersengineeringltd.com/contact',
+    image: '/imgs/logo/text-logo.png',
+    icon: '/imgs/logo/icon.png',
+  },
+];
+
+//Variant
+export const slideRight = {
+  initial: { opacity: 0, x: -25 },
+  whileInView: { opacity: 1, x: 0 },
+};
+
+export const slideLeft = {
+  initial: { opacity: 0, x: 25 },
+  whileInView: { opacity: 1, x: 0 },
+};
+
+//functions
 const getWordCount = (blocks: blogBody) => {
   let wordCount = 0;
 

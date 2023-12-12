@@ -1,56 +1,60 @@
 import React from 'react';
 import PageHeader from '@/components/pageHeader/PageHeader';
-import BlogCard from '@/components/blogComp/BlogCard';
-import { sanityClient } from '@/services/sanity/sanityClient';
-import { getAllPosts } from '@/services/sanity/queries';
-import { getStringDate } from '@/Constants';
+import BlogsGrid from '@/components/blogComp/BlogsGrid';
+import { fetchSanityData } from '@/services/sanity/sanityClient';
+import { getAllPosts, getPostCategories } from '@/services/sanity/queries';
+import { pagesMetaData } from '@/Constants';
+import { Metadata } from 'next';
+import { OpenGraph } from 'next/dist/lib/metadata/types/opengraph-types';
 
 export const revalidate = 60; // revalidate every minute
 
-const fetchPosts = async () => {
-  const posts = await sanityClient.fetch(getAllPosts);
-  return posts;
+export const metadata: Metadata = {
+  title: pagesMetaData[5].title,
+  description: pagesMetaData[5].description,
+  icons: {
+    icon: pagesMetaData[5].icon,
+    shortcut: pagesMetaData[5].icon,
+    apple: pagesMetaData[5].icon,
+    other: {
+      rel: 'apple-touch-icon-precomposed',
+      url: pagesMetaData[5].icon,
+    },
+  },
+  openGraph: {
+    type: pagesMetaData[5].type,
+    url: pagesMetaData[5].url,
+    title: pagesMetaData[5].title,
+    description: pagesMetaData[5].description,
+    siteName: pagesMetaData[5].title,
+    images: [
+      {
+        url: pagesMetaData[5].image,
+      },
+    ],
+  } as OpenGraph,
+  twitter: {
+    card: 'summary_large_image',
+    site: pagesMetaData[5].url,
+    images: [
+      {
+        url: pagesMetaData[5].image,
+      },
+    ],
+  },
 };
 
 const page = async () => {
-  const posts: any = await fetchPosts();
+  const [blogs, categories] = await Promise.all([
+    fetchSanityData(getAllPosts),
+    fetchSanityData(getPostCategories),
+  ]);
 
   return (
     <>
       <PageHeader index={3} />
 
-      <section className='my-40 md:my-52 lg:my-20 grid place-items-center mx-auto gap-56 md:gap-8 lg:gap-20 grid-cols-1 md:grid-cols-2 lg:grid-cols-1 2xl:grid-cols-2 w-4/5 md:w-11/12'>
-        {posts.map(
-          (
-            {
-              slug,
-              title,
-              author,
-              publishedAt,
-              description,
-              mainImage,
-              categories,
-              body,
-            },
-            idx: number
-          ) => {
-            return (
-              <BlogCard
-                key={slug.current}
-                index={idx}
-                slug={slug.current}
-                title={title}
-                categories={categories}
-                publishedAt={getStringDate(publishedAt)}
-                description={description}
-                mainImage={mainImage}
-                author={author}
-                body={body}
-              />
-            );
-          }
-        )}
-      </section>
+      <BlogsGrid blogs={blogs} categories={categories} />
     </>
   );
 };

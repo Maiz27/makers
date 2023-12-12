@@ -1,19 +1,60 @@
 import React from 'react';
-import { sanityClient, urlFor } from '@/services/sanity/sanityClient';
+import { fetchSanityData, urlFor } from '@/services/sanity/sanityClient';
 import { getPostBySlug } from '@/services/sanity/queries';
 import PageHeader from '@/components/pageHeader/PageHeader';
 import BlogBody from '@/components/blogComp/BlogBody';
+import { blog } from '@/types';
 
 export const revalidate = 60; // revalidate every minute
 
-const fetchPost = async (slug: string) => {
-  const posts = await sanityClient.fetch(getPostBySlug, { slug });
-  return posts[0];
-};
+export async function generateMetadata({ params }) {
+  const slug = params.slug;
 
-const page = async ({ params }) => {
-  const post = await fetchPost(params.slug);
-  const { mainImage, body } = post;
+  const post: blog = await fetchSanityData(getPostBySlug, { slug });
+  const imgUrl = urlFor(post.mainImage).url();
+  const url = `https://www.makersengineeringltd.com/blog/${post.slug.current}`;
+
+  return {
+    title: post.title,
+    description: post.description,
+    image: imgUrl,
+
+    icons: {
+      icon: '/imgs/logo/icon.png',
+      shortcut: '/imgs/logo/icon.png',
+      apple: '/imgs/logo/icon.png',
+      other: {
+        rel: 'apple-touch-icon-precomposed',
+        url: '/imgs/logo/icon.png',
+      },
+    },
+    openGraph: {
+      type: 'article',
+      url: url,
+      title: post.title,
+      description: post.description,
+      siteName: post.title,
+      images: [
+        {
+          url: imgUrl,
+        },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      site: url,
+      images: [
+        {
+          url: imgUrl,
+        },
+      ],
+    },
+  };
+}
+
+const page = async ({ params: { slug } }) => {
+  const post = await fetchSanityData(getPostBySlug, { slug });
+  const { body } = post;
 
   return (
     <article>

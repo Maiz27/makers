@@ -1,10 +1,11 @@
 import React from 'react';
 import CTA from '../CTA/CTA';
-import Image, { StaticImageData } from 'next/image';
+import Image from 'next/image';
 import { MdDateRange, MdTimer } from 'react-icons/md';
 import { urlFor } from '@/services/sanity/sanityClient';
 import { blog } from '@/types';
 import { calculateReadTime } from '@/Constants';
+import AnimateInView from '../animateInView/AnimateInView';
 
 const BlogCard = ({
   index,
@@ -20,7 +21,8 @@ const BlogCard = ({
   const imgUrl = urlFor(img).url();
 
   return (
-    <div
+    <AnimateInView
+      delay={++index * 0.2}
       className={`w-full h-full grow bg-accent/10 shadow-md relative flex flex-col lg:flex-row justify-center items-center rounded-3xl max-w-2xl ${
         index % 2 ? 'bg-black text-base-100' : 'bg-base-100'
       }`}
@@ -66,9 +68,9 @@ const BlogCard = ({
           })}
         </ul>
 
-        <CTA text='Read More' page={`/blog/${slug}`} size='sm' />
+        <CTA text='Read More' page={`/blog/${slug.current}`} size='sm' />
       </div>
-    </div>
+    </AnimateInView>
   );
 };
 

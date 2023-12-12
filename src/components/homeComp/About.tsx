@@ -6,24 +6,26 @@ import { leftImage, rightImage } from '@/types';
 import blueprint from '/public/imgs/blueprint.jpg';
 import img from '/public/imgs/site/9.jpg';
 import img2 from '/public/imgs/site/11.jpg';
+import AnimateInView from '../animateInView/AnimateInView';
 
 const About = () => {
   const main = { img: blueprint, alt: 'Blueprint', priority: false };
   const left: leftImage = {
-    img: img,
+    img: img2,
     alt: 'Makers Engineers',
     position: 'bottom',
   };
   const right: rightImage = {
-    img: img2,
+    img: img,
     alt: 'Makers Engineers',
     position: 'top',
   };
-  return (
-    <section className='min-h-screen bg-accent/10 flex flex-col lg:flex-row justify-evenly items-center gap-24 lg:gap-4 py-20 lg:py-0'>
-      <TripleImage main={main} left={left} right={right} />
 
-      <div className='w-4/5 lg:w-1/2 max-w-2xl flex flex-col gap-8'>
+  return (
+    <section className='min-h-screen bg-accent/10 flex flex-col lg:flex-row justify-evenly items-center gap-24 lg:gap-4 py-20 lg:py-0 overflow-x-hidden'>
+      <TripleImage main={main} left={left} right={right} animateFrom='l' />
+
+      <AnimateInView className='w-4/5 lg:w-1/2 max-w-2xl flex flex-col gap-8'>
         <Heading text='Our Story: Engineering a Brighter Future' Tag='h2' />
         <p>
           Discover a dynamic force in the engineering realm, MAKERS Engineering
@@ -37,7 +39,7 @@ const About = () => {
         <div>
           <CTA text='Learn More' page='/about' />
         </div>
-      </div>
+      </AnimateInView>
     </section>
   );
 };

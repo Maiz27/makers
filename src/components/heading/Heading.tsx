@@ -20,10 +20,10 @@ type props = {
   isCentered?: boolean;
 };
 
-const Heading = ({ Tag, text, size = '5xl', isCentered = false }: props) => {
+const Heading = ({ Tag, text, size, isCentered = false }: props) => {
   return (
     <Tag
-      className={`w-fit text-3xl lg:text-4xl xl:text-${size} ${
+      className={`w-fit ${size ? `text-${size}` : `text-3xl lg:text-4xl`} ${
         isCentered && 'lg:mx-auto  lg:text-center'
       } leading-normal relative before:content-[""] before:absolute before:-top-4 xl:before:-top-8 before:left-0 before:w-20 before:h-[5px] before:bg-primary before:rounded-xl`}
     >

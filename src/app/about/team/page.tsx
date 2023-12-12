@@ -2,25 +2,54 @@ import React from 'react';
 import Image from 'next/image';
 import Heading from '@/components/heading/Heading';
 import PageHeader from '@/components/pageHeader/PageHeader';
-import { sanityClient, urlFor } from '@/services/sanity/sanityClient';
+import { fetchSanityData, urlFor } from '@/services/sanity/sanityClient';
 import { getAllFounders, getAllMembers } from '@/services/sanity/queries';
+import AnimateInView from '@/components/animateInView/AnimateInView';
+import { pagesMetaData } from '@/Constants';
+import { Metadata } from 'next';
+import { OpenGraph } from 'next/dist/lib/metadata/types/opengraph-types';
 
 export const revalidate = 60; // revalidate every minute
 
-const fetchFounders = async () => {
-  const founders = await sanityClient.fetch(getAllFounders);
-  return founders;
-};
-
-const fetchTeamMembers = async () => {
-  const team = await sanityClient.fetch(getAllMembers);
-  return team;
+export const metadata: Metadata = {
+  title: pagesMetaData[2].title,
+  description: pagesMetaData[2].description,
+  icons: {
+    icon: pagesMetaData[2].icon,
+    shortcut: pagesMetaData[2].icon,
+    apple: pagesMetaData[2].icon,
+    other: {
+      rel: 'apple-touch-icon-precomposed',
+      url: pagesMetaData[2].icon,
+    },
+  },
+  openGraph: {
+    type: pagesMetaData[2].type,
+    url: pagesMetaData[2].url,
+    title: pagesMetaData[2].title,
+    description: pagesMetaData[2].description,
+    siteName: pagesMetaData[2].title,
+    images: [
+      {
+        url: pagesMetaData[2].image,
+      },
+    ],
+  } as OpenGraph,
+  twitter: {
+    card: 'summary_large_image',
+    site: pagesMetaData[2].url,
+    images: [
+      {
+        url: pagesMetaData[2].image,
+      },
+    ],
+  },
 };
 
 const page = async () => {
   const [founders, team] = await Promise.all([
-    fetchFounders(),
-    fetchTeamMembers(),
+    fetchSanityData(getAllFounders),
+    fetchSanityData(getAllMembers),
   ]);
 
   return (
@@ -49,8 +78,10 @@ const Founders = ({ list }) => {
       {list.map(({ image, name, title, description }, index: number) => {
         const imgUrl = urlFor(image).url();
         return (
-          <div
+          <AnimateInView
             key={index}
+            delay={++index * 0.3}
+            threshold={0.7}
             className={`flex flex-col justify-evenly gap-8 lg:gap-0 ${
               index % 2 ? 'lg:flex-row-reverse' : 'lg:flex-row'
             } justify-center items-center`}
@@ -71,7 +102,7 @@ const Founders = ({ list }) => {
 
               <p>{description}</p>
             </div>
-          </div>
+          </AnimateInView>
         );
       })}
     </div>
@@ -89,13 +120,18 @@ const Team = ({ list }) => {
         {list.map(({ name, title, image }, index: number) => {
           const imgUrl = urlFor(image).url();
           return (
-            <div key={index} className='w-4/5 space-y-4'>
+            <AnimateInView
+              key={index}
+              delay={++index * 0.1}
+              className='w-4/5 space-y-4'
+            >
               <div className='h-96 lg:h-72 2xl:h-96'>
                 <Image
                   src={imgUrl}
                   alt={name}
                   width={500}
                   height={500}
+                  loading='lazy'
                   className='h-full object-cover object-top rounded-xl shadow-lg'
                 />
               </div>
@@ -104,7 +140,7 @@ const Team = ({ list }) => {
                 <h3 className='text-lg tracking-wider font-semibold'>{name}</h3>
                 <h4>{title}</h4>
               </div>
-            </div>
+            </AnimateInView>
           );
         })}
       </div>

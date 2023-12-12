@@ -5,13 +5,14 @@ import Link from 'next/link';
 type props = {
   text: string;
   onClick?: MouseEventHandler<HTMLButtonElement>;
-  page: string;
+  page?: string;
   type?: 'button' | 'reset' | 'submit';
   size?: 'xs' | 'sm' | 'md' | 'lg';
   isBtn?: boolean;
   isOutline?: boolean;
   bg?: 'primary' | 'secondary' | 'accent';
   className?: string;
+  loading?: boolean;
 };
 
 const CTA = ({
@@ -24,15 +25,14 @@ const CTA = ({
   bg = 'primary',
   size = 'md',
   className = '',
+  loading,
 }: props) => {
   if (isBtn) {
     return (
       <button
-        className={
-          isOutline
-            ? `btn btn-${size} btn-outline border border-neutral normal-case hover:-translate-y-1 ${className}`
-            : `btn btn-${size} btn-${bg} normal-case hover:-translate-y-1 ${className}`
-        }
+        className={`btn btn-${size} normal-case hover:-translate-y-1 ${className} ${
+          isOutline ? `btn-outline border border-neutral` : `btn-${bg}`
+        } ${loading && 'animate-pulse'}`}
         type={type}
         onClick={onClick}
       >
@@ -42,12 +42,10 @@ const CTA = ({
   } else {
     return (
       <Link
-        className={
-          isOutline
-            ? `btn btn-${size} btn-outline border border-neutral normal-case hover:-translate-y-1 ${className}`
-            : `btn btn-${size} btn-${bg} normal-case hover:-translate-y-1 ${className}`
-        }
-        href={page}
+        className={`btn btn-${size} normal-case hover:-translate-y-1 ${className} ${
+          isOutline ? `btn-outline border border-neutral` : `btn-${bg}`
+        } ${loading && 'animate-pulse'}`}
+        href={page!}
       >
         {text}
       </Link>
