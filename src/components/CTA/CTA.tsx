@@ -5,7 +5,7 @@ import Link from 'next/link';
 type props = {
   text: string;
   onClick?: MouseEventHandler<HTMLButtonElement>;
-  page: string;
+  page?: string;
   type?: 'button' | 'reset' | 'submit';
   size?: 'xs' | 'sm' | 'md' | 'lg';
   isBtn?: boolean;
@@ -47,7 +47,7 @@ const CTA = ({
             ? `btn btn-${size} btn-outline border border-neutral normal-case hover:-translate-y-1 ${className}`
             : `btn btn-${size} btn-${bg} normal-case hover:-translate-y-1 ${className}`
         }
-        href={page}
+        href={page!}
       >
         {text}
       </Link>

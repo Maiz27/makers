@@ -8,6 +8,7 @@ import { routes } from '@/Constants';
 import { FaBars, FaTimes } from 'react-icons/fa';
 import icon from '/public/imgs/logo/icon.png';
 import '../../app/globals.css';
+import CTA from '../CTA/CTA';
 
 const Navbar = () => {
   const [isMenuOpen, setMenuOpen] = useState(false);
@@ -71,24 +72,25 @@ const Navbar = () => {
         <div className='navbar-center hidden lg:flex'>
           <ul className='flex justify-around items-center px-1 gap-12 xl:gap-20 font-bold'>
             {routes.map(({ name, path }) => {
-              return (
-                <Link
-                  href={path}
-                  key={path}
-                  className='transition-colors hover:text-yellow-500 hover:scale-110 nav-hover'
-                  style={{
-                    textShadow:
-                      '-1px -1px 0px rgba(255, 255, 255, 0.5),1px -1px 0px rgba(255, 255, 255, 0.5),-1px  1px 0px rgba(255, 255, 255, 0.5),1px  1px 0px rgba(255, 255, 255, 0.5)',
-                  }}
-                >
-                  {name}
-                </Link>
-              );
+              if (name !== 'Contact')
+                return (
+                  <Link
+                    href={path}
+                    key={path}
+                    className='transition-colors hover:text-yellow-500 hover:scale-110 nav-hover'
+                    style={{
+                      textShadow:
+                        '-1px -1px 0px rgba(255, 255, 255, 0.5),1px -1px 0px rgba(255, 255, 255, 0.5),-1px  1px 0px rgba(255, 255, 255, 0.5),1px  1px 0px rgba(255, 255, 255, 0.5)',
+                    }}
+                  >
+                    {name}
+                  </Link>
+                );
             })}
           </ul>
         </div>
         <div className='navbar-end gap-2'>
-          <a className='btn btn-primary normal-case'>Contact</a>
+          <CTA page='/contact' text='Contact' />
 
           <button
             onClick={toggleMenu}

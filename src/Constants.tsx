@@ -11,9 +11,14 @@ import {
   FaLightbulb,
   FaShieldAlt,
   FaTrophy,
+  FaUser,
+  FaEnvelopeOpenText,
+  FaComment,
 } from 'react-icons/fa';
 import { FaXTwitter, FaLinkedinIn, FaFacebookF } from 'react-icons/fa6';
 import { BiSolidTrafficCone } from 'react-icons/bi';
+import { MdMail, MdPhoneIphone } from 'react-icons/md';
+
 import { blogBody, headerList } from './types';
 
 import aboutBg from '/public/imgs/site/1.jpg';
@@ -21,6 +26,7 @@ import teamBg from '/public/imgs/site/6.jpg';
 import projectBg from '/public/imgs/wallpapers/construction.jpg';
 import BlogBg from '/public/imgs/wallpapers/library.jpg';
 import servicesBg from '/public/imgs/wallpapers/construction2.jpg';
+import contactBg from '/public/imgs/wallpapers/contact.jpg';
 
 import ad1 from 'public/imgs/AD/ad1.jpg';
 import ad2 from 'public/imgs/AD/ad2.jpg';
@@ -62,6 +68,10 @@ export const routes = [
   {
     name: 'Blog',
     path: '/blog',
+  },
+  {
+    name: 'Contact',
+    path: '/contact',
   },
 ];
 
@@ -225,8 +235,8 @@ export const headingList: headerList = [
   },
   {
     heading: 'Contact Us',
-    text: '',
-    bg: '',
+    text: "Get in touch with Makers Engineering Limited. Your journey towards innovative solutions and collaborative excellence starts here. Whether you have inquiries, partnership proposals, or simply want to connect, we are ready to assist you. Reach out and let's build something extraordinary together.",
+    bg: contactBg,
   },
   {
     heading: 'Our Team',
@@ -254,6 +264,50 @@ export const values = [
   },
 ];
 
+export const contactFormFields = [
+  {
+    name: 'name',
+    label: 'Name',
+    icon: <FaUser />,
+    type: 'text',
+    placeholder: 'John Doe',
+    required: true,
+  },
+  {
+    name: 'email',
+    label: 'Email Address',
+    icon: <MdMail />,
+    type: 'email',
+    placeholder: 'username@site.com',
+    required: true,
+  },
+  {
+    name: 'phone',
+    label: 'Phone Number',
+    icon: <MdPhoneIphone />,
+    type: 'tel',
+    placeholder: '+211 (Optional)',
+    required: false,
+  },
+  {
+    name: 'subject',
+    label: 'Message Subject',
+    icon: <FaEnvelopeOpenText />,
+    type: 'text',
+    placeholder: 'Type here (Optional)',
+    required: false,
+  },
+  {
+    name: 'message',
+    label: 'Message',
+    icon: <FaComment />,
+    type: 'textarea',
+    placeholder: 'Type here',
+    required: true,
+  },
+];
+
+//functions
 const getWordCount = (blocks: blogBody) => {
   let wordCount = 0;
 

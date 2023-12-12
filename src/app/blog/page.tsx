@@ -25,7 +25,6 @@ const page = async () => {
     fetchPostCategories(),
   ]);
 
-  console.log(categories);
   return (
     <>
       <PageHeader index={3} />
