@@ -9,6 +9,7 @@ interface AnimateInViewProps {
   tag?: string;
   initial?: TargetAndTransition;
   whileInView?: TargetAndTransition;
+  once?: boolean;
 }
 
 const AnimateInView = ({
@@ -19,6 +20,7 @@ const AnimateInView = ({
   tag = 'div',
   initial = { opacity: 0, y: 15 },
   whileInView = { opacity: 1, y: 0 },
+  once = true,
 }: AnimateInViewProps) => {
   const MotionComponent = motion[tag];
 
@@ -27,7 +29,7 @@ const AnimateInView = ({
       initial={initial}
       whileInView={whileInView}
       transition={{ delay: delay }}
-      viewport={{ amount: threshold, once: false }}
+      viewport={{ amount: threshold, once: once }}
       className={className}
     >
       {children}

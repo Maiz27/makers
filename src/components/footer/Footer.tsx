@@ -3,6 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { routes, socials } from '@/Constants';
 import logo from '/public/imgs/logo/icon.png';
+import AnimateInView from '../animateInView/AnimateInView';
 
 const Footer = () => {
   return (
@@ -27,16 +28,17 @@ const Footer = () => {
             </span>
           </div>
         </div>
-        <ul className='w-4/5 md:w-1/2 max-w-sm flex justify-between items-center'>
-          {routes.map(({ path, name }) => {
+        <ul className='w-4/5 md:w-1/2 max-w-sm flex justify-between items-center mb-4 md:mb-0'>
+          {routes.map(({ path, name }, idx) => {
             return (
-              <Link
-                key={name}
-                href={path}
-                className='transition-colors hover:text-yellow-500 hover:scale-110 font-bold'
-              >
-                {name}
-              </Link>
+              <AnimateInView key={name} delay={idx * 0.2} once={false}>
+                <Link
+                  href={path}
+                  className='transition-colors hover:text-yellow-500 hover:scale-110 font-bold'
+                >
+                  {name}
+                </Link>
+              </AnimateInView>
             );
           })}
         </ul>
@@ -45,16 +47,17 @@ const Footer = () => {
         <div className='flex flex-col justify-center gap-2'>
           <p>Find us on:</p>
           <ul className='flex items-center gap-8'>
-            {socials.map(({ icon, link }) => {
+            {socials.map(({ icon, link }, idx) => {
               return (
-                <a
-                  key={link}
-                  href={link}
-                  target='_blank'
-                  className='text-xl transition-colors hover:text-yellow-500 hover:scale-110'
-                >
-                  {icon}
-                </a>
+                <AnimateInView key={link} delay={idx * 0.2} once={false}>
+                  <a
+                    href={link}
+                    target='_blank'
+                    className='text-xl transition-colors hover:text-yellow-500 hover:scale-110'
+                  >
+                    {icon}
+                  </a>
+                </AnimateInView>
               );
             })}
           </ul>

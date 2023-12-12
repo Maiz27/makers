@@ -57,7 +57,7 @@ const ContactForm = () => {
         setFormData({ ...initialState });
         setResult('Message Sent Successfully!');
       } else {
-        setResult('Error Sending Message');
+        setResult('An Error Occurred, try again later!');
       }
     } catch (error) {
       setResult('An Error Occurred, try again later!');
@@ -104,11 +104,15 @@ const ContactForm = () => {
         </AnimateInView>
       ))}
 
-      {isLoading && <p>Sending...</p>}
       {result && <p className='p-4'>{result}</p>}
 
       <AnimateInView delay={1} className='mt-4'>
-        <CTA text='Send Message' isBtn={true} type='submit' />
+        <CTA
+          text='Send Message'
+          isBtn={true}
+          type='submit'
+          loading={isLoading}
+        />
       </AnimateInView>
     </form>
   );
