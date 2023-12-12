@@ -1,19 +1,38 @@
 import React from 'react';
-import { sanityClient, urlFor } from '@/services/sanity/sanityClient';
+import { fetchSanityData, urlFor } from '@/services/sanity/sanityClient';
 import { getPostBySlug } from '@/services/sanity/queries';
 import PageHeader from '@/components/pageHeader/PageHeader';
 import BlogBody from '@/components/blogComp/BlogBody';
 
 export const revalidate = 60; // revalidate every minute
 
-const fetchPost = async (slug: string) => {
-  const posts = await sanityClient.fetch(getPostBySlug, { slug });
-  return posts[0];
-};
+export async function generateMetadata({ params }, parent) {
+  // read route params
+  const slug = params.slug;
 
-const page = async ({ params }) => {
-  const post = await fetchPost(params.slug);
-  const { mainImage, body } = post;
+  // fetch data
+  const post = await fetchSanityData(getPostBySlug, { slug });
+  const imgUrl = urlFor(post.mainImage).url();
+
+  return {
+    title: post.title,
+    description: post.description,
+    type: 'article',
+    icons: {
+      icon: imgUrl,
+      shortcut: imgUrl,
+      apple: imgUrl,
+      other: {
+        rel: 'apple-touch-icon-precomposed',
+        url: imgUrl,
+      },
+    },
+  };
+}
+
+const page = async ({ params: { slug } }) => {
+  const post = await fetchSanityData(getPostBySlug, { slug });
+  const { body } = post;
 
   return (
     <article>

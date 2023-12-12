@@ -3,6 +3,12 @@ import PageHeader from '@/components/pageHeader/PageHeader';
 import { ServiceCardAlt } from '@/components/servicesComp/ServiceCard';
 import { servicesList } from '@/Constants';
 
+export const metadata = {
+  title: 'Makers Engineering - Our Services',
+  description:
+    "Unveil the potential of your projects with MAKERS Engineering's broad service list that will fulfill all your needs.",
+};
+
 const page = () => {
   return (
     <>

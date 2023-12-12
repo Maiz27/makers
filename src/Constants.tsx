@@ -47,6 +47,7 @@ import id7 from 'public/imgs/ID/id7.jpg';
 import id8 from 'public/imgs/ID/id8.jpg';
 import id9 from 'public/imgs/ID/id9.jpg';
 import id10 from 'public/imgs/ID/id10.jpg';
+import { sanityClient } from './services/sanity/sanityClient';
 
 export const routes = [
   {

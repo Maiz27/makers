@@ -16,3 +16,14 @@ export const urlFor = (source: Object) => {
   });
   return builder.image(source);
 };
+
+export const fetchSanityData = async (query: string, variables?: {}) => {
+  try {
+    const data = await sanityClient.fetch(query, variables);
+    return data;
+  } catch (error) {
+    // Handle errors or add custom error logging
+    console.error('Error fetching data:', error);
+    throw error;
+  }
+};

@@ -15,6 +15,12 @@ import img5 from '/public/imgs/office/2.jpg';
 import img6 from '/public/imgs/office/3.jpg';
 import AnimateInView from '@/components/animateInView/AnimateInView';
 
+export const metadata = {
+  title: 'Makers Engineering - About Us',
+  description:
+    "With a track record spanning multiple technical domains, we've been redefining possibilities in the Civil Engineering Industry since our inception in 2018.",
+};
+
 const page = () => {
   return (
     <>

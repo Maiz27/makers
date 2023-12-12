@@ -2,26 +2,22 @@ import React from 'react';
 import Image from 'next/image';
 import Heading from '@/components/heading/Heading';
 import PageHeader from '@/components/pageHeader/PageHeader';
-import { sanityClient, urlFor } from '@/services/sanity/sanityClient';
+import { fetchSanityData, urlFor } from '@/services/sanity/sanityClient';
 import { getAllFounders, getAllMembers } from '@/services/sanity/queries';
 import AnimateInView from '@/components/animateInView/AnimateInView';
 
 export const revalidate = 60; // revalidate every minute
-
-const fetchFounders = async () => {
-  const founders = await sanityClient.fetch(getAllFounders);
-  return founders;
-};
-
-const fetchTeamMembers = async () => {
-  const team = await sanityClient.fetch(getAllMembers);
-  return team;
+export const metadata = {
+  title: 'Makers Engineering - Our Team',
+  image: '/imgs/site/1.jpg',
+  description:
+    'The Driving Force Behind Makers Engineering. At Makers, we believe in the power of collaboration and the strength of a unified vision.',
 };
 
 const page = async () => {
   const [founders, team] = await Promise.all([
-    fetchFounders(),
-    fetchTeamMembers(),
+    fetchSanityData(getAllFounders),
+    fetchSanityData(getAllMembers),
   ]);
 
   return (

@@ -4,25 +4,31 @@ import Services from '@/components/homeComp/services/Services';
 import Designs from '@/components/homeComp/designs/Designs';
 import Blog from '@/components/homeComp/Blog';
 import FAQ from '@/components/homeComp/FAQ';
-import { sanityClient } from '@/services/sanity/sanityClient';
 import { getAllHeroImages, getLatestPosts } from '@/services/sanity/queries';
+import { fetchSanityData } from '@/services/sanity/sanityClient';
 
 export const revalidate = 60; // revalidate every minute
 
-const fetchHeroImages = async () => {
-  const images = await sanityClient.fetch(getAllHeroImages);
-  return images;
-};
-
-const fetchLatestBlogs = async () => {
-  const latestBlogs = await sanityClient.fetch(getLatestPosts);
-  return latestBlogs;
+export const metadata = {
+  title: 'Makers Engineering',
+  image: '/imgs/logo/text-logo.png',
+  description:
+    "Discover a dynamic force in South Sudan's the engineering realm, MAKERS Engineering Limited.",
+  icons: {
+    icon: '/imgs/logo/icon.png',
+    shortcut: '/imgs/logo/text-logo.png',
+    apple: '/imgs/logo/text-logo.png',
+    other: {
+      rel: 'apple-touch-icon-precomposed',
+      url: '/imgs/logo/apple-touch-icon.png',
+    },
+  },
 };
 
 export default async function Home() {
   const [heroImages, latestBlogs] = await Promise.all([
-    fetchHeroImages(),
-    fetchLatestBlogs(),
+    fetchSanityData(getAllHeroImages),
+    fetchSanityData(getLatestPosts),
   ]);
 
   return (

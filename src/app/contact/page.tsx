@@ -4,6 +4,13 @@ import ContactForm from '@/components/forms/ContactForm';
 import { FaPhoneAlt, FaEnvelope, FaMapPin } from 'react-icons/fa';
 import AnimateInView from '@/components/animateInView/AnimateInView';
 
+export const metadata = {
+  title: 'Makers Engineering - Contact Us',
+  image: '/imgs/logo/text-logo.png',
+  description:
+    'Get in touch with Makers Engineering Limited. Your journey towards innovative solutions and collaborative excellence starts here.',
+};
+
 const page = () => {
   return (
     <>
