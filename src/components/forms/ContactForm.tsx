@@ -2,6 +2,7 @@
 import { useState } from 'react';
 import CTA from '@/components/CTA/CTA';
 import { contactFormFields } from '@/Constants';
+import AnimateInView from '../animateInView/AnimateInView';
 
 const ContactForm = () => {
   const initialState = {
@@ -68,10 +69,11 @@ const ContactForm = () => {
   return (
     <form
       onSubmit={sendEmail}
-      className='flex flex-col items-center w-4/5 lg:w-2/5'
+      className='w-4/5 lg:w-2/5 flex flex-col items-center'
     >
-      {contactFormFields.map((field) => (
-        <div
+      {contactFormFields.map((field, idx) => (
+        <AnimateInView
+          delay={idx * 0.2}
           key={field.name}
           className='form-control w-full max-w-sm focus-within:text-accent transition-colors mt-2'
         >
@@ -99,15 +101,15 @@ const ContactForm = () => {
               className='input input-bordered focus-visible:outline-accent transition-colors w-full max-w-sm'
             />
           )}
-        </div>
+        </AnimateInView>
       ))}
 
       {isLoading && <p>Sending...</p>}
       {result && <p className='p-4'>{result}</p>}
 
-      <div className='mt-4'>
+      <AnimateInView delay={1} className='mt-4'>
         <CTA text='Send Message' isBtn={true} type='submit' />
-      </div>
+      </AnimateInView>
     </form>
   );
 };

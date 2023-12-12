@@ -2,14 +2,15 @@ import PageHeader from '@/components/pageHeader/PageHeader';
 import Heading from '@/components/heading/Heading';
 import ContactForm from '@/components/forms/ContactForm';
 import { FaPhoneAlt, FaEnvelope, FaMapPin } from 'react-icons/fa';
+import AnimateInView from '@/components/animateInView/AnimateInView';
 
 const page = () => {
   return (
-    <main>
+    <>
       <PageHeader index={4} />
 
       <section className='my-20 flex w-full flex-col lg:flex-row justify-evenly items-center lg:items-start space-y-12 lg:space-y-0'>
-        <div className='w-4/5 lg:w-2/6 flex flex-col justify-center items-center space-y-8'>
+        <AnimateInView className='w-4/5 lg:w-2/6 flex flex-col justify-center items-center space-y-8'>
           <Heading Tag='h2' text='Get In Touch' />
 
           <p>
@@ -47,10 +48,10 @@ const page = () => {
               <p>Atlabara Block (B) Facebook Road Juba, CES, South Sudan</p>
             </div>
           </div>
-        </div>
+        </AnimateInView>
         <ContactForm />
       </section>
-    </main>
+    </>
   );
 };
 
