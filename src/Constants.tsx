@@ -307,6 +307,17 @@ export const contactFormFields = [
   },
 ];
 
+//Variant
+export const slideRight = {
+  initial: { opacity: 0, x: -25 },
+  whileInView: { opacity: 1, x: 0 },
+};
+
+export const slideLeft = {
+  initial: { opacity: 0, x: 25 },
+  whileInView: { opacity: 1, x: 0 },
+};
+
 //functions
 const getWordCount = (blocks: blogBody) => {
   let wordCount = 0;

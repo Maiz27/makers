@@ -17,6 +17,9 @@ export type tripleImageProps = {
   left: leftImage;
   right: rightImage;
   mainExpand?: boolean;
+  animateFrom?: 'l' | 'r';
+  animationThreshold?: number;
+  animationDelay?: number;
 };
 
 export type leftImage = {

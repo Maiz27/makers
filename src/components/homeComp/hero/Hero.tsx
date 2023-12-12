@@ -3,6 +3,7 @@ import ImageSlider from './ImageSlider';
 import Stats from './Stats';
 import CTA from '@/components/CTA/CTA';
 import { heroImages } from '@/types';
+import AnimateInView from '@/components/animateInView/AnimateInView';
 
 const Hero = ({ images }: heroImages) => {
   return (
@@ -12,9 +13,13 @@ const Hero = ({ images }: heroImages) => {
       </div>
       <div className='w-full absolute lg:static lg:w-[75%] h-full'>
         <ImageSlider images={images} />
-        <div className='hidden z-10 lg:block lg:absolute bottom-[10%] left-1/2 -translate-x-1/5 xl:-translate-x-1/4'>
+
+        <AnimateInView
+          delay={1.5}
+          className='hidden z-10 lg:block lg:absolute bottom-[10%] left-1/2 -translate-x-1/5 xl:-translate-x-1/4'
+        >
           <Stats />
-        </div>
+        </AnimateInView>
       </div>
       <div
         className='absolute inset-0 bg-base-100 hidden lg:block'
@@ -31,16 +36,19 @@ export default Hero;
 const TextArea = () => {
   return (
     <section className='flex flex-col justify-center items-center lg:items-start z-10 gap-8 lg:ml-10 xl:ml-16'>
-      <h1 className='text-3xl xl:text-4xl leading-normal'>
-        Pioneering a New Era of Innovation and Excellence in Civil Engineering
-      </h1>
-      <p>
-        Discover a dynamic force in the engineering realm,
-        <span className='font-bold tracking-widest'> MAKERS </span>
-        Engineering Limited. a powerhouse committed to innovation, with a vision
-        for a stronger South Sudan.
-      </p>
-      <div className='flex items-center gap-4'>
+      <AnimateInView className='space-y-4'>
+        <h1 className='text-3xl xl:text-4xl leading-normal'>
+          Pioneering a New Era of Innovation and Excellence in Civil Engineering
+        </h1>
+        <p>
+          Discover a dynamic force in the engineering realm,
+          <span className='font-bold tracking-widest'> MAKERS </span>
+          Engineering Limited. a powerhouse committed to innovation, with a
+          vision for a stronger South Sudan.
+        </p>
+      </AnimateInView>
+
+      <AnimateInView tag='div' className='flex items-center gap-4' delay={1}>
         <CTA
           text='Explore Services'
           page='/services'
@@ -58,7 +66,7 @@ const TextArea = () => {
           page='/projects'
           className='lg:hidden btn-outline btn-secondary'
         />
-      </div>
+      </AnimateInView>
     </section>
   );
 };

@@ -2,6 +2,8 @@
 import React, { useState } from 'react';
 import { ServiceCard } from '@/components/servicesComp/ServiceCard';
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
+import AnimateInView from '@/components/animateInView/AnimateInView';
+import { slideLeft } from '@/Constants';
 
 type props = {
   list: Array<{
@@ -26,7 +28,12 @@ const CollapseCards = ({ list }: props) => {
     }
   };
   return (
-    <div className='overflow-hidden px-4 py-12'>
+    <AnimateInView
+      initial={slideLeft.initial}
+      whileInView={slideLeft.whileInView}
+      delay={1}
+      className='overflow-hidden px-4 py-12'
+    >
       <div className='mx-auto max-w-7xl'>
         <div className='mb-8 flex justify-between gap-4'>
           <div></div>
@@ -52,7 +59,7 @@ const CollapseCards = ({ list }: props) => {
           ))}
         </div>
       </div>
-    </div>
+    </AnimateInView>
   );
 };
 

@@ -1,19 +1,16 @@
 'use client';
-import React, { useState, useEffect, useRef } from 'react';
-import { usePathname } from 'next/navigation';
+import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import useLockBodyScroll from '@/context/useLockBodyScroll';
+import CTA from '../CTA/CTA';
 import { routes } from '@/Constants';
 import { FaBars, FaTimes } from 'react-icons/fa';
 import icon from '/public/imgs/logo/icon.png';
-import '../../app/globals.css';
-import CTA from '../CTA/CTA';
 
 const Navbar = () => {
   const [isMenuOpen, setMenuOpen] = useState(false);
   const [isTransparent, setIsTransparent] = useState(true);
-  const pathname = usePathname();
 
   const node = useRef<HTMLElement | null>(null);
 

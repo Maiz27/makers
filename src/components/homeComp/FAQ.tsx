@@ -6,6 +6,7 @@ import { faqList } from '@/Constants';
 import building from '/public/imgs/wallpapers/construction.jpg';
 import img from '/public/imgs/crane.jpg';
 import img2 from '/public/imgs/construction.jpg';
+import AnimateInView from '../animateInView/AnimateInView';
 
 const FAQ = () => {
   const main = { img: building, alt: 'Building', priority: false };
@@ -24,7 +25,10 @@ const FAQ = () => {
     <section className='min-h-screen bg-accent/10 flex flex-col lg:flex-row justify-evenly items-center gap-24 lg:gap-4 py-20 lg:py-0'>
       <TripleImage main={main} left={left} right={right} />
 
-      <div className='w-4/5 lg:w-1/2 max-w-2xl flex flex-col gap-8'>
+      <AnimateInView
+        threshold={0.5}
+        className='w-4/5 lg:w-1/2 max-w-2xl flex flex-col gap-8'
+      >
         <Heading
           text='Our Common Queries: Answers to Your Questions'
           Tag='h2'
@@ -33,20 +37,21 @@ const FAQ = () => {
         <div className='flex flex-col justify-center items-center gap-4'>
           {faqList.map(({ question, answer }, idx) => {
             return (
-              <div
-                key={idx}
-                tabIndex={0}
-                className='collapse collapse-arrow border border-base-300 bg-base-200'
-              >
-                <div className='collapse-title font-medium'>{question}</div>
-                <div className='collapse-content text-sm'>
-                  <p>{answer}</p>
+              <AnimateInView key={idx} delay={++idx * 0.2}>
+                <div
+                  tabIndex={0}
+                  className='collapse collapse-arrow border border-base-300 bg-base-200'
+                >
+                  <div className='collapse-title font-medium'>{question}</div>
+                  <div className='collapse-content text-sm'>
+                    <p>{answer}</p>
+                  </div>
                 </div>
-              </div>
+              </AnimateInView>
             );
           })}
         </div>
-      </div>
+      </AnimateInView>
     </section>
   );
 };

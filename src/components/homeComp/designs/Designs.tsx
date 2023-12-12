@@ -6,6 +6,7 @@ import AD from 'public/imgs/AD/ad1.jpg';
 import ID1 from 'public/imgs/ID/id1.jpg';
 import ID3 from 'public/imgs/ID/id3.jpg';
 import { leftImage, rightImage } from '@/types';
+import AnimateInView from '@/components/animateInView/AnimateInView';
 
 const Designs = () => {
   const main = { img: AD, alt: 'Architecture Design' };
@@ -21,7 +22,7 @@ const Designs = () => {
   };
   return (
     <section className='min-h-screen bg-accent/10 flex flex-col lg:flex-row justify-evenly items-center gap-20 lg:gap-0 py-20 lg:py-0'>
-      <div className='w-4/5 lg:w-2/5 flex flex-col gap-8 items-start'>
+      <AnimateInView className='w-4/5 lg:w-2/5 flex flex-col gap-8 items-start'>
         <Heading
           text='Our Signature Designs: Elevating Spaces, Redefining Aesthetics'
           Tag='h2'
@@ -35,8 +36,8 @@ const Designs = () => {
         </p>
 
         <CTA text='Explore Designs' page='/designs' />
-      </div>
-      <TripleImage main={main} left={left} right={right} />
+      </AnimateInView>
+      <TripleImage main={main} left={left} right={right} animateFrom='r' />
     </section>
   );
 };
