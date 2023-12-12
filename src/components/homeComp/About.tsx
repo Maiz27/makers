@@ -22,7 +22,7 @@ const About = () => {
   };
 
   return (
-    <section className='min-h-screen bg-accent/10 flex flex-col lg:flex-row justify-evenly items-center gap-24 lg:gap-4 py-20 lg:py-0'>
+    <section className='min-h-screen bg-accent/10 flex flex-col lg:flex-row justify-evenly items-center gap-24 lg:gap-4 py-20 lg:py-0 overflow-x-hidden'>
       <TripleImage main={main} left={left} right={right} animateFrom='l' />
 
       <AnimateInView className='w-4/5 lg:w-1/2 max-w-2xl flex flex-col gap-8'>

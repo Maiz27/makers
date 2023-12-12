@@ -2,6 +2,7 @@
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import useWindowWidth from '@/hooks/useWindowWidth';
+import AnimateInView from '../animateInView/AnimateInView';
 
 export const ServiceCard = ({ position, index, title, desc, Icon }) => {
   const translateAmt =
@@ -39,7 +40,8 @@ export const ServiceCardAlt = ({ index, title, desc, Icon }) => {
     }
   };
   return (
-    <div
+    <AnimateInView
+      delay={++index * 0.2}
       className={`w-full h-full relative flex min-h-[250px] max-w-lg shrink-0 flex-col justify-between group overflow-hidden p-8 shadow transition-shadow rounded-xl ${
         fn() ? 'bg-black text-base-100' : 'bg-base-100'
       }`}
@@ -49,6 +51,6 @@ export const ServiceCardAlt = ({ index, title, desc, Icon }) => {
       </div>
       <h3 className='mb-8 text-3xl font-bold'>{title}</h3>
       <p>{desc}</p>
-    </div>
+    </AnimateInView>
   );
 };

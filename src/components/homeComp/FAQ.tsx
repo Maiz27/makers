@@ -23,7 +23,7 @@ const FAQ = () => {
 
   return (
     <section className='min-h-screen bg-accent/10 flex flex-col lg:flex-row justify-evenly items-center gap-24 lg:gap-4 py-20 lg:py-0'>
-      <TripleImage main={main} left={left} right={right} />
+      <TripleImage main={main} left={left} right={right} animateFrom='l' />
 
       <AnimateInView
         threshold={0.5}

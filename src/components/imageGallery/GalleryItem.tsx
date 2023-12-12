@@ -2,6 +2,7 @@
 import Image, { StaticImageData } from 'next/image';
 import { useIsClient } from '@/context/IsClientContext';
 import { FaTimes } from 'react-icons/fa';
+import AnimateInView from '../animateInView/AnimateInView';
 
 type props = {
   idx: number;
@@ -16,9 +17,11 @@ const GalleryItem = ({ idx, image }: props) => {
 
   return (
     <>
-      <button onClick={openModal} className='card overflow-hidden'>
-        <Image src={image} alt='id' className='w-full h-full' />
-      </button>
+      <AnimateInView delay={++idx * 0.2}>
+        <button onClick={openModal} className='card overflow-hidden'>
+          <Image src={image} alt='id' className='w-full h-full' />
+        </button>
+      </AnimateInView>
       <dialog id={id} className='modal'>
         <div className='modal-box bg-neutral w-4/5 max-w-4xl relative'>
           <form method='dialog' className='absolute top-2 right-2'>

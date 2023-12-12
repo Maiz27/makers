@@ -26,7 +26,7 @@ export default async function Home() {
   ]);
 
   return (
-    <>
+    <div className='overflow-x-hidden'>
       <Hero images={heroImages} />
 
       <About />
@@ -38,6 +38,6 @@ export default async function Home() {
       <Blog latestBlogs={latestBlogs} />
 
       <FAQ />
-    </>
+    </div>
   );
 }
