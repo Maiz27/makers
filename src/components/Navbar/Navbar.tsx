@@ -1,5 +1,6 @@
 'use client';
 import { useState, useEffect, useRef } from 'react';
+import { motion } from 'framer-motion';
 import Link from 'next/link';
 import Image from 'next/image';
 import useLockBodyScroll from '@/context/useLockBodyScroll';
@@ -18,11 +19,13 @@ const Navbar = () => {
 
   const toggleMenu = () => {
     setMenuOpen(!isMenuOpen);
+    setIsTransparent(!isMenuOpen ? false : true);
   };
 
   const handleClickOutside = (event: { target: any }) => {
     if (node.current && !node.current.contains(event.target)) {
       setMenuOpen(false);
+      setIsTransparent(true);
     }
   };
 
@@ -47,7 +50,7 @@ const Navbar = () => {
   return (
     <header
       ref={node}
-      className={`w-full top-0 z-50 transition-all ${
+      className={`w-full top-0 z-50 transition-all duration-500 ${
         isTransparent ? 'absolute bg-transparent' : 'sticky shadow bg-base-100'
       }`}
     >
@@ -70,74 +73,67 @@ const Navbar = () => {
           <ul className='flex justify-around items-center px-1 gap-12 xl:gap-20 font-bold'>
             {routes.map(({ name, path }) => {
               if (name !== 'Contact')
-                return (
-                  <Link
-                    href={path}
-                    key={path}
-                    className='transition-colors hover:text-yellow-500 hover:scale-110 nav-hover'
-                    style={{
-                      textShadow:
-                        '-1px -1px 0px rgba(255, 255, 255, 0.5),1px -1px 0px rgba(255, 255, 255, 0.5),-1px  1px 0px rgba(255, 255, 255, 0.5),1px  1px 0px rgba(255, 255, 255, 0.5)',
-                    }}
-                  >
-                    {name}
-                  </Link>
-                );
+                return <Route key={path} route={{ name, path }} />;
             })}
           </ul>
         </div>
         <div className='navbar-end gap-2'>
           <CTA page='/contact' text='Contact' />
+          <label className='inline-grid lg:hidden swap swap-rotate text-3xl text-neutral group transition-transform'>
+            {/* this hidden checkbox controls the state */}
+            <input type='checkbox' checked={isMenuOpen} onChange={toggleMenu} />
 
-          <button
-            onClick={toggleMenu}
-            className='lg:hidden text-3xl grid place-items-center z-50 text-base-100 mix-blend-difference'
-          >
-            {isMenuOpen ? <FaTimes /> : <FaBars />}
-          </button>
-          <aside
-            className={`fixed w-3/4 h-screen top-0 z-20 bg-base-100 shadow-2xl ${
-              isMenuOpen ? 'left-1/4' : 'left-full'
-            }`}
-          >
-            {isMenuOpen && (
-              <div className='h-full flex flex-col items-center gap-8 mt-20'>
-                <Link href='/' className='flex aspect-square w-48'>
-                  <Image
-                    src={icon}
-                    alt='Makers Engineering Logo'
-                    title='Makers Engineering Logo'
-                    className='w-full object-cover'
-                    width={50}
-                    height={20}
-                  />
-                </Link>
+            {/* hamburger icon */}
+            <div className='swap-off fill-current mx-auto group-hover:scale-110 group-active:scale-95'>
+              <FaBars />
+            </div>
 
-                <h2 className='font-bold tracking-widest text-center text-2xl'>
-                  Makers Engineering
-                </h2>
-
-                <ul className='flex flex-col'>
-                  {routes.map(({ name, path }) => {
-                    return (
-                      <Link
-                        key={path}
-                        href={path}
-                        className='font-semibold  p-2 lg:p-0'
-                        onClick={toggleMenu}
-                      >
-                        {name}
-                      </Link>
-                    );
-                  })}
-                </ul>
-              </div>
-            )}
-          </aside>
+            {/* close icon */}
+            <div className='swap-on fill-current mx-auto group-hover:scale-110 group-active:scale-95'>
+              <FaTimes />
+            </div>
+          </label>
         </div>
       </nav>
+      <MobileMenu menuOpen={isMenuOpen} />
     </header>
   );
 };
 
 export default Navbar;
+
+const MobileMenu = ({ menuOpen }: { menuOpen: boolean }) => {
+  return (
+    <motion.div
+      initial={false}
+      animate={{
+        height: menuOpen ? 'fit-content' : '0px',
+      }}
+      className='block overflow-hidden md:hidden bg-base-100 text-neutral'
+    >
+      <div className='flex justify-between md:justify-around items-center p-4'>
+        {routes.map(({ name, path }) => {
+          if (name !== 'Contact')
+            return <Route key={path} route={{ name, path }} />;
+        })}
+      </div>
+    </motion.div>
+  );
+};
+
+const Route = ({ route }: { route: { name: string; path: string } }) => {
+  const { name, path } = route;
+  return (
+    <Link
+      href={path}
+      key={path}
+      className='transition-colors hover:text-yellow-500 hover:scale-110 nav-hover font-semibold'
+      style={{
+        textShadow:
+          '-1px -1px 0px rgba(255, 255, 255, 0.5),1px -1px 0px rgba(255, 255, 255, 0.5),-1px  1px 0px rgba(255, 255, 255, 0.5),1px  1px 0px rgba(255, 255, 255, 0.5)',
+      }}
+    >
+      {name}
+    </Link>
+  );
+};
