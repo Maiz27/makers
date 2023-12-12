@@ -315,6 +315,7 @@ export const pagesMetaData = [
     type: 'website',
     url: 'https://www.makersengineeringltd.com/',
     image: '/imgs/logo/text-logo.png',
+    icon: '/imgs/logo/icon.png',
   },
   {
     title: 'Makers Engineering - About Us',
@@ -323,6 +324,7 @@ export const pagesMetaData = [
     type: 'website',
     url: 'https://www.makersengineeringltd.com/about',
     image: '/imgs/logo/text-logo.png',
+    icon: '/imgs/logo/icon.png',
   },
   {
     title: 'Makers Engineering - Our Team',
@@ -331,6 +333,7 @@ export const pagesMetaData = [
     type: 'website',
     url: 'https://www.makersengineeringltd.com/about/team',
     image: '/imgs/site/1.jpg',
+    icon: '/imgs/logo/icon.png',
   },
   {
     title: 'Makers Engineering - Our Services',
@@ -339,6 +342,7 @@ export const pagesMetaData = [
     type: 'website',
     url: 'https://www.makersengineeringltd.com/services',
     image: '/imgs/logo/text-logo.png',
+    icon: '/imgs/logo/icon.png',
   },
   {
     title: 'Makers Engineering - Our Designs',
@@ -347,6 +351,7 @@ export const pagesMetaData = [
     type: 'website',
     url: 'https://www.makersengineeringltd.com/designs',
     image: '/imgs/AD/ad1.jpg',
+    icon: '/imgs/logo/icon.png',
   },
   {
     title: 'Makers Engineering - Our Blogs',
@@ -355,6 +360,7 @@ export const pagesMetaData = [
     type: 'website',
     url: 'https://www.makersengineeringltd.com/blog',
     image: '/imgs/wallpapers/library.jpg',
+    icon: '/imgs/logo/icon.png',
   },
   {
     title: 'Makers Engineering - Contact Us',
@@ -363,6 +369,7 @@ export const pagesMetaData = [
     type: 'website',
     url: 'https://www.makersengineeringltd.com/contact',
     image: '/imgs/logo/text-logo.png',
+    icon: '/imgs/logo/icon.png',
   },
 ];
 

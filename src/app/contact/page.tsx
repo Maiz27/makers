@@ -11,12 +11,12 @@ export const metadata: Metadata = {
   title: pagesMetaData[6].title,
   description: pagesMetaData[6].description,
   icons: {
-    icon: pagesMetaData[6].image,
-    shortcut: pagesMetaData[6].image,
-    apple: pagesMetaData[6].image,
+    icon: pagesMetaData[6].icon,
+    shortcut: pagesMetaData[6].icon,
+    apple: pagesMetaData[6].icon,
     other: {
       rel: 'apple-touch-icon-precomposed',
-      url: pagesMetaData[6].image,
+      url: pagesMetaData[6].icon,
     },
   },
   openGraph: {
