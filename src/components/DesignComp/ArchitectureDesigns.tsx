@@ -6,7 +6,7 @@ import { archDesigns } from '@/Constants';
 
 const ArchitectureDesigns = () => {
   return (
-    <section className='my-20 space-y-8'>
+    <section className='my-20 space-y-8 md:space-y-0'>
       <div className='max-w-3xl mx-auto space-y-4 text-center'>
         <Heading Tag='h2' text='Our Architecture Designs' isCentered={true} />
         <p>

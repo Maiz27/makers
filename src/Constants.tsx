@@ -31,6 +31,17 @@ import ad6 from 'public/imgs/AD/ad6.jpg';
 import ad7 from 'public/imgs/AD/ad7.jpg';
 import ad8 from 'public/imgs/AD/ad8.jpg';
 
+import id1 from 'public/imgs/ID/id1.jpg';
+import id2 from 'public/imgs/ID/id2.jpg';
+import id3 from 'public/imgs/ID/id3.jpg';
+import id4 from 'public/imgs/ID/id4.jpg';
+import id5 from 'public/imgs/ID/id5.jpg';
+import id6 from 'public/imgs/ID/id6.jpg';
+import id7 from 'public/imgs/ID/id7.jpg';
+import id8 from 'public/imgs/ID/id8.jpg';
+import id9 from 'public/imgs/ID/id9.jpg';
+import id10 from 'public/imgs/ID/id10.jpg';
+
 export const routes = [
   {
     name: 'Home',
@@ -131,6 +142,19 @@ export const archDesigns = [
     images: [ad7, ad8],
     contentPosition: 'l',
   },
+];
+
+export const interiorDesigns = [
+  id1,
+  id2,
+  id3,
+  id4,
+  id5,
+  id6,
+  id7,
+  id8,
+  id9,
+  id10,
 ];
 
 export const faqList = [

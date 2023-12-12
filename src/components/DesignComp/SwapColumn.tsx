@@ -58,7 +58,7 @@ const SlidingFeatureDisplay = <T,>({
         layout
         transition={{
           type: 'spring',
-          stiffness: 400,
+          stiffness: 300,
           damping: 25,
         }}
         className='h-fit w-3/5 rounded-xl p-8'
