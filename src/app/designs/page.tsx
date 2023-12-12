@@ -7,7 +7,7 @@ export const metadata = {
   title: 'Makers Engineering - Our Designs',
   image: '/imgs/AD/ad1.jpg',
   description:
-    "Discover a dynamic force in South Sudan's the engineering realm, MAKERS Engineering Limited.",
+    'Explore our portfolio to witness the seamless fusion of form and function where architectural innovation meets artistic expression.',
 };
 
 const page = () => {
