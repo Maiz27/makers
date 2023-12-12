@@ -13,7 +13,7 @@ import img3 from '/public/imgs/site/4.jpg';
 import img4 from '/public/imgs/site/2.jpg';
 import img5 from '/public/imgs/office/2.jpg';
 import img6 from '/public/imgs/office/3.jpg';
-import Image from 'next/image';
+import AnimateInView from '@/components/animateInView/AnimateInView';
 
 const page = () => {
   return (
@@ -45,7 +45,10 @@ const AboutUs = () => {
   };
   return (
     <section className='flex flex-col lg:flex-row justify-evenly items-center gap-24 lg:gap-4 py-20 xl:py-32'>
-      <div className='w-4/5 lg:w-1/2 max-w-2xl flex flex-col gap-8'>
+      <AnimateInView
+        threshold={0.7}
+        className='w-4/5 lg:w-1/2 max-w-2xl flex flex-col gap-8'
+      >
         <Heading text='About Us: Makers Engineering' Tag='h2' />
         <p>
           Step into the world of MAKERS Engineering Limited, where innovation
@@ -60,9 +63,9 @@ const AboutUs = () => {
           endeavor, we shape possibilities, leaving an indelible mark on the
           landscape of innovation.
         </p>
-      </div>
+      </AnimateInView>
 
-      <TripleImage main={main} left={left} right={right} />
+      <TripleImage main={main} left={left} right={right} animateFrom='r' />
     </section>
   );
 };
@@ -70,23 +73,27 @@ const AboutUs = () => {
 const MissionVision = () => {
   return (
     <section className='min-h-[60vh] flex flex-col justify-center items-center gap-16 py-20 bg-accent/10'>
-      <div className='w-full flex flex-col justify-center items-center gap-10 md:gap-12'>
+      <AnimateInView className='w-full flex flex-col justify-center items-center gap-10 md:gap-12'>
         <Heading Tag='h3' text='Our Values: Defining Who We Are' />
 
         <div className='w-full grid place-items-center grid-cols-2 md:grid-cols-4 gap-10'>
-          {values.map(({ title, icon }) => {
+          {values.map(({ title, icon }, idx) => {
             return (
-              <div key={title} className='flex flex-col items-center gap-2'>
+              <AnimateInView
+                key={title}
+                delay={++idx * 0.3}
+                className='flex flex-col items-center gap-2'
+              >
                 <span className='text-xl'>{icon}</span>
                 <h3>{title}</h3>
-              </div>
+              </AnimateInView>
             );
           })}
         </div>
-      </div>
+      </AnimateInView>
 
       <div className='w-10/12 flex flex-col lg:flex-row justify-center items-center gap-16 mt-8 xl:mt-16'>
-        <div className='space-y-6'>
+        <AnimateInView delay={1} className='space-y-6'>
           <Heading Tag='h2' text='Our Mission: Transformative Future' />
           <p>
             At MAKERS Engineering Limited, our mission is to engineer a
@@ -98,8 +105,8 @@ const MissionVision = () => {
             partnerships, realizing their aspirations, and sculpting a world
             where engineering brilliance propels us all towards progress.
           </p>
-        </div>
-        <div className='space-y-6'>
+        </AnimateInView>
+        <AnimateInView delay={1} className='space-y-6'>
           <Heading Tag='h2' text='Our Vision: Engineering Solutions' />
           <p>
             Our vision at MAKERS Engineering Limited is to be the cornerstone of
@@ -111,7 +118,7 @@ const MissionVision = () => {
             future where our engineering prowess shapes a more sustainable,
             connected, and prosperous world for generations to come.
           </p>
-        </div>
+        </AnimateInView>
       </div>
     </section>
   );
@@ -131,8 +138,8 @@ const Team = () => {
   };
   return (
     <section className='flex flex-col lg:flex-row justify-evenly items-center gap-24 lg:gap-4 py-20 xl:py-32'>
-      <TripleImage main={main} left={left} right={right} />
-      <div className='w-4/5 lg:w-1/2 max-w-2xl flex flex-col gap-8'>
+      <TripleImage main={main} left={left} right={right} animateFrom='l' />
+      <AnimateInView className='w-4/5 lg:w-1/2 max-w-2xl flex flex-col gap-8'>
         <Heading
           text='Our Team: The Driving Force Behind Makers Engineering'
           Tag='h2'
@@ -150,7 +157,7 @@ const Team = () => {
         <div>
           <CTA text='Meet Our Team' page='/about/team' />
         </div>
-      </div>
+      </AnimateInView>
     </section>
   );
 };

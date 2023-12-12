@@ -4,6 +4,7 @@ import Heading from '@/components/heading/Heading';
 import PageHeader from '@/components/pageHeader/PageHeader';
 import { sanityClient, urlFor } from '@/services/sanity/sanityClient';
 import { getAllFounders, getAllMembers } from '@/services/sanity/queries';
+import AnimateInView from '@/components/animateInView/AnimateInView';
 
 export const revalidate = 60; // revalidate every minute
 
@@ -49,8 +50,10 @@ const Founders = ({ list }) => {
       {list.map(({ image, name, title, description }, index: number) => {
         const imgUrl = urlFor(image).url();
         return (
-          <div
+          <AnimateInView
             key={index}
+            delay={++index * 0.3}
+            threshold={0.7}
             className={`flex flex-col justify-evenly gap-8 lg:gap-0 ${
               index % 2 ? 'lg:flex-row-reverse' : 'lg:flex-row'
             } justify-center items-center`}
@@ -71,7 +74,7 @@ const Founders = ({ list }) => {
 
               <p>{description}</p>
             </div>
-          </div>
+          </AnimateInView>
         );
       })}
     </div>
@@ -89,7 +92,11 @@ const Team = ({ list }) => {
         {list.map(({ name, title, image }, index: number) => {
           const imgUrl = urlFor(image).url();
           return (
-            <div key={index} className='w-4/5 space-y-4'>
+            <AnimateInView
+              key={index}
+              delay={++index * 0.1}
+              className='w-4/5 space-y-4'
+            >
               <div className='h-96 lg:h-72 2xl:h-96'>
                 <Image
                   src={imgUrl}
@@ -105,7 +112,7 @@ const Team = ({ list }) => {
                 <h3 className='text-lg tracking-wider font-semibold'>{name}</h3>
                 <h4>{title}</h4>
               </div>
-            </div>
+            </AnimateInView>
           );
         })}
       </div>
