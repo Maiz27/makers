@@ -1,9 +1,13 @@
 'use client';
-import Image from 'next/image';
+import Image, { StaticImageData } from 'next/image';
 import { useIsClient } from '@/context/IsClientContext';
 import { FaTimes } from 'react-icons/fa';
 
-const GalleryItem = ({ idx, image }) => {
+type props = {
+  idx: number;
+  image: string | StaticImageData;
+};
+const GalleryItem = ({ idx, image }: props) => {
   const id = `image-${idx}`;
   const isClient = useIsClient();
   const openModal = () => {
