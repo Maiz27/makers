@@ -19,11 +19,17 @@ const GalleryItem = ({ idx, image }: props) => {
     <>
       <AnimateInView delay={++idx * 0.2}>
         <button onClick={openModal} className='card overflow-hidden'>
-          <Image src={image} alt='id' className='w-full h-full' />
+          <Image
+            src={image}
+            width={250}
+            height={250}
+            alt='id'
+            className='w-full h-full'
+          />
         </button>
       </AnimateInView>
       <dialog id={id} className='modal'>
-        <div className='modal-box bg-neutral w-4/5 max-w-4xl relative'>
+        <div className='modal-box bg-neutral w-4/5 lg:w-auto max-w-4xl relative'>
           <form method='dialog' className='absolute top-2 right-2'>
             <button
               title='Close Modal'
@@ -32,8 +38,14 @@ const GalleryItem = ({ idx, image }: props) => {
               <FaTimes />
             </button>
           </form>
-          <div className='h-60 md:h-auto w-full'>
-            <Image src={image} alt='id' className='w-full h-full' />
+          <div className='h-40 md:h-auto w-full grid place-items-center'>
+            <Image
+              src={image}
+              width={1920}
+              height={1080}
+              alt='id'
+              className='h-auto w-auto'
+            />
           </div>
         </div>
       </dialog>

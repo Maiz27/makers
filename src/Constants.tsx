@@ -28,26 +28,6 @@ import BlogBg from '/public/imgs/wallpapers/library.jpg';
 import servicesBg from '/public/imgs/wallpapers/construction2.jpg';
 import contactBg from '/public/imgs/wallpapers/contact.jpg';
 
-import ad1 from 'public/imgs/AD/ad1.jpg';
-import ad2 from 'public/imgs/AD/ad2.jpg';
-import ad3 from 'public/imgs/AD/ad3.jpg';
-import ad4 from 'public/imgs/AD/ad4.jpg';
-import ad5 from 'public/imgs/AD/ad5.jpg';
-import ad6 from 'public/imgs/AD/ad6.jpg';
-import ad7 from 'public/imgs/AD/ad7.jpg';
-import ad8 from 'public/imgs/AD/ad8.jpg';
-
-import id1 from 'public/imgs/ID/id1.jpg';
-import id2 from 'public/imgs/ID/id2.jpg';
-import id3 from 'public/imgs/ID/id3.jpg';
-import id4 from 'public/imgs/ID/id4.jpg';
-import id5 from 'public/imgs/ID/id5.jpg';
-import id6 from 'public/imgs/ID/id6.jpg';
-import id7 from 'public/imgs/ID/id7.jpg';
-import id8 from 'public/imgs/ID/id8.jpg';
-import id9 from 'public/imgs/ID/id9.jpg';
-import id10 from 'public/imgs/ID/id10.jpg';
-
 export const routes = [
   {
     name: 'Home',
@@ -123,80 +103,6 @@ export const servicesList = [
   },
 ];
 
-export const archDesigns = [
-  {
-    name: 'G Apartments',
-    description:
-      'In the realm of real estate, envisioning a paradigm shift involves transcending the mere exchange of properties to sculpting immersive spaces that harmonize with individual aspirations. Redefining real estate means not just selling homes but crafting narratives where each brick resonates with personal stories of belonging and dreams realized',
-    images: [ad3, ad4],
-    contentPosition: 'r',
-  },
-  {
-    name: 'Garthgoth villa',
-    description:
-      "Home is more than a shelter; it's a living canvas where the strokes of memories, laughter, and comfort create a masterpiece of belonging. In the embrace of four walls, the heartbeat of family and the symphony of shared experiences transform a house into a sanctuary, making 'home' the poetry written in the language of love and shared stories",
-    images: [ad1, ad2],
-    contentPosition: 'l',
-  },
-  {
-    name: 'Business Center Concept',
-    description:
-      'Designing a dynamic business center involves a fusion of sophistication and functionality, where contemporary architecture meets state-of-the-art amenities. The blueprint envisions a space that seamlessly accommodates collaborative work environments, advanced technological infrastructure,and aesthetic appeal—cultivating an atmosphere where innovation thrives and professional aspirations find their optimal expression.',
-    images: [ad5, ad6],
-    contentPosition: 'r',
-  },
-  {
-    name: 'Filling Station',
-    description:
-      'Crafting a modern petrol filling station design is an intricate dance between form and function,seamlessly blending sleek architectural aesthetics with cutting-edge technology. From eco-friendly fueling points to inviting convenience spaces, the design envisions a harmonious synergy, not just catering to vehicular needs but embracing sustainability and enhancing the overall customer experience.',
-    images: [ad7, ad8],
-    contentPosition: 'l',
-  },
-];
-
-export const interiorDesigns = [
-  id1,
-  id2,
-  id3,
-  id4,
-  id5,
-  id6,
-  id7,
-  id8,
-  id9,
-  id10,
-];
-
-export const faqList = [
-  {
-    question: 'What services does your construction company provide?',
-    answer:
-      'Our construction company offers a wide range of services, including residential and commercial construction, remodeling, renovations, interior and exterior improvements, landscaping, and architectural design.',
-  },
-  {
-    question: 'How experienced is your construction team?',
-    answer:
-      'Our construction team comprises highly skilled professionals with years of experience in the industry. They are experts in their respective fields and are dedicated to delivering high-quality workmanship on every project.',
-  },
-  {
-    question:
-      'Can you handle both small and large-scale construction projects?',
-    answer:
-      "Absolutely! Whether it's a small home renovation or a large commercial construction project, we have the expertise, resources, and equipment to handle projects of any scale. No project is too big or too small for us.",
-  },
-  {
-    question:
-      'What sets your construction company apart from others in the market?',
-    answer:
-      'We pride ourselves on our commitment to excellence, attention to detail, and exceptional customer service. Our team goes the extra mile to ensure client satisfaction, and we use high-quality materials and the latest construction techniques to deliver outstanding results.',
-  },
-  {
-    question: 'How do you ensure the safety of your construction sites?',
-    answer:
-      'Safety is our top priority. We strictly adhere to all safety regulations and guidelines. Our construction sites are supervised by experienced professionals, and we conduct regular safety inspections to identify and mitigate potential hazards, ensuring a secure working environment for our team and anyone involved in the project.',
-  },
-];
-
 export const socials = [
   {
     icon: <FaLinkedinIn />,
@@ -208,7 +114,7 @@ export const socials = [
   },
   {
     icon: <FaFacebookF />,
-    link: 'https://facebook.com/',
+    link: 'https://facebook.com/p/Makers-Engineering-Ltd-100057367189870/',
   },
 ];
 
@@ -307,14 +213,16 @@ export const contactFormFields = [
   },
 ];
 
+export const baseURl = 'https://www.makersengineeringltd.com';
+
 export const pagesMetaData = [
   {
     title: 'Makers Engineering',
     description:
       "Discover a dynamic force in South Sudan's the engineering realm, MAKERS Engineering Limited.",
     type: 'website',
-    url: 'https://www.makersengineeringltd.com/',
-    image: '/imgs/logo/text-logo.png',
+    url: `${baseURl}`,
+    image: `${baseURl}/imgs/logo/text-logo.png`,
     icon: '/imgs/logo/icon.png',
   },
   {
@@ -322,8 +230,8 @@ export const pagesMetaData = [
     description:
       "With a track record spanning multiple technical domains, we've been redefining possibilities in the Civil Engineering Industry since our inception in 2018.",
     type: 'website',
-    url: 'https://www.makersengineeringltd.com/about',
-    image: '/imgs/logo/text-logo.png',
+    url: `${baseURl}/about`,
+    image: `${baseURl}/imgs/logo/text-logo.png`,
     icon: '/imgs/logo/icon.png',
   },
   {
@@ -331,8 +239,8 @@ export const pagesMetaData = [
     description:
       'The Driving Force Behind Makers Engineering. At Makers, we believe in the power of collaboration and the strength of a unified vision.',
     type: 'website',
-    url: 'https://www.makersengineeringltd.com/about/team',
-    image: '/imgs/site/1.jpg',
+    url: `${baseURl}/about/team`,
+    image: `${baseURl}/imgs/site/1.jpg`,
     icon: '/imgs/logo/icon.png',
   },
   {
@@ -340,8 +248,8 @@ export const pagesMetaData = [
     description:
       "Unveil the potential of your projects with MAKERS Engineering's broad service list that will fulfill all your needs.",
     type: 'website',
-    url: 'https://www.makersengineeringltd.com/services',
-    image: '/imgs/logo/text-logo.png',
+    url: `${baseURl}/services`,
+    image: `${baseURl}/imgs/logo/text-logo.png`,
     icon: '/imgs/logo/icon.png',
   },
   {
@@ -349,8 +257,8 @@ export const pagesMetaData = [
     description:
       "Unveil the potential of your projects with MAKERS Engineering's broad service list that will fulfill all your needs.",
     type: 'website',
-    url: 'https://www.makersengineeringltd.com/designs',
-    image: '/imgs/AD/ad1.jpg',
+    url: `${baseURl}/designs`,
+    image: `${baseURl}/imgs/AD/ad1.jpg`,
     icon: '/imgs/logo/icon.png',
   },
   {
@@ -358,8 +266,8 @@ export const pagesMetaData = [
     description:
       'Discover the latest engineering trends and innovations through our insights. Short, insightful, and engaging, our articles offer a glimpse into the future of construction.',
     type: 'website',
-    url: 'https://www.makersengineeringltd.com/blog',
-    image: '/imgs/wallpapers/library.jpg',
+    url: `${baseURl}/blog`,
+    image: `${baseURl}/imgs/wallpapers/library.jpg`,
     icon: '/imgs/logo/icon.png',
   },
   {
@@ -367,8 +275,8 @@ export const pagesMetaData = [
     description:
       'Get in touch with Makers Engineering Limited. Your journey towards innovative solutions and collaborative excellence starts here.',
     type: 'website',
-    url: 'https://www.makersengineeringltd.com/contact',
-    image: '/imgs/logo/text-logo.png',
+    url: `${baseURl}/contact`,
+    image: `${baseURl}/imgs/logo/text-logo.png`,
     icon: '/imgs/logo/icon.png',
   },
 ];

@@ -4,8 +4,9 @@ import CTA from '@/components/CTA/CTA';
 import BlogCard from '../blogComp/BlogCard';
 import { getStringDate } from '@/Constants';
 import AnimateInView from '../animateInView/AnimateInView';
+import { blog } from '@/types';
 
-const Blog = ({ latestBlogs }) => {
+const Blog = ({ latestBlogs }: { latestBlogs: blog[] }) => {
   return (
     <section className='min-h-screen flex flex-col justify-center gap-60 lg:gap-20 py-20'>
       <AnimateInView
@@ -51,7 +52,7 @@ const Blog = ({ latestBlogs }) => {
               <BlogCard
                 key={slug.current}
                 index={idx}
-                slug={slug.current}
+                slug={slug}
                 title={title}
                 categories={categories}
                 publishedAt={getStringDate(publishedAt)}

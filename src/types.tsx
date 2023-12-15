@@ -1,11 +1,8 @@
 import { StaticImageData } from 'next/image';
 
-export type heroImages = {
-  images: Array<{
-    title: string;
-    index: number;
-    image: Object;
-  }>;
+export type heroImage = {
+  index: number;
+  image: Object;
 };
 
 export type tripleImageProps = {
@@ -69,3 +66,32 @@ export type headerList = Array<{
   text: string;
   bg: string | StaticImageData;
 }>;
+
+export type stats = {
+  projects: stat;
+  clients: stat;
+  workforce: stat;
+};
+
+export type FAQ = {
+  index: number;
+  question: string;
+  answer: string;
+};
+
+export type archDesign = {
+  contentPosition: 'l' | 'r';
+  title: string;
+  description: string;
+  images: Array<Object>;
+};
+
+export type interDesign = {
+  title: string;
+  image: Object;
+};
+
+type stat = {
+  count: number;
+  details: string;
+};

@@ -19,7 +19,7 @@ const Navbar = () => {
 
   const toggleMenu = () => {
     setMenuOpen(!isMenuOpen);
-    setIsTransparent(!isMenuOpen ? false : true);
+    // changeBackground();
   };
 
   useEffect(() => {
@@ -65,7 +65,7 @@ const Navbar = () => {
               height={20}
               loading='eager'
               priority
-              className='h-full object-scale-down'
+              className='h-auto w-auto object-scale-down'
             />
           </Link>
         </div>

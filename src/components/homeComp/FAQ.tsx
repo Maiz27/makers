@@ -1,14 +1,13 @@
 import React from 'react';
 import Heading from '../heading/Heading';
 import TripleImage from '../tripleImage/TripleImage';
-import { leftImage, rightImage } from '@/types';
-import { faqList } from '@/Constants';
+import { FAQ, leftImage, rightImage } from '@/types';
 import building from '/public/imgs/wallpapers/construction.jpg';
 import img from '/public/imgs/crane.jpg';
 import img2 from '/public/imgs/construction.jpg';
 import AnimateInView from '../animateInView/AnimateInView';
 
-const FAQ = () => {
+const FAQ = ({ list }: { list: FAQ[] }) => {
   const main = { img: building, alt: 'Building', priority: false };
   const left: leftImage = {
     img: img,
@@ -35,21 +34,23 @@ const FAQ = () => {
         />
 
         <div className='flex flex-col justify-center items-center gap-4'>
-          {faqList.map(({ question, answer }, idx) => {
-            return (
-              <AnimateInView key={idx} delay={++idx * 0.2}>
-                <div
-                  tabIndex={0}
-                  className='collapse collapse-arrow border border-base-300 bg-base-200'
-                >
-                  <div className='collapse-title font-medium'>{question}</div>
-                  <div className='collapse-content text-sm'>
-                    <p>{answer}</p>
+          {list
+            .sort((a, b) => a.index - b.index)
+            .map(({ question, answer }, idx) => {
+              return (
+                <AnimateInView key={idx} delay={++idx * 0.2}>
+                  <div
+                    tabIndex={0}
+                    className='collapse collapse-arrow border border-base-300 bg-base-200'
+                  >
+                    <div className='collapse-title font-medium'>{question}</div>
+                    <div className='collapse-content text-sm'>
+                      <p>{answer}</p>
+                    </div>
                   </div>
-                </div>
-              </AnimateInView>
-            );
-          })}
+                </AnimateInView>
+              );
+            })}
         </div>
       </AnimateInView>
     </section>

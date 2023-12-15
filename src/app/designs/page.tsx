@@ -5,8 +5,11 @@ import InteriorDesigns from '@/components/DesignComp/InteriorDesigns';
 import { pagesMetaData } from '@/Constants';
 import { Metadata } from 'next';
 import { OpenGraph } from 'next/dist/lib/metadata/types/opengraph-types';
+import { fetchSanityData } from '@/services/sanity/sanityClient';
+import { getArchDesigns, getInterDesigns } from '@/services/sanity/queries';
 
 export const metadata: Metadata = {
+  // metadataBase: new URL(baseURl),
   title: pagesMetaData[4].title,
   description: pagesMetaData[4].description,
   icons: {
@@ -41,14 +44,19 @@ export const metadata: Metadata = {
   },
 };
 
-const page = () => {
+const page = async () => {
+  const [archDesigns, interDesigns] = await Promise.all([
+    fetchSanityData(getArchDesigns),
+    fetchSanityData(getInterDesigns),
+  ]);
+
   return (
     <>
       <PageHeader index={2} />
 
-      <ArchitectureDesigns />
+      <ArchitectureDesigns designs={archDesigns} />
 
-      <InteriorDesigns />
+      <InteriorDesigns designs={interDesigns} />
     </>
   );
 };

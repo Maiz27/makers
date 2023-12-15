@@ -14,7 +14,7 @@ const Footer = () => {
             <Image
               src={logo}
               alt='Makers Engineering Logo'
-              className='h-full object-contain'
+              className='h-auto w-auto object-contain'
               width={30}
               height={20}
             />

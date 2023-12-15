@@ -55,12 +55,13 @@ export const getPostCategories = `*[_type == 'category']
     title,
 }`;
 
-export const getAllHeroImages = `*[_type == 'heroImages'] 
-| order(index asc) {
-    title,
-    index,
-    image,
-}`;
+export const getHomePageData = `*[_type == 'homePageData'] {
+    projects,
+    clients,
+    workforce,
+    heroImages,
+    FAQs,
+}[0]`;
 
 export const getAllFounders = `*[_type == 'founder'] {
   name,
@@ -73,4 +74,15 @@ export const getAllMembers = `*[_type == 'team'] | order(title asc) {
   name,
   title,
   image,
+}`;
+
+export const getArchDesigns = `*[_type == 'archDesigns'] | order(title asc) {
+title,
+description,
+images,
+}`;
+
+export const getInterDesigns = `*[_type == 'interDesigns'] | order(title asc) {
+title,
+image,
 }`;

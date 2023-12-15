@@ -2,10 +2,10 @@ import React from 'react';
 import ImageSlider from './ImageSlider';
 import Stats from './Stats';
 import CTA from '@/components/CTA/CTA';
-import { heroImages } from '@/types';
+import { heroImage, stats } from '@/types';
 import AnimateInView from '@/components/animateInView/AnimateInView';
 
-const Hero = ({ images }: heroImages) => {
+const Hero = ({ images, stats }: { images: heroImage[]; stats: stats }) => {
   return (
     <div className='h-screen relative flex items-center'>
       <div className='w-11/12 md:w-4/5 lg:w-3/6 z-10 mx-auto text-base-100 lg:text-neutral'>
@@ -18,7 +18,7 @@ const Hero = ({ images }: heroImages) => {
           delay={1.5}
           className='hidden z-10 lg:block lg:absolute bottom-[10%] left-1/2 -translate-x-1/5 xl:-translate-x-1/4'
         >
-          <Stats />
+          <Stats stats={stats} />
         </AnimateInView>
       </div>
       <div

@@ -4,7 +4,7 @@ import Services from '@/components/homeComp/services/Services';
 import Designs from '@/components/homeComp/designs/Designs';
 import Blog from '@/components/homeComp/Blog';
 import FAQ from '@/components/homeComp/FAQ';
-import { getAllHeroImages, getLatestPosts } from '@/services/sanity/queries';
+import { getHomePageData, getLatestPosts } from '@/services/sanity/queries';
 import { fetchSanityData } from '@/services/sanity/sanityClient';
 import { pagesMetaData } from '@/Constants';
 import { Metadata } from 'next';
@@ -48,14 +48,17 @@ export const metadata: Metadata = {
 };
 
 export default async function Home() {
-  const [heroImages, latestBlogs] = await Promise.all([
-    fetchSanityData(getAllHeroImages),
+  const [pageData, latestBlogs] = await Promise.all([
+    fetchSanityData(getHomePageData),
     fetchSanityData(getLatestPosts),
   ]);
 
+  const { projects, clients, workforce, heroImages, FAQs } = pageData;
+  const stats = { projects, clients, workforce };
+
   return (
     <div className='overflow-x-hidden'>
-      <Hero images={heroImages} />
+      <Hero images={heroImages} stats={stats} />
 
       <About />
 
@@ -65,7 +68,7 @@ export default async function Home() {
 
       <Blog latestBlogs={latestBlogs} />
 
-      <FAQ />
+      <FAQ list={FAQs} />
     </div>
   );
 }

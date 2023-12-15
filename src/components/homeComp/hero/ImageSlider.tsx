@@ -6,9 +6,9 @@ import { Splide, SplideSlide, SplideTrack } from '@splidejs/react-splide';
 import '@splidejs/react-splide/css';
 
 import { urlFor } from '@/services/sanity/sanityClient';
-import { heroImages } from '@/types';
+import { heroImage } from '@/types';
 
-const ImageSlider = ({ images }: heroImages) => {
+const ImageSlider = ({ images }: { images: heroImage[] }) => {
   const options = {
     type: 'loop',
     autoplay: true,
@@ -22,21 +22,23 @@ const ImageSlider = ({ images }: heroImages) => {
       className='h-full after:content-[""] after:absolute after:w-full after:h-full after:inset-0 after:bg-[#0000007a] lg:after:bg-[#0000002a]'
     >
       <SplideTrack className='h-full'>
-        {images.map(({ title, image }) => {
-          const imgUrl = urlFor(image).url();
-          return (
-            <SplideSlide key={title}>
-              <Image
-                src={imgUrl}
-                alt={title}
-                width={2400}
-                height={2400}
-                className='h-full object-cover object-center'
-                priority={true}
-              />
-            </SplideSlide>
-          );
-        })}
+        {images
+          .sort((a, b) => a.index - b.index)
+          .map(({ index, image }) => {
+            const imgUrl = urlFor(image).url();
+            return (
+              <SplideSlide key={index}>
+                <Image
+                  src={imgUrl}
+                  alt={`image-${index}`}
+                  width={2400}
+                  height={2400}
+                  className='h-full object-cover object-center'
+                  priority={true}
+                />
+              </SplideSlide>
+            );
+          })}
       </SplideTrack>
 
       <div className='splide__arrows hidden' />
