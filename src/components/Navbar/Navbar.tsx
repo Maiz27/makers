@@ -19,7 +19,11 @@ const Navbar = () => {
 
   const toggleMenu = () => {
     setMenuOpen(!isMenuOpen);
-    // changeBackground();
+    if (!isMenuOpen) {
+      setIsTransparent(false);
+    } else if (window.scrollY <= 100 && isMenuOpen) {
+      setIsTransparent(true);
+    }
   };
 
   useEffect(() => {

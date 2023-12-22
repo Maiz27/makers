@@ -14,7 +14,7 @@ const InteriorDesigns = ({ designs }: { designs: interDesign[] }) => {
         </p>
       </div>
 
-      <ImageGallery designs={designs} />
+      <ImageGallery images={designs} />
     </AnimateInView>
   );
 };
