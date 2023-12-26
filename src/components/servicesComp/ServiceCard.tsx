@@ -2,7 +2,7 @@
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import useWindowWidth from '@/hooks/useWindowWidth';
-import AnimateInView from '../animateInView/AnimateInView';
+import AnimateInView from '../animationWrappers/AnimateInView';
 
 export const ServiceCard = ({ position, index, title, desc, Icon }) => {
   const translateAmt =

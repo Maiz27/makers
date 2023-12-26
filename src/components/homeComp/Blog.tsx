@@ -3,7 +3,7 @@ import Heading from '@/components/heading/Heading';
 import CTA from '@/components/CTA/CTA';
 import BlogCard from '../blogComp/BlogCard';
 import { getStringDate } from '@/Constants';
-import AnimateInView from '../animateInView/AnimateInView';
+import AnimateInView from '../animationWrappers/AnimateInView';
 import { blog } from '@/types';
 
 const Blog = ({ latestBlogs }: { latestBlogs: blog[] }) => {

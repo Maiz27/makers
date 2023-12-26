@@ -3,7 +3,7 @@ import ImageSlider from './ImageSlider';
 import Stats from './Stats';
 import CTA from '@/components/CTA/CTA';
 import { heroImage, stats } from '@/types';
-import AnimateInView from '@/components/animateInView/AnimateInView';
+import AnimateInView from '@/components/animationWrappers/AnimateInView';
 
 const Hero = ({ images, stats }: { images: heroImage[]; stats: stats }) => {
   return (

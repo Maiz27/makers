@@ -7,6 +7,7 @@ import { Metadata } from 'next';
 import { OpenGraph } from 'next/dist/lib/metadata/types/opengraph-types';
 import { fetchSanityData } from '@/services/sanity/sanityClient';
 import { getArchDesigns, getInterDesigns } from '@/services/sanity/queries';
+import PageTransition from '@/components/animationWrappers/PageTransition';
 
 export const metadata: Metadata = {
   // metadataBase: new URL(baseURl),
@@ -51,13 +52,13 @@ const page = async () => {
   ]);
 
   return (
-    <>
+    <PageTransition>
       <PageHeader index={2} />
 
       <ArchitectureDesigns designs={archDesigns} />
 
       <InteriorDesigns designs={interDesigns} />
-    </>
+    </PageTransition>
   );
 };
 

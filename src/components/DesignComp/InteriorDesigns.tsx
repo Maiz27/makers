@@ -1,5 +1,5 @@
 import { interDesign } from '@/types';
-import AnimateInView from '../animateInView/AnimateInView';
+import AnimateInView from '../animationWrappers/AnimateInView';
 import Heading from '../heading/Heading';
 import ImageGallery from '../imageGallery/ImageGallery';
 

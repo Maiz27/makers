@@ -5,7 +5,7 @@ import { FAQ, leftImage, rightImage } from '@/types';
 import building from '/public/imgs/wallpapers/construction.jpg';
 import img from '/public/imgs/crane.jpg';
 import img2 from '/public/imgs/construction.jpg';
-import AnimateInView from '../animateInView/AnimateInView';
+import AnimateInView from '../animationWrappers/AnimateInView';
 
 const FAQ = ({ list }: { list: FAQ[] }) => {
   const main = { img: building, alt: 'Building', priority: false };

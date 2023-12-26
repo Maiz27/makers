@@ -2,7 +2,7 @@ import React from 'react';
 import Heading from '../../heading/Heading';
 import CollapseCards from './CollapseCards';
 import { servicesList } from '@/Constants';
-import AnimateInView from '@/components/animateInView/AnimateInView';
+import AnimateInView from '@/components/animationWrappers/AnimateInView';
 
 const Services = () => {
   return (

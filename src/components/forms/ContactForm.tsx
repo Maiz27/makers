@@ -2,7 +2,7 @@
 import { useState } from 'react';
 import CTA from '@/components/CTA/CTA';
 import { contactFormFields } from '@/Constants';
-import AnimateInView from '../animateInView/AnimateInView';
+import AnimateInView from '../animationWrappers/AnimateInView';
 
 const ContactForm = () => {
   const initialState = {

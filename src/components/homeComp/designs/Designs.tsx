@@ -6,7 +6,7 @@ import AD from 'public/imgs/AD/ad1.jpg';
 import ID1 from 'public/imgs/ID/id1.jpg';
 import ID3 from 'public/imgs/ID/id3.jpg';
 import { leftImage, rightImage } from '@/types';
-import AnimateInView from '@/components/animateInView/AnimateInView';
+import AnimateInView from '@/components/animationWrappers/AnimateInView';
 
 const Designs = () => {
   const main = { img: AD, alt: 'Architecture Design' };

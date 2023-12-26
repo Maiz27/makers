@@ -5,7 +5,7 @@ import { MdDateRange, MdTimer } from 'react-icons/md';
 import { urlFor } from '@/services/sanity/sanityClient';
 import { blog } from '@/types';
 import { calculateReadTime } from '@/Constants';
-import AnimateInView from '../animateInView/AnimateInView';
+import AnimateInView from '../animationWrappers/AnimateInView';
 
 const BlogCard = ({
   index,

@@ -3,7 +3,7 @@ import { useState, useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import Image from 'next/image';
-import useLockBodyScroll from '@/context/useLockBodyScroll';
+import useLockBodyScroll from '@/hooks/useLockBodyScroll';
 import CTA from '../CTA/CTA';
 import { routes } from '@/Constants';
 import { FaBars, FaTimes } from 'react-icons/fa';
@@ -99,14 +99,20 @@ const Navbar = () => {
           </label>
         </div>
       </nav>
-      <MobileMenu menuOpen={isMenuOpen} />
+      <MobileMenu menuOpen={isMenuOpen} toggleMenu={toggleMenu} />
     </header>
   );
 };
 
 export default Navbar;
 
-const MobileMenu = ({ menuOpen }: { menuOpen: boolean }) => {
+const MobileMenu = ({
+  menuOpen,
+  toggleMenu,
+}: {
+  menuOpen: boolean;
+  toggleMenu: () => void;
+}) => {
   return (
     <motion.div
       initial={false}
@@ -118,19 +124,32 @@ const MobileMenu = ({ menuOpen }: { menuOpen: boolean }) => {
       <div className='flex justify-between md:justify-around items-center p-4'>
         {routes.map(({ name, path }) => {
           if (name !== 'Contact')
-            return <Route key={path} route={{ name, path }} />;
+            return (
+              <Route
+                key={path}
+                route={{ name, path }}
+                toggleMenu={toggleMenu}
+              />
+            );
         })}
       </div>
     </motion.div>
   );
 };
 
-const Route = ({ route }: { route: { name: string; path: string } }) => {
+const Route = ({
+  route,
+  toggleMenu,
+}: {
+  route: { name: string; path: string };
+  toggleMenu?: () => void;
+}) => {
   const { name, path } = route;
   return (
     <Link
       href={path}
       key={path}
+      onClick={() => toggleMenu && toggleMenu()}
       className='transition-colors hover:text-yellow-500 hover:scale-110 nav-hover font-semibold'
       style={{
         textShadow:

@@ -1,8 +1,11 @@
-import React from 'react';
+import { Metadata } from 'next';
+import { OpenGraph } from 'next/dist/lib/metadata/types/opengraph-types';
 import PageHeader from '@/components/pageHeader/PageHeader';
 import Heading from '@/components/heading/Heading';
 import CTA from '@/components/CTA/CTA';
 import TripleImage from '@/components/tripleImage/TripleImage';
+import AnimateInView from '@/components/animationWrappers/AnimateInView';
+import PageTransition from '@/components/animationWrappers/PageTransition';
 import { leftImage, rightImage } from '@/types';
 import { pagesMetaData, values } from '@/Constants';
 
@@ -13,9 +16,6 @@ import img3 from '/public/imgs/site/4.jpg';
 import img4 from '/public/imgs/site/2.jpg';
 import img5 from '/public/imgs/office/2.jpg';
 import img6 from '/public/imgs/office/3.jpg';
-import AnimateInView from '@/components/animateInView/AnimateInView';
-import { Metadata } from 'next';
-import { OpenGraph } from 'next/dist/lib/metadata/types/opengraph-types';
 
 export const metadata: Metadata = {
   title: pagesMetaData[1].title,
@@ -54,7 +54,7 @@ export const metadata: Metadata = {
 
 const page = () => {
   return (
-    <>
+    <PageTransition>
       <PageHeader index={0} />
 
       <AboutUs />
@@ -62,7 +62,7 @@ const page = () => {
       <MissionVision />
 
       <Team />
-    </>
+    </PageTransition>
   );
 };
 

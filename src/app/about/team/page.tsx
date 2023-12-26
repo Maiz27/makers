@@ -4,10 +4,11 @@ import Heading from '@/components/heading/Heading';
 import PageHeader from '@/components/pageHeader/PageHeader';
 import { fetchSanityData, urlFor } from '@/services/sanity/sanityClient';
 import { getAllFounders, getAllMembers } from '@/services/sanity/queries';
-import AnimateInView from '@/components/animateInView/AnimateInView';
+import AnimateInView from '@/components/animationWrappers/AnimateInView';
 import { pagesMetaData } from '@/Constants';
 import { Metadata } from 'next';
 import { OpenGraph } from 'next/dist/lib/metadata/types/opengraph-types';
+import PageTransition from '@/components/animationWrappers/PageTransition';
 
 export const revalidate = 60; // revalidate every minute
 
@@ -53,7 +54,7 @@ const page = async () => {
   ]);
 
   return (
-    <>
+    <PageTransition>
       <PageHeader index={5} />
 
       <section className='w-4/5 lg:w-full mx-auto flex flex-col justify-center items-center py-20'>
@@ -66,7 +67,7 @@ const page = async () => {
       </section>
 
       <Team list={team} />
-    </>
+    </PageTransition>
   );
 };
 

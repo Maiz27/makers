@@ -4,6 +4,7 @@ import { getPostBySlug } from '@/services/sanity/queries';
 import PageHeader from '@/components/pageHeader/PageHeader';
 import BlogBody from '@/components/blogComp/BlogBody';
 import { blog } from '@/types';
+import PageTransition from '@/components/animationWrappers/PageTransition';
 
 export const revalidate = 60; // revalidate every minute
 
@@ -64,13 +65,13 @@ const page = async ({ params: { slug } }) => {
   const { body } = post;
 
   return (
-    <article>
+    <PageTransition tag='article'>
       <PageHeader blog={post} />
 
       <section className='w-4/5 lg:w-2/3 2xl:w-1/2 mx-auto mt-10 mb-20'>
         <BlogBody body={body} />
       </section>
-    </article>
+    </PageTransition>
   );
 };
 

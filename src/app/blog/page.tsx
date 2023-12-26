@@ -6,6 +6,7 @@ import { getAllPosts, getPostCategories } from '@/services/sanity/queries';
 import { pagesMetaData } from '@/Constants';
 import { Metadata } from 'next';
 import { OpenGraph } from 'next/dist/lib/metadata/types/opengraph-types';
+import PageTransition from '@/components/animationWrappers/PageTransition';
 
 export const revalidate = 60; // revalidate every minute
 
@@ -51,11 +52,11 @@ const page = async () => {
   ]);
 
   return (
-    <>
+    <PageTransition>
       <PageHeader index={3} />
 
       <BlogsGrid blogs={blogs} categories={categories} />
-    </>
+    </PageTransition>
   );
 };
 

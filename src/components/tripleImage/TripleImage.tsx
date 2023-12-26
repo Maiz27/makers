@@ -1,7 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 import { tripleImageProps } from '@/types';
-import AnimateInView from '../animateInView/AnimateInView';
+import AnimateInView from '../animationWrappers/AnimateInView';
 import { slideLeft, slideRight } from '@/Constants';
 
 const TripleImage = ({

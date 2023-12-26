@@ -9,6 +9,7 @@ import { fetchSanityData } from '@/services/sanity/sanityClient';
 import { pagesMetaData } from '@/Constants';
 import { Metadata } from 'next';
 import { OpenGraph } from 'next/dist/lib/metadata/types/opengraph-types';
+import PageTransition from '@/components/animationWrappers/PageTransition';
 
 export const revalidate = 60; // revalidate every minute
 
@@ -57,7 +58,7 @@ export default async function Home() {
   const stats = { projects, clients, workforce };
 
   return (
-    <>
+    <PageTransition classNames='overflow-x-hidden'>
       <Hero images={heroImages} stats={stats} />
 
       <About />
@@ -69,6 +70,6 @@ export default async function Home() {
       <Blog latestBlogs={latestBlogs} />
 
       <FAQ list={FAQs} />
-    </>
+    </PageTransition>
   );
 }

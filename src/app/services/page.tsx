@@ -4,6 +4,7 @@ import { ServiceCardAlt } from '@/components/servicesComp/ServiceCard';
 import { pagesMetaData, servicesList } from '@/Constants';
 import { Metadata } from 'next';
 import { OpenGraph } from 'next/dist/lib/metadata/types/opengraph-types';
+import PageTransition from '@/components/animationWrappers/PageTransition';
 
 export const metadata: Metadata = {
   title: pagesMetaData[3].title,
@@ -42,7 +43,7 @@ export const metadata: Metadata = {
 
 const page = () => {
   return (
-    <>
+    <PageTransition>
       <PageHeader index={1} />
 
       <section className='my-20 mx-auto w-11/12 grid place-items-center grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8'>
@@ -58,7 +59,7 @@ const page = () => {
           );
         })}
       </section>
-    </>
+    </PageTransition>
   );
 };
 

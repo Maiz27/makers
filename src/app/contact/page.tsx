@@ -2,10 +2,11 @@ import PageHeader from '@/components/pageHeader/PageHeader';
 import Heading from '@/components/heading/Heading';
 import ContactForm from '@/components/forms/ContactForm';
 import { FaPhoneAlt, FaEnvelope, FaMapPin } from 'react-icons/fa';
-import AnimateInView from '@/components/animateInView/AnimateInView';
+import AnimateInView from '@/components/animationWrappers/AnimateInView';
 import { Metadata } from 'next';
 import { pagesMetaData } from '@/Constants';
 import { OpenGraph } from 'next/dist/lib/metadata/types/opengraph-types';
+import PageTransition from '@/components/animationWrappers/PageTransition';
 
 export const metadata: Metadata = {
   title: pagesMetaData[6].title,
@@ -44,7 +45,7 @@ export const metadata: Metadata = {
 
 const page = () => {
   return (
-    <>
+    <PageTransition>
       <PageHeader index={4} />
 
       <section className='my-20 flex w-full flex-col lg:flex-row justify-evenly items-center lg:items-start space-y-12 lg:space-y-0'>
@@ -89,7 +90,7 @@ const page = () => {
         </AnimateInView>
         <ContactForm />
       </section>
-    </>
+    </PageTransition>
   );
 };
 

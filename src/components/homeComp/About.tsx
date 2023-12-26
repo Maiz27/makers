@@ -6,7 +6,7 @@ import { leftImage, rightImage } from '@/types';
 import blueprint from '/public/imgs/blueprint.jpg';
 import img from '/public/imgs/site/9.jpg';
 import img2 from '/public/imgs/site/11.jpg';
-import AnimateInView from '../animateInView/AnimateInView';
+import AnimateInView from '../animationWrappers/AnimateInView';
 
 const About = () => {
   const main = { img: blueprint, alt: 'Blueprint', priority: false };

@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { ServiceCard } from '@/components/servicesComp/ServiceCard';
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
-import AnimateInView from '@/components/animateInView/AnimateInView';
+import AnimateInView from '@/components/animationWrappers/AnimateInView';
 import { slideLeft } from '@/Constants';
 
 type props = {

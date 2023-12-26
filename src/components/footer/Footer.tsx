@@ -3,7 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { routes, socials } from '@/Constants';
 import logo from '/public/imgs/logo/icon.png';
-import AnimateInView from '../animateInView/AnimateInView';
+import AnimateInView from '../animationWrappers/AnimateInView';
 
 const Footer = () => {
   return (
