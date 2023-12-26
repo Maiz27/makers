@@ -1,4 +1,4 @@
-import React from 'react';
+import { notFound } from 'next/navigation';
 import { fetchSanityData, urlFor } from '@/services/sanity/sanityClient';
 import { getPostBySlug } from '@/services/sanity/queries';
 import PageHeader from '@/components/pageHeader/PageHeader';
@@ -11,49 +11,56 @@ export async function generateMetadata({ params }) {
   const slug = params.slug;
 
   const post: blog = await fetchSanityData(getPostBySlug, { slug });
-  const imgUrl = urlFor(post.mainImage).url();
-  const url = `https://www.makersengineeringltd.com/blog/${post.slug.current}`;
+  if (post) {
+    const imgUrl = urlFor(post.mainImage).url();
+    const url = `https://www.makersengineeringltd.com/blog/${post.slug.current}`;
 
-  return {
-    title: post.title,
-    description: post.description,
-    image: imgUrl,
-
-    icons: {
-      icon: '/imgs/logo/icon.png',
-      shortcut: '/imgs/logo/icon.png',
-      apple: '/imgs/logo/icon.png',
-      other: {
-        rel: 'apple-touch-icon-precomposed',
-        url: '/imgs/logo/icon.png',
-      },
-    },
-    openGraph: {
-      type: 'article',
-      url: url,
+    return {
       title: post.title,
       description: post.description,
-      siteName: post.title,
-      images: [
-        {
-          url: imgUrl,
+      image: imgUrl,
+
+      icons: {
+        icon: '/imgs/logo/icon.png',
+        shortcut: '/imgs/logo/icon.png',
+        apple: '/imgs/logo/icon.png',
+        other: {
+          rel: 'apple-touch-icon-precomposed',
+          url: '/imgs/logo/icon.png',
         },
-      ],
-    },
-    twitter: {
-      card: 'summary_large_image',
-      site: url,
-      images: [
-        {
-          url: imgUrl,
-        },
-      ],
-    },
-  };
+      },
+      openGraph: {
+        type: 'article',
+        url: url,
+        title: post.title,
+        description: post.description,
+        siteName: post.title,
+        images: [
+          {
+            url: imgUrl,
+          },
+        ],
+      },
+      twitter: {
+        card: 'summary_large_image',
+        site: url,
+        images: [
+          {
+            url: imgUrl,
+          },
+        ],
+      },
+    };
+  }
 }
 
 const page = async ({ params: { slug } }) => {
   const post = await fetchSanityData(getPostBySlug, { slug });
+
+  if (!post) {
+    return notFound();
+  }
+
   const { body } = post;
 
   return (

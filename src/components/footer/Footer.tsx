@@ -10,7 +10,7 @@ const Footer = () => {
     <footer className='w-full min-h-60 md:h-72'>
       <div className='h-28 flex flex-col md:flex-row justify-between items-center md:pr-8 xl:pr-12 border-t-2 border-b-2 border-neutral/30'>
         <div className='h-2/3 lg:w-max flex justify-center items-center space-x-2 md:ml-4'>
-          <div className='h-full'>
+          <div>
             <Image
               src={logo}
               alt='Makers Engineering Logo'

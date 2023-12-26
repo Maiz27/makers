@@ -57,7 +57,7 @@ export default async function Home() {
   const stats = { projects, clients, workforce };
 
   return (
-    <div className='overflow-x-hidden'>
+    <>
       <Hero images={heroImages} stats={stats} />
 
       <About />
@@ -69,6 +69,6 @@ export default async function Home() {
       <Blog latestBlogs={latestBlogs} />
 
       <FAQ list={FAQs} />
-    </div>
+    </>
   );
 }

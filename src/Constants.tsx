@@ -27,6 +27,7 @@ import projectBg from '/public/imgs/wallpapers/construction.jpg';
 import BlogBg from '/public/imgs/wallpapers/library.jpg';
 import servicesBg from '/public/imgs/wallpapers/construction2.jpg';
 import contactBg from '/public/imgs/wallpapers/contact.jpg';
+import blueprint from '/public/imgs/blueprint.jpg';
 
 export const routes = [
   {
@@ -148,6 +149,16 @@ export const headingList: headerList = [
     heading: 'Our Team',
     text: 'The Driving Force Behind Makers Engineering. At Makers, we believe in the power of collaboration and the strength of a unified vision. Our team is not just a group of individuals; we are a collective force dedicated to innovation and excellence.',
     bg: teamBg,
+  },
+  {
+    heading: '404 - Page Not Found',
+    text: "Oops! Lost in the construction zone. Head back to our homepage or navigate around to explore the world of Makers Engineering. If you need assistance, we're just a click away!",
+    bg: blueprint,
+  },
+  {
+    heading: '404 - Blog Not Found',
+    text: 'Oops! This blog post seems to be missing. Head back to our main blog page or explore the rest of our site for more engineering insights.',
+    bg: blueprint,
   },
 ];
 
