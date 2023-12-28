@@ -17,18 +17,18 @@ const Recommendations = async ({ slug, categories }: props) => {
     category,
   });
 
-  console.log(posts);
-  return (
-    <section className='w-full pb-4 gap-2'>
-      {/* <h3 className='text-2xl mb-2 text-center'>Recommended Blogs</h3> */}
+  if (posts)
+    return (
+      <section className='w-full pb-4 gap-2'>
+        {/* <h3 className='text-2xl mb-2 text-center'>Recommended Blogs</h3> */}
 
-      <div className='w-full px-4 mx-auto grid place-items-center grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-1 gap-4'>
-        {posts.map((post) => {
-          return <RecommendationCard key={post.slug.current} post={post} />;
-        })}
-      </div>
-    </section>
-  );
+        <div className='w-full px-4 mx-auto grid place-items-center grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-1 gap-4'>
+          {posts.map((post) => {
+            return <RecommendationCard key={post.slug.current} post={post} />;
+          })}
+        </div>
+      </section>
+    );
 };
 
 export default Recommendations;

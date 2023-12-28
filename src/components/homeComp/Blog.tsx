@@ -8,7 +8,11 @@ import { blog } from '@/types';
 
 const Blog = ({ latestBlogs }: { latestBlogs: blog[] }) => {
   return (
-    <section className='min-h-screen flex flex-col justify-center gap-60 lg:gap-20 py-20'>
+    <section
+      className={`min-h-screen flex flex-col justify-center lg:gap-20 py-20 ${
+        latestBlogs.length > 0 ? 'gap-60' : 'gap-8'
+      }`}
+    >
       <AnimateInView
         threshold={0.5}
         delay={0.5}
@@ -33,38 +37,48 @@ const Blog = ({ latestBlogs }: { latestBlogs: blog[] }) => {
         </div>
       </AnimateInView>
 
-      <div className='grid place-items-center mx-auto gap-56 md:gap-8 lg:gap-20 grid-cols-1 md:grid-cols-2 lg:grid-cols-1 2xl:grid-cols-2 w-4/5 md:w-11/12'>
-        {latestBlogs.map(
-          (
-            {
-              slug,
-              title,
-              author,
-              publishedAt,
-              description,
-              mainImage,
-              categories,
-              body,
-            },
-            idx: number
-          ) => {
-            return (
-              <BlogCard
-                key={slug.current}
-                index={idx}
-                slug={slug}
-                title={title}
-                categories={categories}
-                publishedAt={getStringDate(publishedAt)}
-                description={description}
-                mainImage={mainImage}
-                author={author}
-                body={body}
-              />
-            );
-          }
-        )}
-      </div>
+      {latestBlogs.length > 0 ? (
+        <div className='grid place-items-center mx-auto gap-56 md:gap-8 lg:gap-20 grid-cols-1 md:grid-cols-2 lg:grid-cols-1 2xl:grid-cols-2 w-4/5 md:w-11/12'>
+          {latestBlogs.map(
+            (
+              {
+                slug,
+                title,
+                author,
+                publishedAt,
+                description,
+                mainImage,
+                categories,
+                body,
+              },
+              idx: number
+            ) => {
+              return (
+                <BlogCard
+                  key={slug.current}
+                  index={idx}
+                  slug={slug}
+                  title={title}
+                  categories={categories}
+                  publishedAt={getStringDate(publishedAt)}
+                  description={description}
+                  mainImage={mainImage}
+                  author={author}
+                  body={body}
+                />
+              );
+            }
+          )}
+        </div>
+      ) : (
+        <div className='w-4/5 max-w-xl text-center mx-auto'>
+          <p>
+            Currently on a blog hiatus! Stay tuned for new insights from Makers
+            Engineering Limited. Explore other sections or reach out to us in
+            the meantime. Thanks for your understanding!
+          </p>
+        </div>
+      )}
     </section>
   );
 };
