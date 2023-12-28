@@ -31,8 +31,8 @@ const ImageSlider = ({ images }: { images: heroImage[] }) => {
                 <Image
                   src={imgUrl}
                   alt={`image-${index}`}
-                  width={2400}
-                  height={2400}
+                  width={1080}
+                  height={720}
                   className='h-full object-cover object-center'
                   priority={true}
                 />
