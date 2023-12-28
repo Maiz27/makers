@@ -1,8 +1,9 @@
 'use client';
 import { useState } from 'react';
 import CTA from '@/components/CTA/CTA';
-import { contactFormFields } from '@/Constants';
 import AnimateInView from '../animationWrappers/AnimateInView';
+import { toast } from 'react-toastify';
+import { contactFormFields } from '@/Constants';
 
 const ContactForm = () => {
   const initialState = {
@@ -13,7 +14,6 @@ const ContactForm = () => {
     message: '',
   };
   const [formData, setFormData] = useState({ ...initialState });
-  const [result, setResult] = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState(false);
 
   const handleChange = (e: { target: { name: any; value: any } }) => {
@@ -26,17 +26,22 @@ const ContactForm = () => {
 
   const sendEmail = async (e: { preventDefault: () => void }) => {
     e.preventDefault();
-    setResult(null);
 
     const { name, email, message } = formData;
+    const toasts = {
+      success: () => toast.success('Message Sent Successfully!'),
+      error: () => toast.error('An Error Occurred, try again later!'),
+      warnAll: () => toast.warn('Please fill out all form inputs!'),
+      warnEmail: () => toast.warn('Invalid Email Address!'),
+    };
 
     if (!name || !email || !message) {
-      setResult('Please fill out all form inputs');
+      toasts.warnAll();
       return;
     }
 
     if (!email.match(validEmailRegex)) {
-      setResult('Invalid Email!');
+      toasts.warnEmail();
       return;
     }
 
@@ -55,12 +60,12 @@ const ContactForm = () => {
 
       if (response.status === 200) {
         setFormData({ ...initialState });
-        setResult('Message Sent Successfully!');
+        toasts.success();
       } else {
-        setResult('An Error Occurred, try again later!');
+        toasts.error();
       }
     } catch (error) {
-      setResult('An Error Occurred, try again later!');
+      toasts.error();
     } finally {
       setIsLoading(false);
     }
@@ -103,8 +108,6 @@ const ContactForm = () => {
           )}
         </AnimateInView>
       ))}
-
-      {result && <p className='p-4'>{result}</p>}
 
       <AnimateInView delay={1} className='mt-4'>
         <CTA

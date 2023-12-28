@@ -1,14 +1,6 @@
 'use client';
 import { useIsClient } from '@/context/IsClientContext';
 import {
-  FaEnvelope,
-  FaFacebookF,
-  FaLinkedin,
-  FaTelegram,
-  FaWhatsapp,
-} from 'react-icons/fa';
-import { RiTwitterXFill } from 'react-icons/ri';
-import {
   EmailShareButton,
   FacebookShareButton,
   LinkedinShareButton,
@@ -17,20 +9,33 @@ import {
   WhatsappShareButton,
 } from 'react-share';
 import CTA from '../CTA/CTA';
+import { toast } from 'react-toastify';
+import {
+  FaEnvelope,
+  FaFacebookF,
+  FaLinkedin,
+  FaTelegram,
+  FaWhatsapp,
+} from 'react-icons/fa';
+import { RiTwitterXFill } from 'react-icons/ri';
 
 const BlogShare = () => {
   const isClient = useIsClient();
   const currentURL = isClient ? window.location.href : '';
 
   const copyToClipboard = () => {
+    const notifySuccess = () => toast.success('Link Copied Successfully!');
+    const notifyFailure = () => toast.error('Failed to copy link!');
     navigator.clipboard
       .writeText(currentURL)
       .then(() => {
         console.log('URL copied to clipboard:', currentURL);
+        notifySuccess();
         // Optionally, you can show a success message to the user
       })
       .catch((error) => {
         console.error('Error copying to clipboard:', error);
+        notifyFailure();
         // Handle the error, e.g., show an error message to the user
       });
   };

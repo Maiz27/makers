@@ -1,8 +1,10 @@
 import type { Metadata } from 'next';
 import { IsClientCtxProvider } from '@/context/IsClientContext';
 import Navbar from '@/components/Navbar/Navbar';
-import './globals.css';
 import Footer from '@/components/footer/Footer';
+import { ToastContainer } from 'react-toastify';
+import './globals.css';
+import 'react-toastify/dist/ReactToastify.css';
 
 export const metadata: Metadata = {
   title: 'Makers Engineering',
@@ -29,7 +31,20 @@ export default function RootLayout({
       <body>
         <IsClientCtxProvider>
           <Navbar />
-          <main className='min-h-screen'>{children}</main>
+          <main className='min-h-screen'>
+            {children}
+            <ToastContainer
+              position='bottom-center'
+              autoClose={5000}
+              hideProgressBar={false}
+              newestOnTop={false}
+              rtl={false}
+              pauseOnFocusLoss
+              draggable
+              pauseOnHover
+              theme='light'
+            />
+          </main>
           <Footer />
         </IsClientCtxProvider>
       </body>
