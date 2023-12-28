@@ -5,6 +5,7 @@ import PageHeader from '@/components/pageHeader/PageHeader';
 import BlogBody from '@/components/blogComp/BlogBody';
 import { blog } from '@/types';
 import PageTransition from '@/components/animationWrappers/PageTransition';
+import BlogShare from '@/components/blogComp/BlogShare';
 
 export const revalidate = 60; // revalidate every minute
 
@@ -68,9 +69,15 @@ const page = async ({ params: { slug } }) => {
     <PageTransition tag='article'>
       <PageHeader blog={post} />
 
-      <section className='w-4/5 lg:w-2/3 2xl:w-1/2 mx-auto mt-10 mb-20'>
-        <BlogBody body={body} />
-      </section>
+      <div className='w-11/12 mx-auto flex flex-col lg:flex-row items-center lg:items-start gap-4 mt-10 mb-20'>
+        <section className='w-full lg:w-2/3'>
+          <BlogBody body={body} />
+        </section>
+
+        <aside className='w-full lg:w-1/3 max-w-lg card shadow-lg flex-col items-center pb-4 sticky top-28 gap-2'>
+          <BlogShare />
+        </aside>
+      </div>
     </PageTransition>
   );
 };
