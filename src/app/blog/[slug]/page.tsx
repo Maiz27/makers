@@ -6,6 +6,7 @@ import BlogBody from '@/components/blogComp/BlogBody';
 import { blog } from '@/types';
 import PageTransition from '@/components/animationWrappers/PageTransition';
 import BlogShare from '@/components/blogComp/BlogShare';
+import Recommendations from '@/components/blogComp/Recommendations';
 
 export const revalidate = 60; // revalidate every minute
 
@@ -63,19 +64,21 @@ const page = async ({ params: { slug } }) => {
     return notFound();
   }
 
-  const { body } = post;
+  const { body, slug: currentSlug, categories } = post;
 
   return (
     <PageTransition tag='article'>
       <PageHeader blog={post} />
 
-      <div className='w-11/12 mx-auto flex flex-col lg:flex-row items-center lg:items-start gap-4 mt-10 mb-20'>
-        <section className='w-full lg:w-2/3'>
+      <div className='w-11/12 mx-auto flex flex-col xl:flex-row items-center lg:items-start gap-4 mt-10 mb-20'>
+        <section className='w-full xl:w-2/3'>
           <BlogBody body={body} />
         </section>
 
-        <aside className='w-full lg:w-1/3 max-w-lg card shadow-lg flex-col items-center pb-4 sticky top-28 gap-2'>
+        <aside className='w-full xl:w-1/3 flex flex-col items-center sticky top-20 gap-8'>
           <BlogShare />
+
+          <Recommendations slug={currentSlug.current} categories={categories} />
         </aside>
       </div>
     </PageTransition>

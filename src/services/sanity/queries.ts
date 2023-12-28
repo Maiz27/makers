@@ -54,11 +54,10 @@ export const getRecommendedPosts = `*[_type == "post" && $category in categories
 | order(publishedAt desc)[0..1] {
   title,
   slug,
-  publishedAt,
-  description,
-  categories,
+  categories[]-> {
+    title,
+  },
   mainImage,
-  body
 }`;
 
 export const getPostCategories = `*[_type == 'category'] 

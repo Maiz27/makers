@@ -35,8 +35,8 @@ const BlogShare = () => {
       });
   };
   return (
-    <>
-      <h3 className='text-3xl mb-2'>Share Blog</h3>
+    <section className='w-full card shadow-md pb-4 gap-2'>
+      <h3 className='text-2xl mb-2 text-center'>Share Blog</h3>
 
       <label className='form-control flex-row w-full px-8'>
         <input
@@ -48,21 +48,21 @@ const BlogShare = () => {
         />
         <CTA text='Copy' isBtn={true} onClick={copyToClipboard} />
       </label>
-      <div className='grid place-items-center grid-cols-6 gap-2'>
+      <div className='w-4/5 mx-auto grid place-items-center grid-cols-6 gap-4'>
         {socials.map(({ id, icon, ShareButton }) => {
           return (
-            <div
+            <ShareButton
               key={id}
-              className='grid place-items-center p-2 border-2  rounded-full group hover:border-primary transition-colors'
+              url={currentURL}
+              className='tooltip w-10 h-10 grid place-items-center rounded-full group shadow'
+              data-tip={id}
             >
-              <ShareButton url={currentURL} className='tooltip' data-tip={id}>
-                {icon}
-              </ShareButton>
-            </div>
+              {icon}
+            </ShareButton>
           );
         })}
       </div>
-    </>
+    </section>
   );
 };
 
