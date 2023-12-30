@@ -4,8 +4,14 @@ import Stats from './Stats';
 import CTA from '@/components/CTA/CTA';
 import { heroImage, stats } from '@/types';
 import AnimateInView from '@/components/animationWrappers/AnimateInView';
+import { fetchSanityData } from '@/services/sanity/sanityClient';
+import { getHeroImagesAndStat } from '@/services/sanity/queries';
 
-const Hero = ({ images, stats }: { images: heroImage[]; stats: stats }) => {
+const Hero = async () => {
+  const data = await fetchSanityData(getHeroImagesAndStat);
+  const images: heroImage[] = data.heroImages;
+  const { projects, clients, workforce } = data;
+  const stats: stats = { projects, clients, workforce };
   return (
     <div className='h-screen relative flex items-center'>
       <div className='w-11/12 md:w-4/5 lg:w-3/6 z-10 mx-auto text-base-100 lg:text-neutral'>
@@ -55,15 +61,15 @@ const TextArea = () => {
           className='hover:shadow-2xl hover:shadow-primary'
         />
         <CTA
-          text='Previous Projects'
-          page='/projects'
+          text='Explore Designs'
+          page='/designs'
           bg='secondary'
           isOutline={true}
           className='hidden lg:flex'
         />
         <CTA
-          text='Previous Projects'
-          page='/projects'
+          text='Explore Designs'
+          page='/designs'
           className='lg:hidden btn-outline btn-secondary'
         />
       </AnimateInView>

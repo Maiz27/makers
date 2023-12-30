@@ -5,8 +5,12 @@ import BlogCard from '../blogComp/BlogCard';
 import { getStringDate } from '@/Constants';
 import AnimateInView from '../animationWrappers/AnimateInView';
 import { blog } from '@/types';
+import { fetchSanityData } from '@/services/sanity/sanityClient';
+import { getLatestPosts } from '@/services/sanity/queries';
 
-const Blog = ({ latestBlogs }: { latestBlogs: blog[] }) => {
+const Blog = async () => {
+  const latestBlogs: blog[] = await fetchSanityData(getLatestPosts);
+
   return (
     <section
       className={`min-h-screen flex flex-col justify-center lg:gap-20 py-20 ${

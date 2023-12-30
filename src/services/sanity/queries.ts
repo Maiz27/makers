@@ -65,12 +65,15 @@ export const getPostCategories = `*[_type == 'category']
     title,
 }`;
 
-export const getHomePageData = `*[_type == 'homePageData'] {
-    projects,
-    clients,
-    workforce,
-    heroImages,
+export const getFAQsList = `*[_type == 'homePageData'] {
     FAQs,
+}[0]`;
+
+export const getHeroImagesAndStat = `*[_type == 'homePageData'] {
+  projects,
+  clients,
+  workforce,
+  heroImages,
 }[0]`;
 
 export const getAllFounders = `*[_type == 'founder'] {

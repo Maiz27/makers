@@ -6,8 +6,13 @@ import building from '/public/imgs/wallpapers/construction.jpg';
 import img from '/public/imgs/crane.jpg';
 import img2 from '/public/imgs/construction.jpg';
 import AnimateInView from '../animationWrappers/AnimateInView';
+import { fetchSanityData } from '@/services/sanity/sanityClient';
+import { getFAQsList } from '@/services/sanity/queries';
 
-const FAQ = ({ list }: { list: FAQ[] }) => {
+const FAQ = async () => {
+  const data = await fetchSanityData(getFAQsList);
+  const list: FAQ[] = data.FAQs;
+
   const main = { img: building, alt: 'Building', priority: false };
   const left: leftImage = {
     img: img,
