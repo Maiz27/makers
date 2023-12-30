@@ -27,7 +27,7 @@ const BlogsGrid = ({ blogs, categories }: props) => {
   }
 
   return (
-    <section className='mt-10 mb-20 w-11/12 min-h-screen 2xl:w-5/6 mx-auto flex flex-col xl:flex-row lg:space-y-8 xl:space-y-0'>
+    <section className='mt-10 mb-20 w-11/12 min-h-screen mx-auto flex flex-col xl:flex-row gap-4 2xl:gap-6'>
       <BlogsFilter
         count={filteredList.length}
         categories={categories}
@@ -54,7 +54,7 @@ export const FilterBlogs = ({ list }: { list: blog[] }) => {
     );
   }
   return (
-    <div className='w-full h-fit xl:w-4/5 my-40 lg:my-0 grid place-items-center mx-auto gap-56 md:gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-1'>
+    <div className='w-full h-fit my-40 grid place-items-center mx-auto gap-y-48 gap-x-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-2 2xl:grid-cols-3'>
       {list.map(
         (
           {

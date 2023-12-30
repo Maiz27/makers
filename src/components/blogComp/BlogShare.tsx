@@ -1,4 +1,5 @@
 'use client';
+import { useEffect, useState } from 'react';
 import { useIsClient } from '@/context/IsClientContext';
 import {
   EmailShareButton,
@@ -21,7 +22,14 @@ import { RiTwitterXFill } from 'react-icons/ri';
 
 const BlogShare = () => {
   const isClient = useIsClient();
-  const currentURL = isClient ? window.location.href : '';
+  const [currentURL, setCurrentURL] = useState(
+    isClient ? window.location.href : ''
+  );
+
+  useEffect(() => {
+    setCurrentURL(window.location.href);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [window.location.href]);
 
   const copyToClipboard = () => {
     const notifySuccess = () => toast.success('Link Copied Successfully!');

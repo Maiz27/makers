@@ -4,8 +4,6 @@ import Services from '@/components/homeComp/services/Services';
 import Designs from '@/components/homeComp/designs/Designs';
 import Blog from '@/components/homeComp/Blog';
 import FAQ from '@/components/homeComp/FAQ';
-import { getHomePageData, getLatestPosts } from '@/services/sanity/queries';
-import { fetchSanityData } from '@/services/sanity/sanityClient';
 import { pagesMetaData } from '@/Constants';
 import { Metadata } from 'next';
 import { OpenGraph } from 'next/dist/lib/metadata/types/opengraph-types';
@@ -49,17 +47,9 @@ export const metadata: Metadata = {
 };
 
 export default async function Home() {
-  const [pageData, latestBlogs] = await Promise.all([
-    fetchSanityData(getHomePageData),
-    fetchSanityData(getLatestPosts),
-  ]);
-
-  const { projects, clients, workforce, heroImages, FAQs } = pageData;
-  const stats = { projects, clients, workforce };
-
   return (
     <PageTransition classNames='overflow-x-hidden'>
-      <Hero images={heroImages} stats={stats} />
+      <Hero />
 
       <About />
 
@@ -67,9 +57,9 @@ export default async function Home() {
 
       <Designs />
 
-      <Blog latestBlogs={latestBlogs} />
+      <Blog />
 
-      <FAQ list={FAQs} />
+      <FAQ />
     </PageTransition>
   );
 }

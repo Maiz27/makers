@@ -4,15 +4,12 @@ export const getAllPosts = `*[_type == 'post'] {
     description,
     author-> {
       name,
-      title,
-      image,
     },
     mainImage,
     categories[]-> {
       title,
     },
     publishedAt,
-    body,
   }`;
 
 export const getPostBySlug = `*[_type == 'post' && slug.current == $slug] {
@@ -21,8 +18,6 @@ export const getPostBySlug = `*[_type == 'post' && slug.current == $slug] {
     description,
     author-> {
         name,
-        title,
-        image,
       },
     mainImage,
     categories[]-> {
@@ -39,15 +34,12 @@ export const getLatestPosts = `*[_type == 'post']
       description,
       author-> {
           name,
-          title,
-          image,
       },
       mainImage,
       categories[]-> {
           title,
       },
       publishedAt,
-      body,
   }`;
 
 export const getRecommendedPosts = `*[_type == "post" && $category in categories[]->title && slug.current != $currentSlug]
@@ -65,12 +57,15 @@ export const getPostCategories = `*[_type == 'category']
     title,
 }`;
 
-export const getHomePageData = `*[_type == 'homePageData'] {
-    projects,
-    clients,
-    workforce,
-    heroImages,
+export const getFAQsList = `*[_type == 'homePageData'] {
     FAQs,
+}[0]`;
+
+export const getHeroImagesAndStat = `*[_type == 'homePageData'] {
+  projects,
+  clients,
+  workforce,
+  heroImages,
 }[0]`;
 
 export const getAllFounders = `*[_type == 'founder'] {
