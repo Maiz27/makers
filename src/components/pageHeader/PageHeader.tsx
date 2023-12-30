@@ -1,5 +1,5 @@
 import React from 'react';
-import Image, { StaticImageData } from 'next/image';
+import Image from 'next/image';
 import Heading from '../heading/Heading';
 import BreadCrumbs from './BreadCrumbs';
 import { FaUserPen } from 'react-icons/fa6';

@@ -4,15 +4,12 @@ export const getAllPosts = `*[_type == 'post'] {
     description,
     author-> {
       name,
-      title,
-      image,
     },
     mainImage,
     categories[]-> {
       title,
     },
     publishedAt,
-    body,
   }`;
 
 export const getPostBySlug = `*[_type == 'post' && slug.current == $slug] {
@@ -21,8 +18,6 @@ export const getPostBySlug = `*[_type == 'post' && slug.current == $slug] {
     description,
     author-> {
         name,
-        title,
-        image,
       },
     mainImage,
     categories[]-> {
@@ -39,15 +34,12 @@ export const getLatestPosts = `*[_type == 'post']
       description,
       author-> {
           name,
-          title,
-          image,
       },
       mainImage,
       categories[]-> {
           title,
       },
       publishedAt,
-      body,
   }`;
 
 export const getRecommendedPosts = `*[_type == "post" && $category in categories[]->title && slug.current != $currentSlug]

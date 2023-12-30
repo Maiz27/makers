@@ -1,10 +1,10 @@
-import React from 'react';
-import CTA from '../CTA/CTA';
 import Image from 'next/image';
-import { MdDateRange, MdTimer } from 'react-icons/md';
+import CTA from '../CTA/CTA';
 import { urlFor } from '@/services/sanity/sanityClient';
+import { MdDateRange } from 'react-icons/md';
+import { FaUserPen } from 'react-icons/fa6';
 import { blog } from '@/types';
-import { calculateReadTime } from '@/Constants';
+
 import AnimateInView from '../animationWrappers/AnimateInView';
 
 const BlogCard = ({
@@ -16,7 +16,6 @@ const BlogCard = ({
   categories,
   mainImage: img,
   author,
-  body,
 }: blog) => {
   const imgUrl = urlFor(img).url();
 
@@ -47,8 +46,8 @@ const BlogCard = ({
             <MdDateRange /> {publishedAt}
           </time>
           <span className='flex items-center gap-2'>
-            <MdTimer />
-            {calculateReadTime(body)} mins read
+            <FaUserPen />
+            {author.name}
           </span>
         </div>
         <h3 className='font-semibold text-lg text-center'>{title}</h3>
@@ -68,7 +67,7 @@ const BlogCard = ({
           })}
         </ul>
 
-        <CTA text='Read More' page={`/blog/${slug.current}`} size='sm' />
+        <CTA text='Read More' page={`/blog/${slug.current}`} />
       </div>
     </AnimateInView>
   );
