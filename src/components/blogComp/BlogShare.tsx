@@ -28,6 +28,7 @@ const BlogShare = () => {
 
   useEffect(() => {
     setCurrentURL(window.location.href);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [window.location.href]);
 
   const copyToClipboard = () => {
