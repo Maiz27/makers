@@ -13,8 +13,8 @@ const Blog = async () => {
 
   return (
     <section
-      className={`min-h-screen flex flex-col justify-center lg:gap-20 py-20 ${
-        latestBlogs.length > 0 ? 'gap-60' : 'gap-8'
+      className={`min-h-screen flex flex-col justify-center py-20 ${
+        latestBlogs.length > 0 ? 'gap-48' : 'gap-8'
       }`}
     >
       <AnimateInView
@@ -42,7 +42,7 @@ const Blog = async () => {
       </AnimateInView>
 
       {latestBlogs.length > 0 ? (
-        <div className='grid place-items-center mx-auto gap-56 md:gap-8 lg:gap-20 grid-cols-1 md:grid-cols-2 lg:grid-cols-1 2xl:grid-cols-2 w-4/5 md:w-11/12'>
+        <div className='grid place-items-center mx-auto gap-y-40 gap-x-8 grid-cols-1 md:grid-cols-2 w-4/5 md:w-11/12 max-w-5xl'>
           {latestBlogs.map(
             (
               {
