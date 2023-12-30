@@ -10,7 +10,9 @@ export default async function sitemap() {
     lastModified: publishedAt,
   }));
 
-  const _routes = routes.map(({ path }) => ({
+  const allRoutes = [...routes, { name: 'Team', path: '/about/team' }];
+
+  const _routes = allRoutes.map(({ path }) => ({
     url: `${baseURl}${path}`,
     lastModified: new Date().toISOString(),
   }));
