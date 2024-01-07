@@ -27,7 +27,7 @@ jobs:
 
           # Clear the existing directory and clone the repository
           rm -rf $APP_DIR/*
-          git clone [Your Repository URL] $APP_DIR
+          git clone https://github.com/Maiz27/makers.git $APP_DIR
           cd $APP_DIR
 
           # Create .env file from GitHub secrets
