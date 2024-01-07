@@ -19,12 +19,20 @@ jobs:
         username: ${{ secrets.SSH_USER }}
         password: ${{ secrets.SSH_PASSWORD }}
         script: |
-          # Navigate to the app directory
-          cd htdoc/${{ secrets.DOMAIN }}
+          # Ensure PM2 is installed
+          npm install -g pm2
+
+          # Define the app directory
+          APP_DIR=htdocs/${{ secrets.DOMAIN }}
+
+          # Clear the existing directory and clone the repository
+          rm -rf $APP_DIR/*
+          git clone [Your Repository URL] $APP_DIR
+          cd $APP_DIR
 
           # Create .env file from GitHub secrets
           echo "NEXT_PUBLIC_SANITY_PROJECT_ID=${{ secrets.NEXT_PUBLIC_SANITY_PROJECT_ID }}" > .env
-          echo "NEXT_PUBLIC_SANITY_DATASET=${{ secrets.NEXT_PUBLIC_SANITY_DATASET }}" > .env
+          echo "NEXT_PUBLIC_SANITY_DATASET=${{ secrets.NEXT_PUBLIC_SANITY_DATASET }}" >> .env
           echo "RESEND_API_KEY=${{ secrets.RESEND_API_KEY }}" >> .env
           # Add other environment variables as needed
 
@@ -37,5 +45,15 @@ jobs:
           # Build the app
           yarn build
 
-          # Restart the app using PM2
-          pm2 restart ${{ secrets.APP_NAME }}
+          # Check if the app is already being managed by PM2
+          if pm2 show ${{ secrets.APP_NAME }} > /dev/null 2>&1; then
+              # Restart the existing app
+              pm2 restart ${{ secrets.APP_NAME }}
+          else
+              # Start a new PM2 process and save the process list
+              pm2 start npm --name "${{ secrets.APP_NAME }}" -- run start
+              pm2 save
+
+              # Set PM2 to startup on server boot
+              pm2 startup
+          fi
