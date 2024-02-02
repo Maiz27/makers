@@ -123,7 +123,7 @@ export const socials = [
 export const headingList: headerList = [
   {
     heading: 'Pioneering Engineering Excellence: The Makers Story',
-    text: "At the forefront of engineering innovation since 2018, Makers Engineering Limited stands as a testament to groundbreaking solutions in the South Sudan's engineering landscape. Our journey is marked by relentless pursuit of excellence, transforming challenges into opportunities. Dive into our story and discover the passion and expertise that drive us forward.",
+    text: "At the forefront of engineering innovation since 2018, Makers Engineering Limited stands as a testament to groundbreaking solutions in South Sudan's engineering landscape. Our journey is marked by relentless pursuit of excellence, transforming challenges into opportunities. Dive into our story and discover the passion and expertise that drive us forward.",
     bg: aboutBg,
   },
   {
@@ -234,72 +234,72 @@ export const baseURl = 'https://www.makersengineeringltd.com';
 
 export const pagesMetaData = [
   {
-    title: 'Makers Engineering',
+    title: 'Makers Engineering Juba, South Sudan',
     description:
-      "Discover a dynamic force in South Sudan's the engineering realm, MAKERS Engineering Limited.",
+      'Leading the engineering sector in Juba, South Sudan, MAKERS Engineering Limited is your partner in innovative civil and structural projects.',
     type: 'website',
     url: `${baseURl}`,
     image: `${baseURl}/imgs/logo/text-logo.png`,
     icon: '/imgs/logo/icon.png',
   },
   {
-    title: 'Makers Engineering - About Us',
+    title: 'About Makers Engineering - Pioneering in South Sudan',
     description:
-      "With a track record spanning multiple technical domains, we've been redefining possibilities in the Civil Engineering Industry since our inception in 2018.",
+      "Since 2018, Makers Engineering Limited has been at the forefront of engineering landscape, transforming Juba's landscape with sustainable and innovative solutions.",
     type: 'website',
     url: `${baseURl}/about`,
     image: `${baseURl}/imgs/logo/text-logo.png`,
     icon: '/imgs/logo/icon.png',
   },
   {
-    title: 'Makers Engineering - Our Team',
+    title: 'Our Team - The Heart of Makers Engineering',
     description:
-      'The Driving Force Behind Makers Engineering. At Makers, we believe in the power of collaboration and the strength of a unified vision.',
+      "Meet the visionary leaders and passionate engineers behind Makers Engineering Limited, driving innovation in South Sudan's engineering industry.",
     type: 'website',
     url: `${baseURl}/about/team`,
     image: `${baseURl}/imgs/site/1.jpg`,
     icon: '/imgs/logo/icon.png',
   },
   {
-    title: 'Makers Engineering - Our Services',
+    title: 'Engineering Services in Juba - Makers Engineering',
     description:
-      "Unveil the potential of your projects with MAKERS Engineering's broad service list that will fulfill all your needs.",
+      'From architectural design to complex constructions, explore the comprehensive services offered by Makers Engineering Limited in Juba, South Sudan.',
     type: 'website',
     url: `${baseURl}/services`,
     image: `${baseURl}/imgs/logo/text-logo.png`,
     icon: '/imgs/logo/icon.png',
   },
   {
-    title: 'Makers Engineering - Our Projects',
+    title: 'Our Projects - Engineering Marvels by Makers',
     description:
-      "Unveil the potential of your projects with MAKERS Engineering's broad service list that will fulfill all your needs.",
+      "Discover the landmark projects that showcase Makers Engineering Limited's impact on Juba's infrastructure and beyond, embodying engineering excellence.",
     type: 'website',
     url: `${baseURl}/projects`,
-    image: `${baseURl}/imgs/AD/ad1.jpg`,
+    image: `${baseURl}/imgs/wallpapers/projects.png`,
     icon: '/imgs/logo/icon.png',
   },
   {
-    title: 'Makers Engineering - Our Design',
+    title: 'Design Innovation at Makers Engineering',
     description:
-      "Unveil the potential of your projects with MAKERS Engineering's broad service list that will fulfill all your needs.",
+      'At the intersection of creativity and engineering, Makers Engineering Limited in Juba crafts designs that inspire and endure.',
     type: 'website',
     url: `${baseURl}/design`,
     image: `${baseURl}/imgs/AD/ad1.jpg`,
     icon: '/imgs/logo/icon.png',
   },
   {
-    title: 'Makers Engineering - Our Blogs',
+    title: 'Engineering Insights - Blog by Makers Engineering',
     description:
-      'Discover the latest engineering trends and innovations through our insights. Short, insightful, and engaging, our articles offer a glimpse into the future of construction.',
+      'Gain expert insights into the latest trends, challenges, and innovations shaping the engineering world, curated by Makers Engineering Limited.',
     type: 'website',
     url: `${baseURl}/blog`,
     image: `${baseURl}/imgs/wallpapers/library.jpg`,
     icon: '/imgs/logo/icon.png',
   },
   {
-    title: 'Makers Engineering - Contact Us',
+    title: 'Contact Makers Engineering - Get in Touch',
     description:
-      'Get in touch with Makers Engineering Limited. Your journey towards innovative solutions and collaborative excellence starts here.',
+      'Ready to start your next project in Juba, South Sudan? Connect with Makers Engineering Limited and bring your vision to life with our expert team.',
     type: 'website',
     url: `${baseURl}/contact`,
     image: `${baseURl}/imgs/logo/text-logo.png`,
