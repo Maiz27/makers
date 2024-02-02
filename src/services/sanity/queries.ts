@@ -81,6 +81,13 @@ export const getAllMembers = `*[_type == 'team'] | order(title asc) {
   image,
 }`;
 
+export const getProjects = `*[_type == 'projects'] | order(title asc) {
+title,
+status,
+description,
+images,
+}`;
+
 export const getArchDesigns = `*[_type == 'archDesigns'] | order(title asc) {
 title,
 description,

@@ -2,7 +2,10 @@ import { Metadata } from 'next';
 import PageTransition from '@/components/animationWrappers/PageTransition';
 import PageHeader from '@/components/pageHeader/PageHeader';
 import { OpenGraph } from 'next/dist/lib/metadata/types/opengraph-types';
+import { fetchSanityData } from '@/services/sanity/sanityClient';
 import { pagesMetaData } from '@/Constants';
+import { getProjects } from '@/services/sanity/queries';
+import ProjectsSwapColumn from '@/components/DesignComp/ProjectsSwapColumn';
 
 export const metadata: Metadata = {
   // metadataBase: new URL(baseURl),
@@ -40,10 +43,16 @@ export const metadata: Metadata = {
   },
 };
 
-const page = () => {
+const page = async () => {
+  const projects = await fetchSanityData(getProjects);
+
+  console.log(projects);
+
   return (
     <PageTransition>
       <PageHeader index={2} />
+
+      <ProjectsSwapColumn projects={projects} />
     </PageTransition>
   );
 };

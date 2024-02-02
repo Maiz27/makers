@@ -79,6 +79,16 @@ export type FAQ = {
   answer: string;
 };
 
+export type project = {
+  contentPosition: 'l' | 'r';
+  title: string;
+  status: projectStatus;
+  description: blogBody;
+  images: Array<Object>;
+};
+
+export type projectStatus = 'Upcoming' | 'Ongoing' | 'Complete';
+
 export type archDesign = {
   contentPosition: 'l' | 'r';
   title: string;
