@@ -11,35 +11,35 @@ import PageTransition from '@/components/animationWrappers/PageTransition';
 export const revalidate = 60; // revalidate every minute
 
 export const metadata: Metadata = {
-  title: pagesMetaData[5].title,
-  description: pagesMetaData[5].description,
+  title: pagesMetaData[6].title,
+  description: pagesMetaData[6].description,
   icons: {
-    icon: pagesMetaData[5].icon,
-    shortcut: pagesMetaData[5].icon,
-    apple: pagesMetaData[5].icon,
+    icon: pagesMetaData[6].icon,
+    shortcut: pagesMetaData[6].icon,
+    apple: pagesMetaData[6].icon,
     other: {
       rel: 'apple-touch-icon-precomposed',
-      url: pagesMetaData[5].icon,
+      url: pagesMetaData[6].icon,
     },
   },
   openGraph: {
-    type: pagesMetaData[5].type,
-    url: pagesMetaData[5].url,
-    title: pagesMetaData[5].title,
-    description: pagesMetaData[5].description,
-    siteName: pagesMetaData[5].title,
+    type: pagesMetaData[6].type,
+    url: pagesMetaData[6].url,
+    title: pagesMetaData[6].title,
+    description: pagesMetaData[6].description,
+    siteName: pagesMetaData[6].title,
     images: [
       {
-        url: pagesMetaData[5].image,
+        url: pagesMetaData[6].image,
       },
     ],
   } as OpenGraph,
   twitter: {
     card: 'summary_large_image',
-    site: pagesMetaData[5].url,
+    site: pagesMetaData[6].url,
     images: [
       {
-        url: pagesMetaData[5].image,
+        url: pagesMetaData[6].image,
       },
     ],
   },
@@ -53,7 +53,7 @@ const page = async () => {
 
   return (
     <PageTransition>
-      <PageHeader index={3} />
+      <PageHeader index={4} />
 
       <BlogsGrid blogs={blogs} categories={categories} />
     </PageTransition>

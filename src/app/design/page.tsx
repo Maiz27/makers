@@ -11,35 +11,35 @@ import PageTransition from '@/components/animationWrappers/PageTransition';
 
 export const metadata: Metadata = {
   // metadataBase: new URL(baseURl),
-  title: pagesMetaData[4].title,
-  description: pagesMetaData[4].description,
+  title: pagesMetaData[5].title,
+  description: pagesMetaData[5].description,
   icons: {
-    icon: pagesMetaData[4].icon,
-    shortcut: pagesMetaData[4].icon,
-    apple: pagesMetaData[4].icon,
+    icon: pagesMetaData[5].icon,
+    shortcut: pagesMetaData[5].icon,
+    apple: pagesMetaData[5].icon,
     other: {
       rel: 'apple-touch-icon-precomposed',
-      url: pagesMetaData[4].icon,
+      url: pagesMetaData[5].icon,
     },
   },
   openGraph: {
-    type: pagesMetaData[4].type,
-    url: pagesMetaData[4].url,
-    title: pagesMetaData[4].title,
-    description: pagesMetaData[4].description,
-    siteName: pagesMetaData[4].title,
+    type: pagesMetaData[5].type,
+    url: pagesMetaData[5].url,
+    title: pagesMetaData[5].title,
+    description: pagesMetaData[5].description,
+    siteName: pagesMetaData[5].title,
     images: [
       {
-        url: pagesMetaData[4].image,
+        url: pagesMetaData[5].image,
       },
     ],
   } as OpenGraph,
   twitter: {
     card: 'summary_large_image',
-    site: pagesMetaData[4].url,
+    site: pagesMetaData[5].url,
     images: [
       {
-        url: pagesMetaData[4].image,
+        url: pagesMetaData[5].image,
       },
     ],
   },
@@ -53,7 +53,7 @@ const page = async () => {
 
   return (
     <PageTransition>
-      <PageHeader index={2} />
+      <PageHeader index={3} />
 
       <ArchitectureDesigns designs={archDesigns} />
 

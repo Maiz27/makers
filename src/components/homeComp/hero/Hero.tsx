@@ -44,13 +44,14 @@ const TextArea = () => {
     <section className='flex flex-col justify-center items-center lg:items-start z-10 gap-8 lg:ml-10 xl:ml-16'>
       <AnimateInView className='space-y-4'>
         <h1 className='text-3xl xl:text-4xl leading-normal'>
-          Pioneering a New Era of Innovation and Excellence in Civil Engineering
+          Pioneering a New Era of Innovation and Excellence in South
+          Sudan&apos;s Engineering Industry
         </h1>
         <p>
           Discover a dynamic force in the engineering realm,
           <span className='font-bold tracking-widest'> MAKERS </span>
           Engineering Limited. a powerhouse committed to innovation, with a
-          vision for a stronger South Sudan.
+          vision for an innovative & stronger South Sudan.
         </p>
       </AnimateInView>
 
@@ -61,15 +62,15 @@ const TextArea = () => {
           className='hover:shadow-2xl hover:shadow-primary'
         />
         <CTA
-          text='Explore Designs'
-          page='/designs'
+          text='Explore Design'
+          page='/design'
           bg='secondary'
           isOutline={true}
           className='hidden lg:flex'
         />
         <CTA
-          text='Explore Designs'
-          page='/designs'
+          text='Explore Design'
+          page='/design'
           className='lg:hidden btn-outline btn-secondary'
         />
       </AnimateInView>

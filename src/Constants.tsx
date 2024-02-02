@@ -31,10 +31,6 @@ import blueprint from '/public/imgs/blueprint.jpg';
 
 export const routes = [
   {
-    name: 'Home',
-    path: '/',
-  },
-  {
     name: 'About',
     path: '/about',
   },
@@ -43,8 +39,12 @@ export const routes = [
     path: '/services',
   },
   {
-    name: 'Designs',
-    path: '/designs',
+    name: 'Projects',
+    path: '/projects',
+  },
+  {
+    name: 'Design',
+    path: '/design',
   },
   {
     name: 'Blog',
@@ -107,11 +107,11 @@ export const servicesList = [
 export const socials = [
   {
     icon: <FaLinkedinIn />,
-    link: 'https://linkedin.com/',
+    link: 'https://www.linkedin.com/company/makers-engineering-limted/about/',
   },
   {
     icon: <FaXTwitter />,
-    link: 'https://twitter.com/',
+    link: 'https://twitter.com/MakersEng',
   },
   {
     icon: <FaFacebookF />,
@@ -131,7 +131,12 @@ export const headingList: headerList = [
     bg: servicesBg,
   },
   {
-    heading: 'Our Designs',
+    heading: 'Our Projects',
+    text: 'Immerse yourself in a world where architectural innovation meets artistic expression. Each design crafted by Makers Engineering Limited is a signature statement, meticulously curated to transcend the ordinary and redefine the very essence of aesthetics. Explore our portfolio to witness the seamless fusion of form and function.',
+    bg: projectBg,
+  },
+  {
+    heading: 'Our Design',
     text: 'Immerse yourself in a world where architectural innovation meets artistic expression. Each design crafted by Makers Engineering Limited is a signature statement, meticulously curated to transcend the ordinary and redefine the very essence of aesthetics. Explore our portfolio to witness the seamless fusion of form and function.',
     bg: projectBg,
   },
@@ -264,11 +269,20 @@ export const pagesMetaData = [
     icon: '/imgs/logo/icon.png',
   },
   {
-    title: 'Makers Engineering - Our Designs',
+    title: 'Makers Engineering - Our Projects',
     description:
       "Unveil the potential of your projects with MAKERS Engineering's broad service list that will fulfill all your needs.",
     type: 'website',
-    url: `${baseURl}/designs`,
+    url: `${baseURl}/projects`,
+    image: `${baseURl}/imgs/AD/ad1.jpg`,
+    icon: '/imgs/logo/icon.png',
+  },
+  {
+    title: 'Makers Engineering - Our Design',
+    description:
+      "Unveil the potential of your projects with MAKERS Engineering's broad service list that will fulfill all your needs.",
+    type: 'website',
+    url: `${baseURl}/design`,
     image: `${baseURl}/imgs/AD/ad1.jpg`,
     icon: '/imgs/logo/icon.png',
   },
