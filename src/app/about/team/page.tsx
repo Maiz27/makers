@@ -55,7 +55,7 @@ const page = async () => {
 
   return (
     <PageTransition>
-      <PageHeader index={5} />
+      <PageHeader index={6} />
 
       <section className='w-4/5 lg:w-full mx-auto flex flex-col justify-center items-center py-20'>
         <Heading

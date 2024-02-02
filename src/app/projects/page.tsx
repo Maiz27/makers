@@ -1,13 +1,11 @@
-import React from 'react';
-import PageHeader from '@/components/pageHeader/PageHeader';
-import ArchitectureDesigns from '@/components/DesignComp/ArchitectureDesigns';
-import InteriorDesigns from '@/components/DesignComp/InteriorDesigns';
-import { pagesMetaData } from '@/Constants';
 import { Metadata } from 'next';
+import PageTransition from '@/components/animationWrappers/PageTransition';
+import PageHeader from '@/components/pageHeader/PageHeader';
 import { OpenGraph } from 'next/dist/lib/metadata/types/opengraph-types';
 import { fetchSanityData } from '@/services/sanity/sanityClient';
-import { getArchDesigns, getInterDesigns } from '@/services/sanity/queries';
-import PageTransition from '@/components/animationWrappers/PageTransition';
+import { pagesMetaData } from '@/Constants';
+import { getProjects } from '@/services/sanity/queries';
+import ProjectsSwapColumn from '@/components/DesignComp/ProjectsSwapColumn';
 
 export const metadata: Metadata = {
   // metadataBase: new URL(baseURl),
@@ -46,18 +44,13 @@ export const metadata: Metadata = {
 };
 
 const page = async () => {
-  const [archDesigns, interDesigns] = await Promise.all([
-    fetchSanityData(getArchDesigns),
-    fetchSanityData(getInterDesigns),
-  ]);
+  const projects = await fetchSanityData(getProjects);
 
   return (
     <PageTransition>
       <PageHeader index={2} />
 
-      <ArchitectureDesigns designs={archDesigns} />
-
-      <InteriorDesigns designs={interDesigns} />
+      <ProjectsSwapColumn projects={projects} />
     </PageTransition>
   );
 };
