@@ -23,7 +23,8 @@ import { blogBody, headerList } from './types';
 
 import aboutBg from '/public/imgs/site/1.jpg';
 import teamBg from '/public/imgs/site/6.jpg';
-import projectBg from '/public/imgs/wallpapers/construction.jpg';
+import projectBg from '/public/imgs/wallpapers/projects.png';
+import designBg from '/public/imgs/wallpapers/design.png';
 import BlogBg from '/public/imgs/wallpapers/library.jpg';
 import servicesBg from '/public/imgs/wallpapers/construction2.jpg';
 import contactBg from '/public/imgs/wallpapers/contact.jpg';
@@ -121,48 +122,48 @@ export const socials = [
 
 export const headingList: headerList = [
   {
-    heading: 'About Makers',
-    text: "Discover a dynamic force in the engineering realm, MAKERS Engineering Limited. With a track record spanning multiple technical domains, we've been redefining possibilities in the Civil Engineering Industry since our inception in 2018.",
+    heading: 'Pioneering Engineering Excellence: The Makers Story',
+    text: "At the forefront of engineering innovation since 2018, Makers Engineering Limited stands as a testament to groundbreaking solutions in the South Sudan's engineering landscape. Our journey is marked by relentless pursuit of excellence, transforming challenges into opportunities. Dive into our story and discover the passion and expertise that drive us forward.",
     bg: aboutBg,
   },
   {
-    heading: 'Our Services',
-    text: 'Unveil the potential of your projects with MAKERS Engineering Limited, specialized construction, architecture, and interior design services. From visionary architectural concepts to thoughtfully crafted interiors, we transform spaces into living works of art.',
+    heading: 'Tailored Engineering Solutions: Services Beyond Expectations',
+    text: 'Elevate your project with our bespoke engineering services, encompassing construction, architecture, and interior design. Makers Engineering Limited brings your vision to life with unparalleled precision, transforming concepts into tangible realities. Experience the fusion of functionality and beauty with our dedicated team.',
     bg: servicesBg,
   },
   {
-    heading: 'Our Projects',
-    text: 'Immerse yourself in a world where architectural innovation meets artistic expression. Each design crafted by Makers Engineering Limited is a signature statement, meticulously curated to transcend the ordinary and redefine the very essence of aesthetics. Explore our portfolio to witness the seamless fusion of form and function.',
+    heading: 'Engineering the Future: A Portfolio of Distinction',
+    text: 'Explore our portfolio where each project is a beacon of our innovative spirit and architectural excellence. At Makers Engineering Limited, we blend artistic vision with engineering precision, crafting spaces that stand the test of time. Witness the embodiment of our commitment to exceptional design and functionality.',
     bg: projectBg,
   },
   {
-    heading: 'Our Design',
-    text: 'Immerse yourself in a world where architectural innovation meets artistic expression. Each design crafted by Makers Engineering Limited is a signature statement, meticulously curated to transcend the ordinary and redefine the very essence of aesthetics. Explore our portfolio to witness the seamless fusion of form and function.',
-    bg: projectBg,
+    heading: 'Design Philosophy: Where Aesthetics Meet Innovation',
+    text: 'Our design ethos at Makers Engineering Limited marries creativity with practicality, setting new benchmarks in architectural design. Each creation is a narrative of beauty, efficiency, and sustainability, reflecting our dedication to exceeding the ordinary. Discover how our designs pave the way for future trends.',
+    bg: designBg,
   },
   {
-    heading: 'Our Blogs',
-    text: 'Discover the latest engineering trends and innovations through our insights. Short, insightful, and engaging, our articles offer a glimpse into the future of construction. Stay updated, and ahead of the curve with Makers Engineering Limited.',
+    heading: 'Insights from the Engineering Frontier: Our Expert Blog',
+    text: 'Stay ahead of the curve with insights from the cutting edge of engineering. Our blog serves as your gateway to the future, featuring articles that inspire, inform, and challenge the status quo. Join us at Makers Engineering Limited in shaping the trends that define tomorrow.',
     bg: BlogBg,
   },
   {
-    heading: 'Contact Us',
-    text: "Get in touch with Makers Engineering Limited. Your journey towards innovative solutions and collaborative excellence starts here. Whether you have inquiries, partnership proposals, or simply want to connect, we are ready to assist you. Reach out and let's build something extraordinary together.",
+    heading: 'Connect with Makers: Your Pathway to Engineering Innovation',
+    text: "Embark on a journey of discovery and collaboration with Makers Engineering Limited. We're more than just an engineering firm; we're your partner in building the extraordinary. Contact us to explore how together, we can turn innovative ideas into reality.",
     bg: contactBg,
   },
   {
-    heading: 'Our Team',
-    text: 'The Driving Force Behind Makers Engineering. At Makers, we believe in the power of collaboration and the strength of a unified vision. Our team is not just a group of individuals; we are a collective force dedicated to innovation and excellence.',
+    heading: 'Meet the Visionaries: The People Powering Makers',
+    text: "Behind every successful project at Makers Engineering Limited lies a team of visionary thinkers, innovators, and problem solvers. United by a shared mission to lead and inspire, our team's collective expertise is the cornerstone of our success. Get to know the minds and hearts driving our engineering achievements.",
     bg: teamBg,
   },
   {
-    heading: '404 - Page Not Found',
-    text: "Oops! Lost in the construction zone. Head back to our homepage or navigate around to explore the world of Makers Engineering. If you need assistance, we're just a click away!",
+    heading: "Oops! It Seems You've Taken a Wrong Turn",
+    text: "The page you're looking for might have been moved, renamed, or it's just not here. But don't worry, navigating back to our homepage will put you back on track. And remember, we're here to help guide you back.",
     bg: blueprint,
   },
   {
-    heading: '404 - Blog Not Found',
-    text: 'Oops! This blog post seems to be missing. Head back to our main blog page or explore the rest of our site for more engineering insights.',
+    heading: "Missing in Action: This Blog Post Isn't Here",
+    text: "It looks like the blog post you're searching for has vanished into thin air. But all is not lost! Return to our main blog page for more enlightening reads and the latest in engineering innovation.",
     bg: blueprint,
   },
 ];

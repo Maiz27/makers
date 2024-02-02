@@ -20,7 +20,7 @@ const PageHeader = ({ index = 0, blog }: props) => {
 
   return (
     <section className='relative'>
-      <div className='w-full h-[30rem] relative'>
+      <div className='w-full h-[70dvh] xl:h-[60dvh] relative'>
         <Image
           src={headingList[index].bg}
           width={2400}
@@ -50,7 +50,7 @@ const IsBlog = ({ blog }: { blog: blog }) => {
   const imgUrl = urlFor(blog.mainImage).url();
   return (
     <section className='relative'>
-      <div className='w-full h-[30rem] relative'>
+      <div className='w-full h-[70dvh] xl:h-[60dvh] relative'>
         <Image
           src={imgUrl}
           width={2400}
