@@ -303,7 +303,7 @@ export const pagesMetaData = [
       'Ready to start your next project in Juba, South Sudan? Connect with Makers Engineering Limited and bring your vision to life with our expert team.',
     type: 'website',
     url: `${baseURl}/contact`,
-    image: `${baseURl}/imgs/logo/text-logo.png`,
+    image: `${baseURl}/imgs//wallpapers/contact.png`,
     icon: '/imgs/logo/icon.png',
   },
 ];
