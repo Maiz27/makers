@@ -31,7 +31,7 @@ export default function RootLayout({
       <body>
         <IsClientCtxProvider>
           <Navbar />
-          <main className='min-h-screen'>
+          <main className='min-h-[100dvh]'>
             {children}
             <ToastContainer
               position='bottom-center'

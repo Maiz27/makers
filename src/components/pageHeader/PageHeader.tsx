@@ -35,7 +35,7 @@ const PageHeader = ({ index = 0, blog }: props) => {
       <div className='h-3/4 w-10/12 mt-2 flex flex-col justify-center text-white absolute inset-0 z-20 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2'>
         <Heading text={headingList[index].heading} Tag='h1' isCentered={true} />
 
-        <div className='flex flex-col lg:justify-evenly gap-4 mt-4 lg:mt-10 text-xs xl:text-base lg:w-3/5 lg:mx-auto tracking-wider leading-5'>
+        <div className='flex flex-col lg:justify-evenly gap-4 mt-4 lg:mt-10 text-sm xl:text-base lg:w-3/5 lg:mx-auto tracking-wider leading-5'>
           <p className='lg:text-center'>{headingList[index].text}</p>
         </div>
       </div>
@@ -64,6 +64,10 @@ const IsBlog = ({ blog }: { blog: blog }) => {
       </div>
       <div className='h-3/4 w-10/12 mt-2 flex flex-col justify-center text-white absolute inset-0 z-20 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2'>
         <Heading text={blog.title} Tag='h1' isCentered={true} />
+
+        <p className='text-sm lg:text-base md:text-center mt-4 lg:w-3/5 mx-auto'>
+          {blog.description}
+        </p>
 
         <div className='flex flex-col lg:justify-evenly gap-4 mt-4 lg:mt-10 text-xs xl:text-base lg:w-3/5 lg:mx-auto tracking-wider leading-5'>
           <>

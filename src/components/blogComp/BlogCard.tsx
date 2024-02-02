@@ -52,7 +52,7 @@ const BlogCard = ({
         </div>
         <h3 className='font-semibold text-lg text-center'>{title}</h3>
 
-        <p className='text-xs w-11/12 text-center '>{desc}</p>
+        <p className='text-sm w-11/12 text-center '>{desc}</p>
 
         <ul className='flex flex-wrap justify-center items-center gap-2 px-2'>
           {categories.map(({ title }) => {

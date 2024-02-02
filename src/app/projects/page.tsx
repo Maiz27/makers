@@ -46,8 +46,6 @@ export const metadata: Metadata = {
 const page = async () => {
   const projects = await fetchSanityData(getProjects);
 
-  console.log(projects);
-
   return (
     <PageTransition>
       <PageHeader index={2} />

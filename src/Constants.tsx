@@ -25,9 +25,10 @@ import aboutBg from '/public/imgs/site/1.jpg';
 import teamBg from '/public/imgs/site/6.jpg';
 import projectBg from '/public/imgs/wallpapers/projects.png';
 import designBg from '/public/imgs/wallpapers/design.png';
-import BlogBg from '/public/imgs/wallpapers/library.jpg';
+import BlogBg from '/public/imgs/wallpapers/blog.png';
+import bg404 from '/public/imgs/wallpapers/404.png';
 import servicesBg from '/public/imgs/wallpapers/construction2.jpg';
-import contactBg from '/public/imgs/wallpapers/contact.jpg';
+import contactBg from '/public/imgs/wallpapers/contact.png';
 import blueprint from '/public/imgs/blueprint.jpg';
 
 export const routes = [
@@ -159,7 +160,7 @@ export const headingList: headerList = [
   {
     heading: "Oops! It Seems You've Taken a Wrong Turn",
     text: "The page you're looking for might have been moved, renamed, or it's just not here. But don't worry, navigating back to our homepage will put you back on track. And remember, we're here to help guide you back.",
-    bg: blueprint,
+    bg: bg404,
   },
   {
     heading: "Missing in Action: This Blog Post Isn't Here",
