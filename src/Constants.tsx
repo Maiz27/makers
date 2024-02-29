@@ -30,6 +30,8 @@ import bg404 from '/public/imgs/wallpapers/404.png';
 import servicesBg from '/public/imgs/wallpapers/construction2.jpg';
 import contactBg from '/public/imgs/wallpapers/contact.png';
 import blueprint from '/public/imgs/blueprint.jpg';
+import { Metadata } from 'next';
+import { OpenGraph } from 'next/dist/lib/metadata/types/opengraph-types';
 
 export const routes = [
   {
@@ -369,4 +371,47 @@ export const getStringDate = (StringDate: string, isRelative = false) => {
       day: 'numeric',
     });
   }
+};
+
+export const getMetadataByPageIndex = (index: number): Metadata => {
+  const pageMetaData = pagesMetaData[index];
+
+  return {
+    metadataBase: new URL(baseURl),
+    title: pageMetaData.title,
+    description: pageMetaData.description,
+    alternates: {
+      canonical: pageMetaData.url,
+    },
+    icons: {
+      icon: pageMetaData.icon,
+      shortcut: pageMetaData.icon,
+      apple: pageMetaData.icon,
+      other: {
+        rel: 'apple-touch-icon-precomposed',
+        url: pageMetaData.icon,
+      },
+    },
+    openGraph: {
+      type: pageMetaData.type,
+      url: pageMetaData.url,
+      title: pageMetaData.title,
+      description: pageMetaData.description,
+      siteName: pageMetaData.title,
+      images: [
+        {
+          url: pageMetaData.image,
+        },
+      ],
+    } as OpenGraph,
+    twitter: {
+      card: 'summary_large_image',
+      site: pageMetaData.url,
+      images: [
+        {
+          url: pageMetaData.image,
+        },
+      ],
+    },
+  };
 };

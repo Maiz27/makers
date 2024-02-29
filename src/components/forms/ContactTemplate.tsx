@@ -11,7 +11,7 @@ type props = {
 const EmailTemplate = ({ name, email, phone, subject, message }: props) => {
   return (
     <div>
-      <h1>Message from nilotik.tech</h1>
+      <h1>Message from Makers Engineering Website</h1>
       <h2>Subject: {subject}</h2>
       <h3>from: {name}</h3>
       <p>{message}</p>

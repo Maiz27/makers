@@ -44,8 +44,7 @@ const TextArea = () => {
     <section className='flex flex-col justify-center items-center lg:items-start z-10 gap-8 lg:ml-10 xl:ml-16'>
       <AnimateInView className='space-y-4'>
         <h1 className='text-3xl xl:text-4xl leading-normal'>
-          Pioneering a New Era of Innovation and Excellence in South
-          Sudan&apos;s Engineering Industry
+          Leading Innovation in South Sudan&apos;s Engineering Sector
         </h1>
         <p>
           Discover a dynamic force in the engineering realm,

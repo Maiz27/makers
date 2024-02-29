@@ -1,10 +1,10 @@
 import { baseURl, routes } from '@/Constants';
-import { getAllPosts } from '@/services/sanity/queries';
+import { getAllPostsForSEO } from '@/services/sanity/queries';
 import { fetchSanityData } from '@/services/sanity/sanityClient';
 import { blog } from '@/types';
 
 export default async function sitemap() {
-  const allPosts: blog[] = await fetchSanityData(getAllPosts);
+  const allPosts: blog[] = await fetchSanityData(getAllPostsForSEO);
   const posts = allPosts.map(({ slug, publishedAt }) => ({
     url: `${baseURl}/blog/${slug.current}`,
     lastModified: publishedAt,

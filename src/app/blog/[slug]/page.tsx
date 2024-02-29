@@ -22,7 +22,9 @@ export async function generateMetadata({ params }) {
       title: post.title,
       description: post.description,
       image: imgUrl,
-
+      alternates: {
+        canonical: url,
+      },
       icons: {
         icon: '/imgs/logo/icon.png',
         shortcut: '/imgs/logo/icon.png',

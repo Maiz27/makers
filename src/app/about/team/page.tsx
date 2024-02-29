@@ -1,51 +1,17 @@
-import React from 'react';
 import Image from 'next/image';
 import Heading from '@/components/heading/Heading';
 import PageHeader from '@/components/pageHeader/PageHeader';
 import { fetchSanityData, urlFor } from '@/services/sanity/sanityClient';
 import { getAllFounders, getAllMembers } from '@/services/sanity/queries';
 import AnimateInView from '@/components/animationWrappers/AnimateInView';
-import { pagesMetaData } from '@/Constants';
+import { getMetadataByPageIndex } from '@/Constants';
 import { Metadata } from 'next';
-import { OpenGraph } from 'next/dist/lib/metadata/types/opengraph-types';
+
 import PageTransition from '@/components/animationWrappers/PageTransition';
 
 export const revalidate = 60; // revalidate every minute
 
-export const metadata: Metadata = {
-  title: pagesMetaData[2].title,
-  description: pagesMetaData[2].description,
-  icons: {
-    icon: pagesMetaData[2].icon,
-    shortcut: pagesMetaData[2].icon,
-    apple: pagesMetaData[2].icon,
-    other: {
-      rel: 'apple-touch-icon-precomposed',
-      url: pagesMetaData[2].icon,
-    },
-  },
-  openGraph: {
-    type: pagesMetaData[2].type,
-    url: pagesMetaData[2].url,
-    title: pagesMetaData[2].title,
-    description: pagesMetaData[2].description,
-    siteName: pagesMetaData[2].title,
-    images: [
-      {
-        url: pagesMetaData[2].image,
-      },
-    ],
-  } as OpenGraph,
-  twitter: {
-    card: 'summary_large_image',
-    site: pagesMetaData[2].url,
-    images: [
-      {
-        url: pagesMetaData[2].image,
-      },
-    ],
-  },
-};
+export const metadata: Metadata = getMetadataByPageIndex(2);
 
 const page = async () => {
   const [founders, team] = await Promise.all([

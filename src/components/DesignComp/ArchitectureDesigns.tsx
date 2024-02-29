@@ -13,11 +13,11 @@ const ArchitectureDesigns = ({ designs }: { designs: archDesign[] }) => {
     <section className='my-20 space-y-8 md:space-y-0'>
       <div className='max-w-3xl mx-auto space-y-4 text-center px-4'>
         <Heading Tag='h2' text='Our Architecture Designs' isCentered={true} />
-        <p>
+        {/* <p>
           A showcase of innovation and elegance. From contemporary marvels to
           timeless classics, each design reflects our commitment to
           architectural excellence.
-        </p>
+        </p> */}
       </div>
 
       <SwapColumn

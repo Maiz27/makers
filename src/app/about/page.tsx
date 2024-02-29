@@ -1,5 +1,4 @@
 import { Metadata } from 'next';
-import { OpenGraph } from 'next/dist/lib/metadata/types/opengraph-types';
 import PageHeader from '@/components/pageHeader/PageHeader';
 import Heading from '@/components/heading/Heading';
 import CTA from '@/components/CTA/CTA';
@@ -7,7 +6,7 @@ import TripleImage from '@/components/tripleImage/TripleImage';
 import AnimateInView from '@/components/animationWrappers/AnimateInView';
 import PageTransition from '@/components/animationWrappers/PageTransition';
 import { leftImage, rightImage } from '@/types';
-import { pagesMetaData, values } from '@/Constants';
+import { getMetadataByPageIndex, values } from '@/Constants';
 
 import img from '/public/imgs/office/1.jpg';
 import img2 from '/public/imgs/site/3.jpg';
@@ -17,40 +16,7 @@ import img4 from '/public/imgs/site/2.jpg';
 import img5 from '/public/imgs/office/2.jpg';
 import img6 from '/public/imgs/office/3.jpg';
 
-export const metadata: Metadata = {
-  title: pagesMetaData[1].title,
-  description: pagesMetaData[1].description,
-  icons: {
-    icon: pagesMetaData[1].icon,
-    shortcut: pagesMetaData[1].icon,
-    apple: pagesMetaData[1].icon,
-    other: {
-      rel: 'apple-touch-icon-precomposed',
-      url: pagesMetaData[1].icon,
-    },
-  },
-  openGraph: {
-    type: pagesMetaData[1].type,
-    url: pagesMetaData[1].url,
-    title: pagesMetaData[1].title,
-    description: pagesMetaData[1].description,
-    siteName: pagesMetaData[1].title,
-    images: [
-      {
-        url: pagesMetaData[1].image,
-      },
-    ],
-  } as OpenGraph,
-  twitter: {
-    card: 'summary_large_image',
-    site: pagesMetaData[1].url,
-    images: [
-      {
-        url: pagesMetaData[1].image,
-      },
-    ],
-  },
-};
+export const metadata: Metadata = getMetadataByPageIndex(1);
 
 const page = () => {
   return (

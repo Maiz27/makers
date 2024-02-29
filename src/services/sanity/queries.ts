@@ -12,6 +12,11 @@ export const getAllPosts = `*[_type == 'post'] {
     publishedAt,
   }`;
 
+export const getAllPostsForSEO = `*[_type == 'post'] {
+    slug,
+    publishedAt,
+  }`;
+
 export const getPostBySlug = `*[_type == 'post' && slug.current == $slug] {
     title,
     slug,
