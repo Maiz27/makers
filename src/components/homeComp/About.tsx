@@ -1,22 +1,22 @@
-import React from 'react';
 import CTA from '../CTA/CTA';
 import Heading from '../heading/Heading';
 import TripleImage from '../tripleImage/TripleImage';
 import { leftImage, rightImage } from '@/types';
-import blueprint from '/public/imgs/blueprint.jpg';
-import img from '/public/imgs/site/9.jpg';
-import img2 from '/public/imgs/site/11.jpg';
 import AnimateInView from '../animationWrappers/AnimateInView';
 
 const About = () => {
-  const main = { img: blueprint, alt: 'Blueprint', priority: false };
+  const main = {
+    img: '/imgs/blueprint.jpg',
+    alt: 'Blueprint',
+    priority: false,
+  };
   const left: leftImage = {
-    img: img2,
+    img: '/imgs/site/11.jpg',
     alt: 'Makers Engineers',
     position: 'bottom',
   };
   const right: rightImage = {
-    img: img,
+    img: '/imgs/site/9.jpg',
     alt: 'Makers Engineers',
     position: 'top',
   };

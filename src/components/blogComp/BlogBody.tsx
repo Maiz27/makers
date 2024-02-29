@@ -10,7 +10,9 @@ type props = {
 const BlogBody = memo(({ body }: props) => {
   const myPortableTextComponents: PortableTextReactComponents = {
     types: {
-      image: ({ value }) => <Image src={value.imageUrl} alt='' />,
+      image: ({ value }) => (
+        <Image src={value.imageUrl} width={500} height={500} alt='' />
+      ),
       callToAction: ({ value, isInline }) =>
         isInline ? (
           <a href={value.url}>{value.text}</a>

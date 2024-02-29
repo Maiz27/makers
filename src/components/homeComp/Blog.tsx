@@ -1,4 +1,3 @@
-import React from 'react';
 import Heading from '@/components/heading/Heading';
 import CTA from '@/components/CTA/CTA';
 import BlogCard from '../blogComp/BlogCard';
@@ -7,6 +6,8 @@ import AnimateInView from '../animationWrappers/AnimateInView';
 import { blog } from '@/types';
 import { fetchSanityData } from '@/services/sanity/sanityClient';
 import { getLatestPosts } from '@/services/sanity/queries';
+
+export const revalidate = 60;
 
 const Blog = async () => {
   const latestBlogs: blog[] = await fetchSanityData(getLatestPosts);

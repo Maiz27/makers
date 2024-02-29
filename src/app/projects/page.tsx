@@ -7,6 +7,8 @@ import ProjectsSwapColumn from '@/components/DesignComp/ProjectsSwapColumn';
 import { getMetadataByPageIndex } from '@/Constants';
 import Heading from '@/components/heading/Heading';
 
+export const revalidate = 60;
+
 export const metadata: Metadata = getMetadataByPageIndex(4);
 
 const page = async () => {

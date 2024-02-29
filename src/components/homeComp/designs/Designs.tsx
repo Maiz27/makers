@@ -1,22 +1,18 @@
 import CTA from '@/components/CTA/CTA';
 import Heading from '@/components/heading/Heading';
-import React from 'react';
 import TripleImage from '@/components/tripleImage/TripleImage';
-import AD from 'public/imgs/AD/ad1.jpg';
-import ID1 from 'public/imgs/ID/id1.jpg';
-import ID3 from 'public/imgs/ID/id3.jpg';
 import { leftImage, rightImage } from '@/types';
 import AnimateInView from '@/components/animationWrappers/AnimateInView';
 
 const Designs = () => {
-  const main = { img: AD, alt: 'Architecture Design' };
+  const main = { img: '/imgs/AD/ad1.jpg', alt: 'Architecture Design' };
   const right: leftImage = {
-    img: ID1,
+    img: '/imgs/ID/id1.jpg',
     alt: 'Interior Design',
     position: 'bottom',
   };
   const left: rightImage = {
-    img: ID3,
+    img: '/imgs/ID/id3.jpg',
     alt: 'Interior Design',
     position: 'top',
   };

@@ -1,26 +1,28 @@
-import React from 'react';
 import Heading from '../heading/Heading';
 import TripleImage from '../tripleImage/TripleImage';
 import { FAQ, leftImage, rightImage } from '@/types';
-import building from '/public/imgs/wallpapers/construction.jpg';
-import img from '/public/imgs/crane.jpg';
-import img2 from '/public/imgs/construction.jpg';
 import AnimateInView from '../animationWrappers/AnimateInView';
 import { fetchSanityData } from '@/services/sanity/sanityClient';
 import { getFAQsList } from '@/services/sanity/queries';
+
+export const revalidate = 60;
 
 const FAQ = async () => {
   const data = await fetchSanityData(getFAQsList);
   const list: FAQ[] = data.FAQs;
 
-  const main = { img: building, alt: 'Building', priority: false };
+  const main = {
+    img: '/imgs/wallpapers/construction.jpg',
+    alt: 'Building',
+    priority: false,
+  };
   const left: leftImage = {
-    img: img,
+    img: '/imgs/crane.jpg',
     alt: 'Crane',
     position: 'top',
   };
   const right: rightImage = {
-    img: img2,
+    img: '/imgs/construction.jpg',
     alt: 'construction',
     position: 'bottom',
   };

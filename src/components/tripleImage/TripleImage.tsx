@@ -33,10 +33,14 @@ const TripleImage = ({
         alt={main.alt}
         className='w-full object-cover rounded-xl'
         priority={main.priority}
+        width={500}
+        height={500}
       />
       <Image
         src={right.img}
         alt={right.alt}
+        width={250}
+        height={250}
         style={
           right.position === 'top' ? { top: '-2.5rem' } : { bottom: '-2.5rem' }
         }
@@ -45,6 +49,8 @@ const TripleImage = ({
       <Image
         src={left.img}
         alt={left.alt}
+        width={250}
+        height={250}
         style={
           left.position === 'top' ? { top: '-2.5rem' } : { bottom: '-2.5rem' }
         }

@@ -8,14 +8,6 @@ import PageTransition from '@/components/animationWrappers/PageTransition';
 import { leftImage, rightImage } from '@/types';
 import { getMetadataByPageIndex, values } from '@/Constants';
 
-import img from '/public/imgs/office/1.jpg';
-import img2 from '/public/imgs/site/3.jpg';
-import img3 from '/public/imgs/site/4.jpg';
-
-import img4 from '/public/imgs/site/2.jpg';
-import img5 from '/public/imgs/office/2.jpg';
-import img6 from '/public/imgs/office/3.jpg';
-
 export const metadata: Metadata = getMetadataByPageIndex(1);
 
 const page = () => {
@@ -35,14 +27,18 @@ const page = () => {
 export default page;
 
 const AboutUs = () => {
-  const main = { img: img, alt: 'Makers Female Engineers', priority: true };
+  const main = {
+    img: '/imgs/office/1.jpg',
+    alt: 'Makers Female Engineers',
+    priority: true,
+  };
   const left: leftImage = {
-    img: img2,
+    img: '/imgs/site/3.jpg',
     alt: 'Makers Engineers',
     position: 'bottom',
   };
   const right: rightImage = {
-    img: img3,
+    img: '/imgs/site/4.jpg',
     alt: 'Makers Engineers',
     position: 'top',
   };
@@ -128,14 +124,18 @@ const MissionVision = () => {
 };
 
 const Team = () => {
-  const main = { img: img4, alt: 'Makers Engineers', priority: true };
+  const main = {
+    img: '/imgs/site/2.jpg',
+    alt: 'Makers Engineers',
+    priority: true,
+  };
   const left: leftImage = {
-    img: img5,
+    img: '/imgs/office/2.jpg',
     alt: 'Makers Engineers',
     position: 'bottom',
   };
   const right: rightImage = {
-    img: img6,
+    img: '/imgs/office/3.jpg',
     alt: 'Makers Engineers',
     position: 'top',
   };

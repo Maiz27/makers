@@ -1,4 +1,3 @@
-import React from 'react';
 import PageHeader from '@/components/pageHeader/PageHeader';
 import ArchitectureDesigns from '@/components/DesignComp/ArchitectureDesigns';
 import InteriorDesigns from '@/components/DesignComp/InteriorDesigns';
@@ -7,6 +6,8 @@ import { Metadata } from 'next';
 import { fetchSanityData } from '@/services/sanity/sanityClient';
 import { getArchDesigns, getInterDesigns } from '@/services/sanity/queries';
 import PageTransition from '@/components/animationWrappers/PageTransition';
+
+export const revalidate = 60;
 
 export const metadata: Metadata = getMetadataByPageIndex(5);
 

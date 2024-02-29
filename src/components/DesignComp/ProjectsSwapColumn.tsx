@@ -48,7 +48,6 @@ const Base = ({
       case 'Upcoming':
         return 'warning';
         break;
-
       default:
         break;
     }
